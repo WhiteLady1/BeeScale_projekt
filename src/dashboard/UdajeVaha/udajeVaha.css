@@ -1,0 +1,12 @@
+.weight,
+.temperature,
+.humidity,
+.voltage {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.group {
+  display: flex;
+}
