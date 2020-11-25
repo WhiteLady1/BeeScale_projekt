@@ -1,11 +1,10 @@
 import React from 'react';
-import LogIn from './LogIn';
 
 const Logo = () => {
   return (
     <>
       <h1>BeeScale</h1>
-      <LogIn />
+      <a href="https://www.google.com/">Přihlásit</a>
     </>
   );
 };
