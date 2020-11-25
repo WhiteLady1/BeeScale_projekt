@@ -1,9 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Title = styled.h1`
+  font-size: 50px;
+  color: red;
+`;
 
 const Logo = () => {
   return (
     <>
-      <h1>BeeScale</h1>
+      <Title>BeeScale</Title>
       <a href="https://www.google.com/">Přihlásit</a>
     </>
   );
