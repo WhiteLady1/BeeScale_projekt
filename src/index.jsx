@@ -11,7 +11,7 @@ const App = () => {
     <>
       <Router>
         <div>
-          <nav>
+          <nav className="nav-test">
             <ul>
               <li>
                 <Link to="/">Main page</Link>
