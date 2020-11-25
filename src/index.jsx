@@ -1,12 +1,37 @@
 import React from 'react';
+import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { render } from 'react-dom';
-import Logo from './mainPage/Logo';
 import './index.html';
+import './style.css';
+import MainPage from './MainPage/MainPage';
+import Dashboard from './Dashboard/Dashboard';
 
 const App = () => {
   return (
     <>
-      <Logo />
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Main page</Link>
+              </li>
+              <li>
+                <Link to="/dashbord">Dashboard</Link>
+              </li>
+            </ul>
+          </nav>
+
+          <Switch>
+            <Route path="/dashbord">
+              <Dashboard />
+            </Route>
+            <Route path="/">
+              <MainPage />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </>
   );
 };
