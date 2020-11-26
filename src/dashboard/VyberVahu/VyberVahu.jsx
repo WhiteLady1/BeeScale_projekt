@@ -15,7 +15,9 @@ const VyberVahu = () => {
           <option>Váha č.4</option>
         </select>
       </form>
-      <Icon icon={settingsIcon} />
+      <a href="index.html">
+        <Icon icon={settingsIcon} />
+      </a>
       <Icon icon={pensilIcon} />
     </>
   );
