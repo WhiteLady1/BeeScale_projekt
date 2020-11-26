@@ -7,7 +7,7 @@ const VyberVahu = () => {
   return (
     <>
       <form>
-        <label>Vyber váhu</label>
+        <label>Vyber váhu pro zobrazení: </label>
         <select name="vahy" id="vaha">
           <option>Váha č.1</option>
           <option>Váha č.2</option>

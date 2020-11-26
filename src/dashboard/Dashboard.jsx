@@ -3,6 +3,7 @@ import { Mapa } from './Mapa/Mapa';
 import UdajeVaha from './UdajeVaha/UdajeVaha';
 import VyberVahu from './VyberVahu/VyberVahu';
 import Graf from './Graf/Graf';
+import Alert from './Alert/Alert';
 
 const Dashboard = () => {
   return (
@@ -11,6 +12,7 @@ const Dashboard = () => {
       <VyberVahu />
       <UdajeVaha />
       <Graf />
+      <Alert />
       <Mapa />
     </>
   );
