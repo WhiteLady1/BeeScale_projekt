@@ -4,9 +4,10 @@ import UdajeVaha from './UdajeVaha/UdajeVaha';
 import VyberVahu from './VyberVahu/VyberVahu';
 import Graf from './Graf/Graf';
 import Alert from './Alert/Alert';
+import { scale as scaleList } from './scale';
 
 const Dashboard = () => {
-  const [vaha, setVaha] = useState('');
+  const [vaha, setVaha] = useState(`${scaleList[0].de6ce}`);
 
   const nastavujuVahu = (choiceScale) => {
     setVaha(choiceScale);
@@ -16,7 +17,7 @@ const Dashboard = () => {
     <>
       <p>Dashboard</p>
       <p>vybraná váha je: {vaha}</p>
-      <VyberVahu nastavVahu={nastavujuVahu} />
+      <VyberVahu vybranaVaha={vaha} nastavVahu={nastavujuVahu} />
       <UdajeVaha />
       <Graf />
       <Alert />
