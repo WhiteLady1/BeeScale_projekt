@@ -2,19 +2,30 @@ import React from 'react';
 import { Icon, InlineIcon } from '@iconify/react';
 import settingsIcon from '@iconify/icons-carbon/settings';
 import pensilIcon from '@iconify/icons-raphael/pensil';
+import { useState } from 'react';
+import { scale } from '../scale';
+
+const SeznamVah = (props) => {
+  return <option>Vrací id váhy: {props.kod}</option>;
+};
 
 const VyberVahu = () => {
+  const [vybranaVaha, setVybranaVaha] = useState(`${scale[0].de6ce}`);
   return (
     <>
       <form>
         <label>Vyber váhu pro zobrazení: </label>
-        <select name="vahy" id="vaha">
-          <option>Váha č.1</option>
-          <option>Váha č.2</option>
-          <option>Váha č.3</option>
-          <option>Váha č.4</option>
+        <select
+          name="vahy"
+          id="vaha"
+          onChange={(e) => setVybranaVaha(e.target.value)}
+        >
+          {scale.map((scale) => (
+            <SeznamVah kod={scale.de6ce} />
+          ))}
         </select>
       </form>
+      <div>Vybraná váha je: {vybranaVaha}</div>
       <a href="index.html">
         <Icon icon={settingsIcon} />
       </a>
