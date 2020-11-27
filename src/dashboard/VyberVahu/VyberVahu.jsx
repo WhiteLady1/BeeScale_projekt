@@ -9,8 +9,15 @@ const SeznamVah = (props) => {
   return <option>Vrací id váhy: {props.kod}</option>;
 };
 
-const VyberVahu = () => {
+const VyberVahu = (props) => {
   const [vybranaVaha, setVybranaVaha] = useState(`${scale[0].de6ce}`);
+
+  const handleClick = (choice) => {
+    console.log(choice);
+    setVybranaVaha(choice);
+    props.nastavVahu(vybranaVaha);
+  };
+
   return (
     <>
       <form>
@@ -18,7 +25,7 @@ const VyberVahu = () => {
         <select
           name="vahy"
           id="vaha"
-          onChange={(e) => setVybranaVaha(e.target.value)}
+          onChange={(e) => handleClick(e.target.value)}
         >
           {scale.map((scale) => (
             <SeznamVah kod={scale.de6ce} />
