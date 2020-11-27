@@ -15,7 +15,7 @@ const App = () => {
           <Header />
 
           <Switch>
-            <Route path="/dashbord">
+            <Route path="/dashboard">
               <Dashboard />
             </Route>
             <Route path="/">
