@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Title = styled.h1`
   font-size: 50px;
@@ -10,7 +11,7 @@ const Logo = () => {
   return (
     <>
       <Title>BeeScale</Title>
-      <a href="https://www.google.com/">Přihlásit</a>
+      <Link to="/dashboard">Přihlásit</Link>
     </>
   );
 };

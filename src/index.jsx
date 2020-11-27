@@ -5,22 +5,14 @@ import './index.html';
 import './style.css';
 import MainPage from './MainPage/MainPage';
 import Dashboard from './Dashboard/Dashboard';
+import Header from './Header/header';
 
 const App = () => {
   return (
     <>
       <Router>
         <div>
-          <nav className="nav-test">
-            <ul>
-              <li>
-                <Link to="/">Main page</Link>
-              </li>
-              <li>
-                <Link to="/dashbord">Dashboard</Link>
-              </li>
-            </ul>
-          </nav>
+          <Header />
 
           <Switch>
             <Route path="/dashbord">
