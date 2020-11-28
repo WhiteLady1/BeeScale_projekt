@@ -1,14 +1,13 @@
 import React from 'react';
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import weightHanging from '@iconify/icons-fa-solid/weight-hanging';
 import tempIcon from '@iconify/icons-raphael/temp';
 import energyIcon from '@iconify/icons-simple-line-icons/energy';
 import humidityIcon from '@iconify/icons-carbon/humidity';
 import './udajeVaha.css';
-import { scales } from '../scale';
 
 const UdajeVaha = (props) => {
-  const udajeVahy = scales[props.vaha];
+  const udajeVahy = props.data[0];
 
   return (
     <>

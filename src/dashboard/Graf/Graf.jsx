@@ -43,12 +43,15 @@ const data = [
       },
       {
         primary: new Date('2020-12-07T09:00:00.000Z'),
-        secondary: 74,
+        secondary: 40,
       },
     ],
   },
 ];
-const Graf = () => {
+
+const getSecondary = () => data.map((x) => x.data.secondary);
+
+const Graf = (props) => {
   const axes = React.useMemo(
     () => [
       {
