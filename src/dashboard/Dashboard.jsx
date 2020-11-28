@@ -9,6 +9,7 @@ import data from '../data/data';
 
 const Dashboard = () => {
   const [timeOffset, setTimeOffset] = useState(24);
+  const [metric, setMetric] = useState('weight');
 
   const isInSelectedTimeframe = (dateTime) => {
     const parseTime = parseDateTime(dateTime);
@@ -42,11 +43,16 @@ const Dashboard = () => {
         nastavVahu={nastavujuVahu}
         vahyOptions={Object.keys(transformedData)}
       />
-      <UdajeVaha vaha={vahaId} data={transformedData[vahaId]} />
+      <UdajeVaha
+        vaha={vahaId}
+        data={transformedData[vahaId]}
+        setMetric={setMetric}
+      />
       <Graf
         vaha={vahaId}
         data={transformedData[vahaId]}
         setTimeOffset={setTimeOffset}
+        metric={metric}
       />
       <Alert />
       <Mapa />

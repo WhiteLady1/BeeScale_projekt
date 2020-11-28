@@ -9,16 +9,20 @@ import './udajeVaha.css';
 const UdajeVaha = (props) => {
   const udajeVahy = props.data[0];
 
+  const handleClick = (oneMetric) => () => {
+    props.setMetric(oneMetric);
+  };
+
   return (
     <>
       <div>Údaje pro váhu: </div>
-      <div className="weight">
+      <div className="weight" onClick={handleClick('weight')}>
         <Icon icon={weightHanging} style={{ fontSize: '71px' }} />
         <p>Hmotnost</p>
         <p>{udajeVahy.weight}</p>
         <p>Kg</p>
       </div>
-      <div className="temperature">
+      <div className="temperature" onClick={handleClick('temperatureOut')}>
         <Icon icon={tempIcon} style={{ fontSize: '82px' }} />
         <p>Teplota </p>
         <div className="temperature-in">
@@ -36,13 +40,13 @@ const UdajeVaha = (props) => {
           </div>
         </div>
       </div>
-      <div className="humidity">
+      <div className="humidity" onClick={handleClick('humidity')}>
         <Icon icon={humidityIcon} style={{ fontSize: '82px' }} />
         <p>Vlhkost</p>
         <p>{udajeVahy.humidity}</p>
         <p>%</p>
       </div>
-      <div className="voltage">
+      <div className="voltage" onClick={handleClick('voltage')}>
         <Icon icon={energyIcon} style={{ fontSize: '71px' }} />
         <p>Stav baterie</p>
         <p>{udajeVahy.voltage}</p>
