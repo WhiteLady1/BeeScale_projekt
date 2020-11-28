@@ -29,7 +29,7 @@ const Dashboard = () => {
         vahyOptions={Object.keys(transformedData)}
       />
       <UdajeVaha vaha={vahaId} data={transformedData[vahaId]} />
-      {/* <Graf vaha={vahaId} data={transformedData[vahaId]}/> */}
+      <Graf vaha={vahaId} data={transformedData[vahaId]} />
       <Alert />
       <Mapa />
     </>
