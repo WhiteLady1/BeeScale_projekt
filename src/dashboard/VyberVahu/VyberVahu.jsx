@@ -2,13 +2,15 @@ import React from 'react';
 import { Icon, InlineIcon } from '@iconify/react';
 import settingsIcon from '@iconify/icons-carbon/settings';
 import pensilIcon from '@iconify/icons-raphael/pensil';
-import { scale as scaleList } from '../scale';
+import { scales } from '../scale';
 
 const SeznamVah = (props) => {
   return <option value={props.kod}>Vrací id váhy: {props.kod}</option>;
 };
 
 const VyberVahu = (props) => {
+  console.log('VyberVahu');
+
   const handleClick = (choice) => {
     console.log(choice);
     props.nastavVahu(choice);
@@ -24,8 +26,8 @@ const VyberVahu = (props) => {
           id="vaha"
           onChange={(e) => handleClick(e.target.value)}
         >
-          {scaleList.map((scaleItem) => (
-            <SeznamVah key={scaleItem.device} kod={scaleItem.device} />
+          {Object.entries(scales).map((entry) => (
+            <SeznamVah key={entry[0]} kod={entry[0]} />
           ))}
         </select>
       </form>

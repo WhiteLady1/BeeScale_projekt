@@ -9,8 +9,7 @@ import Header from './Header/header';
 import data from './data/test.js';
 
 const App = () => {
-
-  const uniqID = [...new Set(data.map((ids) => ids.de6ce))];
+  const uniqID = [...new Set(data.map((ids) => ids.device))];
   console.log(uniqID);
 
   return (
