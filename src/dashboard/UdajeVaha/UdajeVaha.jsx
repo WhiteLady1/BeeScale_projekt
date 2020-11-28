@@ -2,7 +2,7 @@ import React from 'react';
 import { Icon } from '@iconify/react';
 import weightHanging from '@iconify/icons-fa-solid/weight-hanging';
 import tempIcon from '@iconify/icons-raphael/temp';
-import energyIcon from '@iconify/icons-simple-line-icons/energy';
+import batteryIcon from '@iconify/icons-fa/battery';
 import humidityIcon from '@iconify/icons-carbon/humidity';
 import './udajeVaha.css';
 
@@ -47,7 +47,7 @@ const UdajeVaha = (props) => {
         <p>%</p>
       </div>
       <div className="voltage" onClick={handleClick('voltage')}>
-        <Icon icon={energyIcon} style={{ fontSize: '71px' }} />
+        <Icon icon={batteryIcon} style={{ fontSize: '80px' }} rotate="270deg" />
         <p>Stav baterie</p>
         <p>{udajeVahy.voltage}</p>
         <p>%</p>
