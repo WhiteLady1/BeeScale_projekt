@@ -3,7 +3,7 @@ import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { render } from 'react-dom';
 import './index.html';
 import './style.css';
-import MainPage from './MainPage/MainPage';
+import MainPage from './mainPage/signIn';
 import Dashboard from './Dashboard/Dashboard';
 import Header from './Header/header';
 import Settings from './Settings/Settings';
