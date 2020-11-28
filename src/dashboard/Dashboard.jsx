@@ -4,10 +4,10 @@ import UdajeVaha from './UdajeVaha/UdajeVaha';
 import VyberVahu from './VyberVahu/VyberVahu';
 import Graf from './Graf/Graf';
 import Alert from './Alert/Alert';
-import { scale as scaleList } from './scale';
+import { scales } from './scale';
 
 const Dashboard = () => {
-  const [vaha, setVaha] = useState(`${scaleList[0].device}`);
+  const [vaha, setVaha] = useState(Object.keys(scales)[0]);
 
   const nastavujuVahu = (choiceScale) => {
     setVaha(choiceScale);

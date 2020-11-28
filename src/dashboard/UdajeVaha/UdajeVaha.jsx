@@ -5,18 +5,18 @@ import tempIcon from '@iconify/icons-raphael/temp';
 import energyIcon from '@iconify/icons-simple-line-icons/energy';
 import humidityIcon from '@iconify/icons-carbon/humidity';
 import './udajeVaha.css';
-import { scale } from '../scale';
+import { scales } from '../scale';
 
 const UdajeVaha = (props) => {
-  console.log(props.vaha);
+  const udajeVahy = scales[props.vaha];
 
   return (
     <>
-      <div>Údaje pro váhu: {props.vaha}</div>
+      <div>Údaje pro váhu: </div>
       <div className="weight">
         <Icon icon={weightHanging} style={{ fontSize: '71px' }} />
         <p>Hmotnost</p>
-        <p>{scale[0].weight}</p>
+        <p>{udajeVahy.weight}</p>
         <p>Kg</p>
       </div>
       <div className="temperature">
@@ -25,14 +25,14 @@ const UdajeVaha = (props) => {
         <div className="temperature-in">
           <p>in</p>
           <div className="temperature-in group">
-            <p>25</p>
+            <p>{udajeVahy.temperatureIn}</p>
             <p>°C</p>
           </div>
         </div>
         <div className="temperature-out">
           <p>out</p>
           <div className="temperature-out group">
-            <p>-2</p>
+            <p>{udajeVahy.temperatureOut}</p>
             <p>°C</p>
           </div>
         </div>
@@ -40,13 +40,13 @@ const UdajeVaha = (props) => {
       <div className="humidity">
         <Icon icon={humidityIcon} style={{ fontSize: '82px' }} />
         <p>Vlhkost</p>
-        <p>40</p>
+        <p>{udajeVahy.humidity}</p>
         <p>%</p>
       </div>
       <div className="voltage">
         <Icon icon={energyIcon} style={{ fontSize: '71px' }} />
         <p>Stav baterie</p>
-        <p>100</p>
+        <p>{udajeVahy.voltage}</p>
         <p>%</p>
       </div>
     </>
