@@ -18,7 +18,7 @@ const Dashboard = () => {
       <p>Dashboard</p>
       <p>vybraná váha je: {vaha}</p>
       <VyberVahu vybranaVaha={vaha} nastavVahu={nastavujuVahu} />
-      <UdajeVaha />
+      <UdajeVaha vaha={vaha} />
       <Graf />
       <Alert />
       <Mapa />

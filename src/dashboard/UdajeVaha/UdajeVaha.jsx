@@ -5,14 +5,18 @@ import tempIcon from '@iconify/icons-raphael/temp';
 import energyIcon from '@iconify/icons-simple-line-icons/energy';
 import humidityIcon from '@iconify/icons-carbon/humidity';
 import './udajeVaha.css';
+import { scale } from '../scale';
 
-const UdajeVaha = () => {
+const UdajeVaha = (props) => {
+  console.log(props.vaha);
+
   return (
     <>
+      <div>Údaje pro váhu: {props.vaha}</div>
       <div className="weight">
         <Icon icon={weightHanging} style={{ fontSize: '71px' }} />
         <p>Hmotnost</p>
-        <p>56</p>
+        <p>{scale[0].weight}</p>
         <p>Kg</p>
       </div>
       <div className="temperature">
