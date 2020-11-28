@@ -4,6 +4,7 @@ import weightHanging from '@iconify/icons-fa-solid/weight-hanging';
 import tempIcon from '@iconify/icons-raphael/temp';
 import energyIcon from '@iconify/icons-simple-line-icons/energy';
 import humidityIcon from '@iconify/icons-carbon/humidity';
+import batteryIcon from '@iconify/icons-fa/battery';
 
 const Prehled = () => {
   return (
@@ -34,7 +35,7 @@ const Prehled = () => {
               <div className="jednotka">%</div>
             </div>
             <div className="baterie">
-              <Icon icon={energyIcon} style={{ fontSize: '71px' }} />
+              <Icon icon={batteryIcon} style={{ fontSize: '80px' }} />
               <div className="hodnota">56</div>
               <div className="jednotka">kg</div>
             </div>
@@ -45,3 +46,11 @@ const Prehled = () => {
   );
 };
 export default Prehled;
+
+/* Ikony baterií
+prázdná baterie <Icon icon={battery0} style={{fontSize: '80px'}} />
+25 % <Icon icon={battery1} style={{fontSize: '80px'}} />
+50 % <Icon icon={battery2} style={{fontSize: '80px'}} />
+75 % <Icon icon={battery3} style={{fontSize: '80px'}} />
+100% <Icon icon={batteryIcon} style={{fontSize: '80px'}} /> 
+*/
