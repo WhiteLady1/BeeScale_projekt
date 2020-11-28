@@ -24,7 +24,7 @@ const Graf = (props) => {
     //console.log(new Date(udaj.time));
     dataKNaplneni.push({
       primary: parseDateTime(udaj.time),
-      secondary: udaj.weight,
+      secondary: udaj[props.metric],
     });
   });
 
