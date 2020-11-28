@@ -6,8 +6,13 @@ import './style.css';
 import MainPage from './MainPage/MainPage';
 import Dashboard from './Dashboard/Dashboard';
 import Header from './Header/header';
+import data from './data/test.js';
 
 const App = () => {
+
+  const uniqID = [...new Set(data.map((ids) => ids.de6ce))];
+  console.log(uniqID);
+
   return (
     <>
       <Router>
