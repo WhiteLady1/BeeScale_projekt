@@ -1,19 +1,39 @@
 import React from 'react';
 import data from '../../data/data';
 
-const SettingsScales = () => {
-  const transformedData = {};
-  data.forEach((item) => {
-    if (!transformedData[item.de6ce]) {
-      transformedData[item.de6ce] = [];
-    }
-    transformedData[item.de6ce].push(item);
-  });
+const transformedData = {};
+data.forEach((item) => {
+  if (!transformedData[item.de6ce]) {
+    transformedData[item.de6ce] = [];
+  }
+  transformedData[item.de6ce].push(item);
+});
+const scalesList = Object.keys(transformedData);
 
+const SettingsScales = () => {
   return (
-    <ul>
-      <li>Váha č.1</li>
-    </ul>
+    <div className="settingsScale">
+      <ul>
+        {scalesList.map((scale) => {
+          return (
+            <li key={scale}>
+              <form>
+                {scale}
+                <br />
+                <label>
+                  Jméno:
+                  <input />
+                </label>
+                <label>
+                  Město nebo obec: <input />
+                </label>
+                <button>Uložit změny</button>
+              </form>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 export default SettingsScales;
