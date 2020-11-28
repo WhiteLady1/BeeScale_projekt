@@ -19,18 +19,18 @@ const NavBar = () => {
         </div>
         <ul>
           <li>
-            <Link className="nav" to="/settings">
-              Nastavení
+            <Link className="nav" to="/prehled">
+              Přehled
             </Link>
           </li>
           <li>
             <Link className="nav" to="/dashboard">
-              Kontakt
+              Dashboard
             </Link>
           </li>
           <li>
-            <Link className="nav" to="">
-              E-shop
+            <Link className="nav" to="/settings">
+              Nastavení
             </Link>
           </li>
           <li className="close">X</li>

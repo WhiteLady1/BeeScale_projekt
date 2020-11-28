@@ -7,6 +7,7 @@ import MainPage from './MainPage/MainPage';
 import Dashboard from './Dashboard/Dashboard';
 import Header from './Header/header';
 import Settings from './Settings/Settings';
+import Prehled from './Prehled/Prehled';
 import data from './data/data.js';
 
 const App = () => {
@@ -20,11 +21,14 @@ const App = () => {
           <Header />
 
           <Switch>
-            <Route path="/dashboard">
-              <Dashboard />
+            <Route path="/prehled">
+              <Prehled />
             </Route>
             <Route path="/settings">
               <Settings />
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard />
             </Route>
             <Route path="/">
               <MainPage />
