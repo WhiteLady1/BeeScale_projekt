@@ -7,7 +7,7 @@ import Alert from './Alert/Alert';
 import { scale as scaleList } from './scale';
 
 const Dashboard = () => {
-  const [vaha, setVaha] = useState(`${scaleList[0].de6ce}`);
+  const [vaha, setVaha] = useState(`${scaleList[0].device}`);
 
   const nastavujuVahu = (choiceScale) => {
     setVaha(choiceScale);

@@ -25,7 +25,7 @@ const VyberVahu = (props) => {
           onChange={(e) => handleClick(e.target.value)}
         >
           {scaleList.map((scaleItem) => (
-            <SeznamVah key={scaleItem.de6ce} kod={scaleItem.de6ce} />
+            <SeznamVah key={scaleItem.device} kod={scaleItem.device} />
           ))}
         </select>
       </form>
