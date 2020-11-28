@@ -6,6 +6,7 @@ import './style.css';
 import MainPage from './MainPage/MainPage';
 import Dashboard from './Dashboard/Dashboard';
 import Header from './Header/header';
+import Settings from './Settings/Settings';
 import data from './data/data.js';
 
 const App = () => {
@@ -21,6 +22,9 @@ const App = () => {
           <Switch>
             <Route path="/dashboard">
               <Dashboard />
+            </Route>
+            <Route path="/settings">
+              <Settings />
             </Route>
             <Route path="/">
               <MainPage />
