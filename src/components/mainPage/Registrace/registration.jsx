@@ -5,15 +5,18 @@ import './style.css';
 const Registration = () => {
   return (
     <>
-      <div className="login-page">
+      <div className="registration-page">
         <div className="form">
           <form className="register-form">
-            <input type="text" placeholder="name" />
+            <div className="register-name">
+              <input type="text" placeholder="name" />
+              <input type="text" placeholder="surname" />
+            </div>
             <input type="password" placeholder="password" />
             <input type="text" placeholder="email address" />
-            <button>create</button>
+            <button>Založ</button>
             <p className="message">
-              Už jsi registrovaný? <Link to="/">Přihlaš se</Link>
+              Už jsi prošel registrací? <Link to="/">Přihlaš se</Link>
             </p>
           </form>
         </div>

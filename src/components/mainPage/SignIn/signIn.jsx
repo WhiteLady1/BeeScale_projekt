@@ -9,15 +9,6 @@ const SignIn = () => {
       <Logo />
       <div className="login-page">
         <div className="form">
-          <form className="register-form">
-            <input type="text" placeholder="name" />
-            <input type="password" placeholder="password" />
-            <input type="text" placeholder="email address" />
-            <button>create</button>
-            <p className="message">
-              Already registered? <a href="#">Sign In</a>
-            </p>
-          </form>
           <form className="login-form">
             <input type="text" placeholder="Uživatelské jméno" />
             <input type="password" placeholder="Heslo" />
@@ -26,7 +17,7 @@ const SignIn = () => {
             </button>
 
             <p className="message">
-              Ještě nejsi registrovaný?{' '}
+              Ještě nejsi registrovaný?
               <Link to="/registration">Založ si účet</Link>
             </p>
           </form>

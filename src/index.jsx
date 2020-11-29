@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import React from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
-=======
 import React, { useState } from 'react';
-import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
->>>>>>> b63b64288e42207b05eddbcc808d671f524ccedc
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { render } from 'react-dom';
 import './index.html';
 import './style.css';
@@ -41,13 +36,13 @@ const App = () => {
   });
   const posledniData = {};
   for (const [id, list] of Object.entries(transformedData)) {
-    console.log(list);
+    //console.log(list);
     if (!posledniData[id]) {
-      console.log(list.lenght, typeof list);
+      //console.log(list.lenght, typeof list);
       posledniData[id] = list[list.lenght - 1];
     }
   }
-  console.log(posledniData);
+  //console.log(posledniData);
 
   return (
     <>
@@ -68,11 +63,11 @@ const App = () => {
                 setTimeOffset={setTimeOffset}
               />
             </Route>
-            <Route path="/">
-              <SignIn />
-            </Route>
             <Route path="/registration">
               <Registration />
+            </Route>
+            <Route path="/">
+              <SignIn />
             </Route>
           </Switch>
         </div>
