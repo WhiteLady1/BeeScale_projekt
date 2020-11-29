@@ -36,15 +36,11 @@ const App = () => {
   });
   const posledniData = {};
   for (const [id, list] of Object.entries(transformedData)) {
-<<<<<<< HEAD
     //console.log(list);
     if (!posledniData[id]) {
       //console.log(list.lenght, typeof list);
       posledniData[id] = list[list.lenght - 1];
     }
-=======
-    posledniData[id] = list[list.length - 1];
->>>>>>> 84201be629cea5ee4f7c31756051e4543c127e84
   }
   //console.log(posledniData);
 
