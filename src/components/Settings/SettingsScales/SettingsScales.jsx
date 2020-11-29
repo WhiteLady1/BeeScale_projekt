@@ -1,33 +1,34 @@
 import React from 'react';
-import data from '../../data/data';
+import { usePersistedState } from '../../index';
+import scaleList from '../../index';
 
-const transformedData = {};
+/*const transformedData = {};
 data.forEach((item) => {
   if (!transformedData[item.de6ce]) {
     transformedData[item.de6ce] = [];
   }
   transformedData[item.de6ce].push(item);
-});
-const scalesList = Object.keys(transformedData);
+});*/
 
 const SettingsScales = () => {
+  const [scaleId, setScaleId] = usePersistedState(scaleList, 'scaleList');
   return (
     <div className="settingsScale">
       <ul>
-        {scalesList.map((scale) => {
+        {scaleId.map((scale) => {
           return (
-            <li key={scale}>
+            <li key={scale.SigfoxID}>
               <form>
-                {scale}
+                {scale.SigfoxID}
                 <br />
                 <label>
                   Jméno:
-                  <input />
+                  <input value={scale.name} />
                 </label>
                 <label>
-                  Město nebo obec: <input />
+                  Město nebo obec: <input value={scale.city} />
                 </label>
-                <button>Uložit změny</button>
+                <button onClick={() => {}}>Uložit změny</button>
               </form>
             </li>
           );

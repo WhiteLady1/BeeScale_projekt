@@ -1,5 +1,11 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
+export const scaleList = [
+  { name: 'Tom Ruzyně 1', SigfoxID: '32C7C3', city: 'Hostivice' },
+  { name: 'Branov', SigfoxID: '32B86C', city: 'Branov' },
+  { name: 'Areál Botanika', SigfoxID: '32AEAB', city: 'Horní Bezděkov' },
+];
+
 export const usePersistedState = (
   initialState,
   key,
