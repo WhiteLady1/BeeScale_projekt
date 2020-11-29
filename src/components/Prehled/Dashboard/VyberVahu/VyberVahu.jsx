@@ -25,6 +25,13 @@ const VyberVahu = (props) => {
           id="vaha"
           onChange={(e) => handleClick(e.target.value)}
         >
+          {props.vahyOptions.find(
+            (option) => option === props.vybranaVaha,
+          ) ? null : (
+            <option value={props.vybranaVaha}>
+              Vrací id váhy: {props.vybranaVaha}
+            </option>
+          )}
           {props.vahyOptions.map((entry) => (
             <SeznamVah key={entry} kod={entry} />
           ))}

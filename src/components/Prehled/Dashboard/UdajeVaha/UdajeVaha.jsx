@@ -28,7 +28,7 @@ const UdajeVaha = (props) => {
         <div className="temperature-in">
           <p>in</p>
           <div className="temperature-in group">
-            <p>{udajeVahy.temperatureIn}</p>
+            <p>{udajeVahy.temperatureIn || '0'}</p>
             <p>°C</p>
           </div>
         </div>

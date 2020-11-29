@@ -6,39 +6,35 @@ import weightHanging from '@iconify/icons-fa-solid/weight-hanging';
 import tempIcon from '@iconify/icons-raphael/temp';
 import humidityIcon from '@iconify/icons-carbon/humidity';
 import batteryIcon from '@iconify/icons-fa/battery';
+import { Link } from 'react-router-dom';
 
 const JedenPrehled = (props) => {
-  return <></>;
-};
-
-const JednaVaha = (props) => {
-  console.log(`JednaVaha: ${props}`);
+  console.log(props.prehled);
   return (
     <>
-      <div className="hlavniPrehled">
-        <div className="jmenoVaha">{props.name}</div>
-        <Icon icon={weightHanging} style={{ fontSize: '71px' }} />
+      <div>
+        <Icon icon={weightHanging} style={{ fontSize: '20px' }} />
         <div className="hmotnost">{56}</div>
         <div className="jednotka">kg</div>
       </div>
       <div className="vedlejsiPrehled">
         <div className="hodnoty">
-          <Icon icon={tempIcon} style={{ fontSize: '82px' }} />
+          <Icon icon={tempIcon} style={{ fontSize: '20px' }} />
           <div className="hodnota">56</div>
           <div className="jednotka">°C</div>
         </div>
         <div className="hodnoty">
-          <Icon icon={humidityIcon} style={{ fontSize: '82px' }} />
+          <Icon icon={humidityIcon} style={{ fontSize: '20px' }} />
           <div className="hodnota">56</div>
           <div className="jednotka">°C</div>
         </div>
         <div className="hodnoty">
-          <Icon icon={humidityIcon} style={{ fontSize: '82px' }} />
+          <Icon icon={humidityIcon} style={{ fontSize: '20px' }} />
           <div className="hodnota">56</div>
           <div className="jednotka">%</div>
         </div>
         <div className="baterie">
-          <Icon icon={batteryIcon} style={{ fontSize: '80px' }} />
+          <Icon icon={batteryIcon} style={{ fontSize: '20px' }} />
           <div className="hodnota">56</div>
           <div className="jednotka">kg</div>
         </div>
@@ -47,18 +43,38 @@ const JednaVaha = (props) => {
   );
 };
 
-const Prehled = () => {
-  const [scaleId, setScaleId] = usePersistedState(scaleList, 'scaleList');
+const JednaVaha = (props) => {
+  console.log(`JednaVaha: ${props}`);
+  return (
+    <>
+      <div className="hlavniPrehled">
+        <div className="jmenoVaha">{props.name}</div>
+      </div>
+    </>
+  );
+};
+
+const Prehled = (props) => {
+  const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
+    scaleList,
+    'scaleList',
+  );
 
   return (
     <>
       <div>Jsem ultra mega vytuněnej přehled :)</div>
       <div className="prehledVah">
         <div className="prehledVahy">
-          {console.log(`Přehled před map ${scaleId[0].name}`)}
-          {scaleId.map((e) => {
-            console.log(`Přehlev map ${e}`);
-            return <JednaVaha name={e.name} />;
+          {localStorageScaleList.map((scale) => {
+            return (
+              <Link to={`/dashboard/${scale.SigfoxID}`}>
+                <JednaVaha key={scale.name} name={scale.name} />
+                <JedenPrehled
+                  key={scale.SigfoxID}
+                  prehled={props.posledniData[scale.SigfoxID]}
+                />
+              </Link>
+            );
           })}
         </div>
       </div>

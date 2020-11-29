@@ -11,11 +11,22 @@ import mapySeznam from './img/mapy_logo.svg';
 import './mapaSeznam.css';
 import './mapa.css';
 import './ovladani.css';
+import { scaleList, usePersistedState } from '../../..';
 
-export const Mapa = () => {
+export const Mapa = (props) => {
+  const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
+    scaleList,
+    'scaleList',
+  );
+
+  console.log(props.vaha, localStorageScaleList);
+  const city = localStorageScaleList.find(
+    (scale) => scale.SigfoxID === props.vaha,
+  ).city;
+  //console.log(city);
   const [viewport, setViewport] = useState({
-    latitude: 50.084209699999995,
-    longitude: 14.4477191,
+    latitude: props.latitude,
+    longitude: props.longitude,
     zoom: 15,
   });
 
