@@ -29,7 +29,10 @@ const Graf = (props) => {
         <LineChart
           width={1000}
           height={300}
-          data={props.data}
+          data={props.data.map((item) => ({
+            ...item,
+            temperatureOut: parseFloat(item.temperatureOut, 10),
+          }))}
           margin={{
             top: 5,
             right: 30,
@@ -38,8 +41,8 @@ const Graf = (props) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="time" tickCount="25" />,
-          <YAxis dataKey={props.metric} />
+          <XAxis dataKey="time" />,
+          <YAxis tickCount={15} />
           <Tooltip />
           <Legend />
           <Line type="monotone" dataKey={props.metric} stroke="#82ca9d" />
