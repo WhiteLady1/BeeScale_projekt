@@ -12,20 +12,16 @@ import './mapaSeznam.css';
 import './mapa.css';
 import './ovladani.css';
 import { scaleList, usePersistedState } from '../../..';
-
 const TOKEN =
   'pk.eyJ1Ijoid2hpdGVsYWR5IiwiYSI6ImNraHVvMmozODFldGoycGt6ZDZlNjRwZmUifQ.vejjMGJgs0GlqR9Ccy6xeg';
-
 export const Mapa = (props) => {
   const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
     scaleList,
     'scaleList',
   );
-
   const city = localStorageScaleList.find(
     (scale) => scale.SigfoxID === props.vaha,
   ).city;
-
   useEffect(() => {
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?access_token=${TOKEN}`,
@@ -43,7 +39,6 @@ export const Mapa = (props) => {
         });
       });
   }, [city]);
-
   const [viewport, setViewport] = useState(
     {
       latitude: 50.084209699999995,
@@ -52,9 +47,7 @@ export const Mapa = (props) => {
     },
     [],
   );
-
   const [mesto, setMesto] = useState(null);
-
   const seznamMapy = {
     version: 8,
     sources: {
@@ -74,9 +67,7 @@ export const Mapa = (props) => {
       },
     ],
   };
-
   const [popupOtevren, setPopupOtevren] = useState(false);
-
   return (
     <ReactMapGL
       {...viewport}
@@ -102,7 +93,6 @@ export const Mapa = (props) => {
           </button>
         </Marker>
       )}
-
       {popupOtevren && mesto && (
         <Popup
           latitude={mesto.latitude}
