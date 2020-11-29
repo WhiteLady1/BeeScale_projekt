@@ -12,40 +12,16 @@ import './mapaSeznam.css';
 import './mapa.css';
 import './ovladani.css';
 import { scaleList, usePersistedState } from '../../..';
-
 const TOKEN =
   'pk.eyJ1Ijoid2hpdGVsYWR5IiwiYSI6ImNraHVvMmozODFldGoycGt6ZDZlNjRwZmUifQ.vejjMGJgs0GlqR9Ccy6xeg';
-
-/*export async function getCoordinates(address) {
-  const response = fetch(
-    `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${TOKEN}`,
-  );
-  if (response.features[0]) {
-    return response.features[0].geometry.coordinates;
-  }
-  return null;
-}*/
-
 export const Mapa = (props) => {
   const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
     scaleList,
     'scaleList',
   );
-
   const city = localStorageScaleList.find(
     (scale) => scale.SigfoxID === props.vaha,
   ).city;
-
-  const [viewport, setViewport] = useState({
-    latitude: props.latitude,
-    longitude: props.longitude,
-    zoom: 15,
-  });
-  console.log(`Město, které chci zobrazit na matě je: ${city}`);
-
-  //const cityLat = getCoordinates(city);
-  //console.log(cityLat);
-
   useEffect(() => {
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?access_token=${TOKEN}`,
@@ -61,10 +37,8 @@ export const Mapa = (props) => {
           latitude: json.features[0].geometry.coordinates[1],
           longitude: json.features[0].geometry.coordinates[0],
         });
-        console.log(json.features[0].geometry);
       });
   }, [city]);
-
   const [viewport, setViewport] = useState(
     {
       latitude: 50.084209699999995,
@@ -73,10 +47,7 @@ export const Mapa = (props) => {
     },
     [],
   );
-
   const [mesto, setMesto] = useState(null);
-
-
   const seznamMapy = {
     version: 8,
     sources: {
@@ -96,9 +67,7 @@ export const Mapa = (props) => {
       },
     ],
   };
-
   const [popupOtevren, setPopupOtevren] = useState(false);
-
   return (
     <ReactMapGL
       {...viewport}
@@ -124,7 +93,6 @@ export const Mapa = (props) => {
           </button>
         </Marker>
       )}
-
       {popupOtevren && mesto && (
         <Popup
           latitude={mesto.latitude}
