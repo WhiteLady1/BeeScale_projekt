@@ -12,6 +12,7 @@ import Prehled from './components/Prehled/Prehled';
 import data from './components/data/data.js';
 import subHours from 'date-fns/subHours';
 import { parseDateTime } from './components/Prehled/Dashboard/Graf/Graf';
+import differenceInHours from 'date-fns/differenceInHours';
 
 const App = () => {
   const [timeOffset, setTimeOffset] = useState(24);
@@ -24,18 +25,48 @@ const App = () => {
   };
 
   const transformedData = {};
-  let lastEnteredDate = '';
+  let lastEnteredDate = '1.1.1970';
+  let lastEnteredFullDateWithHours = '1.1.1970 00:00';
+  const podminkaA = (val) => timeOffset === 24 * 30 && val !== lastEnteredDate;
+  const podminkaB = (val, val2) => {
+    //console.log(differenceInHours(parseDateTime(val), parseDateTime(val2)));
+    const difference = differenceInHours(
+      parseDateTime(val),
+      parseDateTime(val2),
+    );
+    return timeOffset === 24 * 7 && difference > 6;
+  };
+  const podminkaC = (val, val2) => {
+    const difference = differenceInHours(
+      parseDateTime(val),
+      parseDateTime(val2),
+    );
+    return timeOffset === 48 && difference > 3;
+  };
+
+  const podminkaD = (val, val2) => {
+    const difference = differenceInHours(
+      parseDateTime(val),
+      parseDateTime(val2),
+    );
+    return timeOffset === 24 && difference > 1;
+  };
+
   data.forEach((item) => {
     if (isInSelectedTimeframe(item.time)) {
       const currentDate = item.time.split(' ')[0];
-      //porovnáváš item.time (1.8.2020) jestli je už v transformData vůči lastEnteredDate
-      console.log(currentDate, lastEnteredDate);
-      if (currentDate !== lastEnteredDate) {
+      if (
+        podminkaA(currentDate) ||
+        podminkaB(item.time, lastEnteredFullDateWithHours) ||
+        podminkaC(item.time, lastEnteredFullDateWithHours) ||
+        podminkaD(item.time, lastEnteredFullDateWithHours)
+      ) {
         if (!transformedData[item.de6ce]) {
           transformedData[item.de6ce] = [];
         }
         transformedData[item.de6ce].push(item);
         lastEnteredDate = currentDate;
+        lastEnteredFullDateWithHours = item.time;
       }
     }
   });

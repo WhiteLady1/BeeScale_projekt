@@ -38,8 +38,8 @@ const Graf = (props) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-
-          <YAxis />
+          <XAxis dataKey="time" tickCount="25" />,
+          <YAxis dataKey={props.metric} />
           <Tooltip />
           <Legend />
           <Line type="monotone" dataKey={props.metric} stroke="#82ca9d" />
