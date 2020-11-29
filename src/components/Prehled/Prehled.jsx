@@ -9,7 +9,7 @@ import batteryIcon from '@iconify/icons-fa/battery';
 import { Link } from 'react-router-dom';
 
 const JedenPrehled = (props) => {
-  console.log(props.prehled);
+  //console.log(props.prehled);
   return (
     <>
       <div>
@@ -44,7 +44,7 @@ const JedenPrehled = (props) => {
 };
 
 const JednaVaha = (props) => {
-  console.log(`JednaVaha: ${props}`);
+  //console.log(`JednaVaha: ${props}`);
   return (
     <>
       <div className="hlavniPrehled">
