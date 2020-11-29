@@ -6,17 +6,13 @@ import weightHanging from '@iconify/icons-fa-solid/weight-hanging';
 import tempIcon from '@iconify/icons-raphael/temp';
 import humidityIcon from '@iconify/icons-carbon/humidity';
 import batteryIcon from '@iconify/icons-fa/battery';
+import { Link } from 'react-router-dom';
 
 const JedenPrehled = (props) => {
-  return <></>;
-};
-
-const JednaVaha = (props) => {
-  console.log(`JednaVaha: ${props}`);
+  console.log(props.prehled);
   return (
     <>
-      <div className="hlavniPrehled">
-        <div className="jmenoVaha">{props.name}</div>
+      <div>
         <Icon icon={weightHanging} style={{ fontSize: '71px' }} />
         <div className="hmotnost">{56}</div>
         <div className="jednotka">kg</div>
@@ -47,18 +43,35 @@ const JednaVaha = (props) => {
   );
 };
 
-const Prehled = () => {
-  const [scaleId, setScaleId] = usePersistedState(scaleList, 'scaleList');
+const JednaVaha = (props) => {
+  console.log(`JednaVaha: ${props}`);
+  return (
+    <>
+      <div className="hlavniPrehled">
+        <div className="jmenoVaha">{props.name}</div>
+      </div>
+    </>
+  );
+};
+
+const Prehled = (props) => {
+  const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
+    scaleList,
+    'scaleList',
+  );
 
   return (
     <>
       <div>Jsem ultra mega vytuněnej přehled :)</div>
       <div className="prehledVah">
         <div className="prehledVahy">
-          {console.log(`Přehled před map ${scaleId[0].name}`)}
-          {scaleId.map((e) => {
-            console.log(`Přehlev map ${e}`);
-            return <JednaVaha name={e.name} />;
+          {localStorageScaleList.map((scale) => {
+            return (
+              <Link to={`/dashboard/${scale.SigfoxID}`}>
+                <JednaVaha name={scale.name} />
+                <JedenPrehled prehled={props.posledniData[scale.SigfoxID]} />
+              </Link>
+            );
           })}
         </div>
       </div>

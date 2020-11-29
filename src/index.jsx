@@ -35,11 +35,7 @@ const App = () => {
   });
   const posledniData = {};
   for (const [id, list] of Object.entries(transformedData)) {
-    console.log(list);
-    if (!posledniData[id]) {
-      console.log(list.lenght, typeof list);
-      posledniData[id] = list[list.lenght - 1];
-    }
+    posledniData[id] = list[list.length - 1];
   }
   console.log(posledniData);
 
@@ -51,12 +47,12 @@ const App = () => {
 
           <Switch>
             <Route path="/prehled">
-              <Prehled />
+              <Prehled posledniData={posledniData} />
             </Route>
             <Route path="/settings">
               <Settings />
             </Route>
-            <Route path="/dashboard">
+            <Route path="/dashboard/:id?">
               <Dashboard
                 transformedData={transformedData}
                 setTimeOffset={setTimeOffset}
