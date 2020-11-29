@@ -1,10 +1,11 @@
 import React from 'react';
-import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { render } from 'react-dom';
 import './index.html';
 import './style.css';
 import Dashboard from './components/Prehled/Dashboard/Dashboard';
-import MainPage from './components/mainPage/signIn';
+import SignIn from './components/MainPage/SignIn/signIn';
+import Registration from './components/MainPage/Registrace/registration';
 import Header from './components/Header/header';
 import Settings from './components/Settings/Settings';
 import Prehled from './components/Prehled/Prehled';
@@ -31,7 +32,10 @@ const App = () => {
               <Dashboard />
             </Route>
             <Route path="/">
-              <MainPage />
+              <SignIn />
+            </Route>
+            <Route path="/registration">
+              <Registration />
             </Route>
           </Switch>
         </div>

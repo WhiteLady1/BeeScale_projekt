@@ -1,11 +1,10 @@
 import React from 'react';
-import Logo from './Logo';
+import { Link } from 'react-router-dom';
 import './style.css';
 
-const MainPage = () => {
+const Registration = () => {
   return (
     <>
-      <Logo />
       <div className="login-page">
         <div className="form">
           <form className="register-form">
@@ -14,15 +13,7 @@ const MainPage = () => {
             <input type="text" placeholder="email address" />
             <button>create</button>
             <p className="message">
-              Already registered? <a href="#">Sign In</a>
-            </p>
-          </form>
-          <form className="login-form">
-            <input type="text" placeholder="username" />
-            <input type="password" placeholder="password" />
-            <button>login</button>
-            <p className="message">
-              Not registered? <a href="#">Create an account</a>
+              Už jsi registrovaný? <Link to="/">Přihlaš se</Link>
             </p>
           </form>
         </div>
@@ -30,4 +21,4 @@ const MainPage = () => {
     </>
   );
 };
-export default MainPage;
+export default Registration;
