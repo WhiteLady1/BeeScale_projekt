@@ -1,6 +1,6 @@
 import React from 'react';
 import { usePersistedState } from '../../index';
-import scaleList from '../../index';
+import { scaleList } from '../../index';
 
 /*const transformedData = {};
 data.forEach((item) => {
