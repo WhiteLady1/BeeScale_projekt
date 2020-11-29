@@ -2,9 +2,9 @@ import React from 'react';
 import { Icon } from '@iconify/react';
 import weightHanging from '@iconify/icons-fa-solid/weight-hanging';
 import tempIcon from '@iconify/icons-raphael/temp';
-import energyIcon from '@iconify/icons-simple-line-icons/energy';
 import humidityIcon from '@iconify/icons-carbon/humidity';
 import batteryIcon from '@iconify/icons-fa/battery';
+impo;
 
 const Prehled = () => {
   return (

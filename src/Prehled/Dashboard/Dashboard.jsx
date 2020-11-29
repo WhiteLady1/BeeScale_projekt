@@ -5,7 +5,7 @@ import UdajeVaha from './UdajeVaha/UdajeVaha';
 import VyberVahu from './VyberVahu/VyberVahu';
 import Graf, { parseDateTime } from './Graf/Graf';
 import Alert from './Alert/Alert';
-import data from '../data/data';
+import data from '../../data/data';
 
 const Dashboard = () => {
   const [timeOffset, setTimeOffset] = useState(24);

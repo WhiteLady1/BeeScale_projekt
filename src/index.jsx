@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import './index.html';
 import './style.css';
 import MainPage from './MainPage/MainPage';
-import Dashboard from './Dashboard/Dashboard';
+import Dashboard from './Prehled/Dashboard/Dashboard';
 import Header from './Header/header';
 import Settings from './Settings/Settings';
 import Prehled from './Prehled/Prehled';
