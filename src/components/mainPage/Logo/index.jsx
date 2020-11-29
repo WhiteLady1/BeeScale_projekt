@@ -11,7 +11,6 @@ const Logo = () => {
   return (
     <>
       <Title>BeeScale</Title>
-      <Link to="/dashboard">Přihlásit</Link>
     </>
   );
 };

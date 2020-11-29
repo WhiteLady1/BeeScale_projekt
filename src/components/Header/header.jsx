@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+//import Logo from '../mainPage/Logo';
 import './style.css';
 
 const NavBar = () => {

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { render } from 'react-dom';
 import './index.html';
 import './style.css';
 import Dashboard from './components/Prehled/Dashboard/Dashboard';
-import MainPage from './components/mainPage/signIn';
+import SignIn from './components/MainPage/SignIn/signIn';
+import Registration from './components/MainPage/Registrace/registration';
 import Header from './components/Header/header';
 import Settings from './components/Settings/Settings';
 import Prehled from './components/Prehled/Prehled';
@@ -35,9 +36,17 @@ const App = () => {
   });
   const posledniData = {};
   for (const [id, list] of Object.entries(transformedData)) {
+<<<<<<< HEAD
+    //console.log(list);
+    if (!posledniData[id]) {
+      //console.log(list.lenght, typeof list);
+      posledniData[id] = list[list.lenght - 1];
+    }
+=======
     posledniData[id] = list[list.length - 1];
+>>>>>>> 84201be629cea5ee4f7c31756051e4543c127e84
   }
-  console.log(posledniData);
+  //console.log(posledniData);
 
   return (
     <>
@@ -58,8 +67,11 @@ const App = () => {
                 setTimeOffset={setTimeOffset}
               />
             </Route>
+            <Route path="/registration">
+              <Registration />
+            </Route>
             <Route path="/">
-              <MainPage />
+              <SignIn />
             </Route>
           </Switch>
         </div>
