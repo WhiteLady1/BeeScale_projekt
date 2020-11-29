@@ -1,15 +1,22 @@
 import React from 'react';
 import { Icon, InlineIcon } from '@iconify/react';
-import settingsIcon from '@iconify/icons-carbon/settings';
 import pensilIcon from '@iconify/icons-raphael/pensil';
+import { scaleList, usePersistedState } from '../../..';
+import { Link } from 'react-router-dom';
 
 const SeznamVah = (props) => {
-  return <option value={props.kod}>Vrací id váhy: {props.kod}</option>;
+  const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
+    scaleList,
+    'scaleList',
+  );
+
+  const name = localStorageScaleList.find(
+    (scale) => scale.SigfoxID === props.kod,
+  ).name;
+  return <option value={props.kod}>{name}</option>;
 };
 
 const VyberVahu = (props) => {
-  console.log('VyberVahu');
-
   const handleClick = (choice) => {
     console.log(choice);
     props.nastavVahu(choice);
@@ -28,20 +35,16 @@ const VyberVahu = (props) => {
           {props.vahyOptions.find(
             (option) => option === props.vybranaVaha,
           ) ? null : (
-            <option value={props.vybranaVaha}>
-              Vrací id váhy: {props.vybranaVaha}
-            </option>
+            <option value={props.vybranaVaha}></option>
           )}
           {props.vahyOptions.map((entry) => (
             <SeznamVah key={entry} kod={entry} />
           ))}
         </select>
       </form>
-      <div>Vybraná váha je: {props.vybranaVaha}</div>
-      <a href="index.html">
-        <Icon icon={settingsIcon} />
-      </a>
-      <Icon icon={pensilIcon} />
+      <Link to="/settings/scales">
+        <Icon icon={pensilIcon} />
+      </Link>
     </>
   );
 };

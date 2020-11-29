@@ -16,30 +16,15 @@ import { scaleList, usePersistedState } from '../../..';
 const TOKEN =
   'pk.eyJ1Ijoid2hpdGVsYWR5IiwiYSI6ImNraHVvMmozODFldGoycGt6ZDZlNjRwZmUifQ.vejjMGJgs0GlqR9Ccy6xeg';
 
-/*export async function getCoordinates(address) {
-  const response = fetch(
-    `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${TOKEN}`,
-  );
-  if (response.features[0]) {
-    return response.features[0].geometry.coordinates;
-  }
-  return null;
-}*/
-
 export const Mapa = (props) => {
   const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
     scaleList,
     'scaleList',
   );
 
-  console.log(props.vaha, localStorageScaleList);
   const city = localStorageScaleList.find(
     (scale) => scale.SigfoxID === props.vaha,
   ).city;
-  console.log(`Město, které chci zobrazit na matě je: ${city}`);
-
-  //const cityLat = getCoordinates(city);
-  //console.log(cityLat);
 
   useEffect(() => {
     fetch(
@@ -56,7 +41,6 @@ export const Mapa = (props) => {
           latitude: json.features[0].geometry.coordinates[1],
           longitude: json.features[0].geometry.coordinates[0],
         });
-        console.log(json.features[0].geometry);
       });
   }, [city]);
 

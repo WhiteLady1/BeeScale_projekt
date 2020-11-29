@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 //import Logo from '../mainPage/Logo';
 import './style.css';
+import { Icon, InlineIcon } from '@iconify/react';
+import settingsIcon from '@iconify/icons-carbon/settings';
 
 const NavBar = () => {
   const location = useLocation();
@@ -31,6 +33,7 @@ const NavBar = () => {
           </li>
           <li>
             <Link className="nav" to="/settings">
+              <Icon icon={settingsIcon} />
               Nastavení
             </Link>
           </li>
