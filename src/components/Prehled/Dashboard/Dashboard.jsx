@@ -16,7 +16,7 @@ const Dashboard = (props) => {
     setVaha(choiceScale);
   };
   const data = vahaId in transformedData ? transformedData[vahaId] : [];
-
+  console.log(`vahaId je: ${vahaId}`);
   return (
     <>
       <p>Dashboard</p>
@@ -26,7 +26,9 @@ const Dashboard = (props) => {
         nastavVahu={nastavujuVahu}
         vahyOptions={Object.keys(transformedData)}
       />
-      {data.length === 0 ? null : (
+      {data.length === 0 ? (
+        <UdajeVaha vaha={vahaId} data={[{}]} setMetric={setMetric} />
+      ) : (
         <UdajeVaha vaha={vahaId} data={data} setMetric={setMetric} />
       )}
       <Graf
@@ -36,7 +38,7 @@ const Dashboard = (props) => {
         metric={metric}
       />
       <Alert />
-      <Mapa />
+      <Mapa vaha={vahaId} />
     </>
   );
 };

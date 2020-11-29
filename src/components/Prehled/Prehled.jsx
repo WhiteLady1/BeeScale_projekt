@@ -13,28 +13,28 @@ const JedenPrehled = (props) => {
   return (
     <>
       <div>
-        <Icon icon={weightHanging} style={{ fontSize: '71px' }} />
+        <Icon icon={weightHanging} style={{ fontSize: '20px' }} />
         <div className="hmotnost">{56}</div>
         <div className="jednotka">kg</div>
       </div>
       <div className="vedlejsiPrehled">
         <div className="hodnoty">
-          <Icon icon={tempIcon} style={{ fontSize: '82px' }} />
+          <Icon icon={tempIcon} style={{ fontSize: '20px' }} />
           <div className="hodnota">56</div>
           <div className="jednotka">°C</div>
         </div>
         <div className="hodnoty">
-          <Icon icon={humidityIcon} style={{ fontSize: '82px' }} />
+          <Icon icon={humidityIcon} style={{ fontSize: '20px' }} />
           <div className="hodnota">56</div>
           <div className="jednotka">°C</div>
         </div>
         <div className="hodnoty">
-          <Icon icon={humidityIcon} style={{ fontSize: '82px' }} />
+          <Icon icon={humidityIcon} style={{ fontSize: '20px' }} />
           <div className="hodnota">56</div>
           <div className="jednotka">%</div>
         </div>
         <div className="baterie">
-          <Icon icon={batteryIcon} style={{ fontSize: '80px' }} />
+          <Icon icon={batteryIcon} style={{ fontSize: '20px' }} />
           <div className="hodnota">56</div>
           <div className="jednotka">kg</div>
         </div>
@@ -68,8 +68,11 @@ const Prehled = (props) => {
           {localStorageScaleList.map((scale) => {
             return (
               <Link to={`/dashboard/${scale.SigfoxID}`}>
-                <JednaVaha name={scale.name} />
-                <JedenPrehled prehled={props.posledniData[scale.SigfoxID]} />
+                <JednaVaha key={scale.name} name={scale.name} />
+                <JedenPrehled
+                  key={scale.SigfoxID}
+                  prehled={props.posledniData[scale.SigfoxID]}
+                />
               </Link>
             );
           })}
