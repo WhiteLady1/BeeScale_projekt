@@ -5,6 +5,7 @@ export const scaleList = [
   { name: 'Branov', SigfoxID: '32B86C', city: 'Branov' },
   { name: 'Areál Botanika', SigfoxID: '32AEAB', city: 'Horní Bezděkov' },
 ];
+export const newEmptyScale = { name: '', SigfoxID: '', city: '' };
 
 export const usePersistedState = (
   initialState,

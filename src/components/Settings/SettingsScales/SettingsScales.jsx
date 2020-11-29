@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { usePersistedState } from '../../index';
-import { scaleList } from '../../index';
+import { scaleList, newEmptyScale } from '../../index';
 
 /*const transformedData = {};
 data.forEach((item) => {
@@ -11,29 +11,83 @@ data.forEach((item) => {
 });*/
 
 const SettingsScales = () => {
-  const [scaleId, setScaleId] = usePersistedState(scaleList, 'scaleList');
+  const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
+    scaleList,
+    'scaleList',
+  );
+  const [formState, setFormState] = useState(localStorageScaleList);
+
   return (
     <div className="settingsScale">
-      <ul>
-        {scaleId.map((scale) => {
-          return (
-            <li key={scale.SigfoxID}>
-              <form>
-                {scale.SigfoxID}
+      <form>
+        <ul>
+          {formState.map((scale, i) => {
+            return (
+              <li key={i}>
+                <label>
+                  ID Váhy:
+                  <input
+                    value={scale.SigfoxID}
+                    onChange={(e) => {
+                      //e.preventDefault();
+                      const newFormState = [...formState];
+                      const newScaleValue = { ...scale };
+                      newScaleValue.SigfoxID = e.target.value;
+                      newFormState[i] = newScaleValue;
+                      setFormState(newFormState);
+                    }}
+                  />
+                </label>
                 <br />
                 <label>
                   Jméno:
-                  <input value={scale.name} />
+                  <input
+                    value={scale.name}
+                    onChange={(e) => {
+                      e.preventDefault();
+                      const newFormState = [...formState];
+                      const newScaleValue = { ...scale };
+                      newScaleValue.name = e.target.value;
+                      newFormState[i] = newScaleValue;
+                      setFormState(newFormState);
+                    }}
+                  />
                 </label>
                 <label>
-                  Město nebo obec: <input value={scale.city} />
+                  Město nebo obec:{' '}
+                  <input
+                    value={scale.city}
+                    onChange={(e) => {
+                      e.preventDefault();
+                      const newFormState = [...formState];
+                      const newScaleValue = { ...scale };
+                      newScaleValue.city = e.target.value;
+                      newFormState[i] = newScaleValue;
+                      setFormState(newFormState);
+                    }}
+                  />
                 </label>
-                <button onClick={() => {}}>Uložit změny</button>
-              </form>
-            </li>
-          );
-        })}
-      </ul>
+              </li>
+            );
+          })}
+        </ul>
+        <button
+          onClick={() => {
+            setlocalStorageScaleList(formState);
+          }}
+        >
+          Uložit změny
+        </button>
+        <button
+          onClick={() => {
+            const newFormState = [...formState];
+            newFormState.push(newEmptyScale);
+            setFormState(newFormState);
+          }}
+        >
+          Přdat váhu
+        </button>
+      </form>
     </div>
   );
 };
