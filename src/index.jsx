@@ -3,12 +3,12 @@ import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { render } from 'react-dom';
 import './index.html';
 import './style.css';
-import Dashboard from './Prehled/Dashboard/Dashboard';
-import MainPage from './mainPage/signIn';
-import Header from './Header/header';
-import Settings from './Settings/Settings';
-import Prehled from './Prehled/Prehled';
-import data from './data/data.js';
+import Dashboard from './components/Prehled/Dashboard/Dashboard';
+import MainPage from './components/mainPage/signIn';
+import Header from './components/Header/header';
+import Settings from './components/Settings/Settings';
+import Prehled from './components/Prehled/Prehled';
+import data from './components/data/data.js';
 
 const App = () => {
   const uniqID = [...new Set(data.map((ids) => ids.device))];
