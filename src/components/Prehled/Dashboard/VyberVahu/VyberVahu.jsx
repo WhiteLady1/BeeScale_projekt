@@ -8,10 +8,7 @@ const SeznamVah = (props) => {
 };
 
 const VyberVahu = (props) => {
-  console.log('VyberVahu');
-
   const handleClick = (choice) => {
-    console.log(choice);
     props.nastavVahu(choice);
   };
 

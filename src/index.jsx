@@ -20,33 +20,32 @@ const App = () => {
     const parseTime = parseDateTime(dateTime);
     const today = new Date(2020, 7, 31, 23, 50);
     const selectedTimeFrame = subHours(today, timeOffset);
-    //console.log(parseTime > selectedTimeFrame);
-    //console.log(parseTime, selectedTimeFrame);
     return parseTime > selectedTimeFrame;
   };
 
   const transformedData = {};
+  let lastEnteredDate = '';
   data.forEach((item) => {
     if (isInSelectedTimeframe(item.time)) {
-      if (!transformedData[item.de6ce]) {
-        transformedData[item.de6ce] = [];
+      const currentDate = item.time.split(' ')[0];
+      //porovnáváš item.time (1.8.2020) jestli je už v transformData vůči lastEnteredDate
+      console.log(currentDate, lastEnteredDate);
+      if (currentDate !== lastEnteredDate) {
+        if (!transformedData[item.de6ce]) {
+          transformedData[item.de6ce] = [];
+        }
+        transformedData[item.de6ce].push(item);
+        lastEnteredDate = currentDate;
       }
-      transformedData[item.de6ce].push(item);
     }
   });
+
   const posledniData = {};
   for (const [id, list] of Object.entries(transformedData)) {
-<<<<<<< HEAD
-    //console.log(list);
     if (!posledniData[id]) {
-      //console.log(list.lenght, typeof list);
       posledniData[id] = list[list.lenght - 1];
     }
-=======
-    posledniData[id] = list[list.length - 1];
->>>>>>> 84201be629cea5ee4f7c31756051e4543c127e84
   }
-  //console.log(posledniData);
 
   return (
     <>

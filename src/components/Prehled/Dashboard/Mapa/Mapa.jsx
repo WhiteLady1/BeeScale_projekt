@@ -19,11 +19,9 @@ export const Mapa = (props) => {
     'scaleList',
   );
 
-  console.log(props.vaha, localStorageScaleList);
   const city = localStorageScaleList.find(
     (scale) => scale.SigfoxID === props.vaha,
   ).city;
-  //console.log(city);
   const [viewport, setViewport] = useState({
     latitude: props.latitude,
     longitude: props.longitude,
