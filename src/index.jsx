@@ -12,6 +12,7 @@ import Prehled from './components/Prehled/Prehled';
 import data from './components/data/data.js';
 import subHours from 'date-fns/subHours';
 import { parseDateTime } from './components/Prehled/Dashboard/Graf/Graf';
+import differenceInHours from 'date-fns/differenceInHours';
 
 const App = () => {
   const [timeOffset, setTimeOffset] = useState(24);
@@ -20,29 +21,62 @@ const App = () => {
     const parseTime = parseDateTime(dateTime);
     const today = new Date(2020, 7, 31, 23, 50);
     const selectedTimeFrame = subHours(today, timeOffset);
-    //console.log(parseTime > selectedTimeFrame);
-    //console.log(parseTime, selectedTimeFrame);
     return parseTime > selectedTimeFrame;
   };
 
   const transformedData = {};
+  let lastEnteredDate = '1.1.1970';
+  let lastEnteredFullDateWithHours = '1.1.1970 00:00';
+  const podminkaA = (val) => timeOffset === 24 * 30 && val !== lastEnteredDate;
+  const podminkaB = (val, val2) => {
+    //console.log(differenceInHours(parseDateTime(val), parseDateTime(val2)));
+    const difference = differenceInHours(
+      parseDateTime(val),
+      parseDateTime(val2),
+    );
+    return timeOffset === 24 * 7 && difference > 6;
+  };
+  const podminkaC = (val, val2) => {
+    const difference = differenceInHours(
+      parseDateTime(val),
+      parseDateTime(val2),
+    );
+    return timeOffset === 48 && difference > 3;
+  };
+
+  const podminkaD = (val, val2) => {
+    const difference = differenceInHours(
+      parseDateTime(val),
+      parseDateTime(val2),
+    );
+    return timeOffset === 24 && difference > 1;
+  };
+
   data.forEach((item) => {
     if (isInSelectedTimeframe(item.time)) {
-      if (!transformedData[item.de6ce]) {
-        transformedData[item.de6ce] = [];
+      const currentDate = item.time.split(' ')[0];
+      if (
+        podminkaA(currentDate) ||
+        podminkaB(item.time, lastEnteredFullDateWithHours) ||
+        podminkaC(item.time, lastEnteredFullDateWithHours) ||
+        podminkaD(item.time, lastEnteredFullDateWithHours)
+      ) {
+        if (!transformedData[item.de6ce]) {
+          transformedData[item.de6ce] = [];
+        }
+        transformedData[item.de6ce].push(item);
+        lastEnteredDate = currentDate;
+        lastEnteredFullDateWithHours = item.time;
       }
-      transformedData[item.de6ce].push(item);
     }
   });
+
   const posledniData = {};
   for (const [id, list] of Object.entries(transformedData)) {
-    //console.log(list);
     if (!posledniData[id]) {
-      //console.log(list.lenght, typeof list);
       posledniData[id] = list[list.lenght - 1];
     }
   }
-  //console.log(posledniData);
 
   return (
     <>

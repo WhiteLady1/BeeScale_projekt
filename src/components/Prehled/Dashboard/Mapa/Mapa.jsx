@@ -32,10 +32,15 @@ export const Mapa = (props) => {
     'scaleList',
   );
 
-  console.log(props.vaha, localStorageScaleList);
   const city = localStorageScaleList.find(
     (scale) => scale.SigfoxID === props.vaha,
   ).city;
+
+  const [viewport, setViewport] = useState({
+    latitude: props.latitude,
+    longitude: props.longitude,
+    zoom: 15,
+  });
   console.log(`Město, které chci zobrazit na matě je: ${city}`);
 
   //const cityLat = getCoordinates(city);
@@ -70,6 +75,7 @@ export const Mapa = (props) => {
   );
 
   const [mesto, setMesto] = useState(null);
+
 
   const seznamMapy = {
     version: 8,
