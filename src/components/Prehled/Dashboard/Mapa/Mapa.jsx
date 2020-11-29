@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import ReactMapGL, {
   Marker,
@@ -13,6 +13,19 @@ import './mapa.css';
 import './ovladani.css';
 import { scaleList, usePersistedState } from '../../..';
 
+const TOKEN =
+  'pk.eyJ1Ijoid2hpdGVsYWR5IiwiYSI6ImNraHVvMmozODFldGoycGt6ZDZlNjRwZmUifQ.vejjMGJgs0GlqR9Ccy6xeg';
+
+/*export async function getCoordinates(address) {
+  const response = fetch(
+    `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${TOKEN}`,
+  );
+  if (response.features[0]) {
+    return response.features[0].geometry.coordinates;
+  }
+  return null;
+}*/
+
 export const Mapa = (props) => {
   const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
     scaleList,
@@ -22,11 +35,47 @@ export const Mapa = (props) => {
   const city = localStorageScaleList.find(
     (scale) => scale.SigfoxID === props.vaha,
   ).city;
+
   const [viewport, setViewport] = useState({
     latitude: props.latitude,
     longitude: props.longitude,
     zoom: 15,
   });
+  console.log(`Město, které chci zobrazit na matě je: ${city}`);
+
+  //const cityLat = getCoordinates(city);
+  //console.log(cityLat);
+
+  useEffect(() => {
+    fetch(
+      `https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?access_token=${TOKEN}`,
+    )
+      .then((resp) => resp.json())
+      .then((json) => {
+        setViewport({
+          ...viewport,
+          latitude: json.features[0].geometry.coordinates[1],
+          longitude: json.features[0].geometry.coordinates[0],
+        });
+        setMesto({
+          latitude: json.features[0].geometry.coordinates[1],
+          longitude: json.features[0].geometry.coordinates[0],
+        });
+        console.log(json.features[0].geometry);
+      });
+  }, [city]);
+
+  const [viewport, setViewport] = useState(
+    {
+      latitude: 50.084209699999995,
+      longitude: 14.4477191,
+      zoom: 15,
+    },
+    [],
+  );
+
+  const [mesto, setMesto] = useState(null);
+
 
   const seznamMapy = {
     version: 8,
@@ -63,24 +112,27 @@ export const Mapa = (props) => {
         <NavigationControl />
         <GeolocateControl />
       </div>
-      <Marker
-        latitude={50.084209699999995}
-        longitude={14.4477191}
-        offsetLeft={-25}
-        offsetTop={-50}
-      >
-        <button className="marker-btn" onClick={() => setPopupOtevren(true)}>
-          <img src={spendlikUrl} width={50} height={50} alt="Přibyslavská" />
-        </button>
-      </Marker>
-      {popupOtevren && (
+      {mesto && (
+        <Marker
+          latitude={mesto.latitude}
+          longitude={mesto.longitude}
+          offsetLeft={-25}
+          offsetTop={-50}
+        >
+          <button className="marker-btn" onClick={() => setPopupOtevren(true)}>
+            <img src={spendlikUrl} width={50} height={50} alt="Přibyslavská" />
+          </button>
+        </Marker>
+      )}
+
+      {popupOtevren && mesto && (
         <Popup
-          latitude={50.084209699999995}
-          longitude={14.4477191}
+          latitude={mesto.latitude}
+          longitude={mesto.longitude}
           offsetTop={-50}
           onClose={() => setPopupOtevren(false)}
         >
-          Doma
+          {city}
         </Popup>
       )}
       <img className="mapaSeznam" src={mapySeznam} alt="Seznam mapy" />
