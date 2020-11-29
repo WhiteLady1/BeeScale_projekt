@@ -1,6 +1,14 @@
 import React from 'react';
-import { Chart } from 'react-charts';
 import './style.css';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+} from 'recharts';
 
 export const parseDateTime = (dateTimeString) => {
   const [date, time] = dateTimeString.split(' ');
@@ -10,35 +18,7 @@ export const parseDateTime = (dateTimeString) => {
 };
 
 const Graf = (props) => {
-  console.log(props.data[0]);
-  const dataChart = [
-    {
-      label: 'Váha 1',
-      data: [],
-    },
-  ];
-
-  const dataKNaplneni = dataChart[0].data;
-
-  props.data.forEach((udaj) => {
-    //console.log(new Date(udaj.time));
-    dataKNaplneni.push({
-      primary: parseDateTime(udaj.time),
-      secondary: udaj[props.metric],
-    });
-  });
-
-  const axes = React.useMemo(
-    () => [
-      {
-        primary: true,
-        type: 'time',
-        position: 'bottom',
-      },
-      { type: 'linear', position: 'left' },
-    ],
-    [],
-  );
+  console.log(props);
   return (
     <>
       <button onClick={() => props.setTimeOffset(24)}>24h</button>
@@ -46,7 +26,28 @@ const Graf = (props) => {
       <button onClick={() => props.setTimeOffset(24 * 7)}>7d</button>
       <button onClick={() => props.setTimeOffset(24 * 30)}>30d</button>
       <div className="graf">
-        <Chart data={dataChart} axes={axes} tooltip />
+        <LineChart
+          width={1000}
+          height={300}
+          data={props.data.map((item) => ({
+            ...item,
+            temperatureOut: parseFloat(item.temperatureOut, 10),
+          }))}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="time" />,
+          <YAxis tickCount={15} />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey={props.metric} stroke="#82ca9d" />
+        </LineChart>
+        ;
       </div>
     </>
   );

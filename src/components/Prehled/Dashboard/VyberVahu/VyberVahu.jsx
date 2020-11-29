@@ -18,7 +18,6 @@ const SeznamVah = (props) => {
 
 const VyberVahu = (props) => {
   const handleClick = (choice) => {
-    console.log(choice);
     props.nastavVahu(choice);
   };
 

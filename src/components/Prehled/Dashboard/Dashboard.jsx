@@ -16,7 +16,7 @@ const Dashboard = (props) => {
     setVaha(choiceScale);
   };
   const data = vahaId in transformedData ? transformedData[vahaId] : [];
-  console.log(`vahaId je: ${vahaId}`);
+
   return (
     <>
       <p>Dashboard</p>
