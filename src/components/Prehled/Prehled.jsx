@@ -9,7 +9,7 @@ import batteryIcon from '@iconify/icons-fa/battery';
 import { Link } from 'react-router-dom';
 
 const JedenPrehled = (props) => {
-  //console.log(props.prehled);
+  //console.log(props.prehled) zbrazuje ověření id váhy;
   return (
     <>
       <div>
