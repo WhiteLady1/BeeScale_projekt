@@ -87,6 +87,8 @@ const App = () => {
           <Switch>
             <Route path="/prehled">
               <Prehled posledniData={posledniData} />
+              {console.log(`posledniData z indexu:`)}
+              {console.log(posledniData)}
             </Route>
             <Route path="/settings">
               <Settings />

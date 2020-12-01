@@ -7,7 +7,7 @@ import humidityIcon from '@iconify/icons-carbon/humidity';
 import './udajeVaha.css';
 
 const UdajeVaha = (props) => {
-  const udajeVahy = props.data[0];
+  const udajeVahy = props.data[props.data.length - 1];
 
   const handleClick = (oneMetric) => () => {
     props.setMetric(oneMetric);
