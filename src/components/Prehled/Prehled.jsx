@@ -9,12 +9,12 @@ import batteryIcon from '@iconify/icons-fa/battery';
 import { Link } from 'react-router-dom';
 
 const JedenPrehled = (props) => {
-  //console.log(props.prehled) zbrazuje ověření id váhy;
+  console.log(props.prehled); //zbrazuje ověření id váhy;
   return (
     <>
       <div>
         <Icon icon={weightHanging} style={{ fontSize: '20px' }} />
-        <div className="hmotnost">{56}</div>
+        <div className="hmotnost">{props.prehled}</div>
         <div className="jednotka">kg</div>
       </div>
       <div className="vedlejsiPrehled">
@@ -68,11 +68,11 @@ const Prehled = (props) => {
           {localStorageScaleList.map((scale) => {
             return (
               <Link to={`/dashboard/${scale.SigfoxID}`}>
-                <JednaVaha key={scale.name} name={scale.name} />
+                <JednaVaha key={scale.SigfoxID} name={scale.name} />
                 <JedenPrehled
-                  key={scale.SigfoxID}
+                  key={scale.name}
                   prehled={props.posledniData[scale.SigfoxID]}
-                />
+                />{' '}
               </Link>
             );
           })}
