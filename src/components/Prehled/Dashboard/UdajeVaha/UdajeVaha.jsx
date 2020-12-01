@@ -15,42 +15,60 @@ const UdajeVaha = (props) => {
 
   return (
     <>
-      <div>Údaje pro váhu: </div>
-      <div className="weight" onClick={handleClick('weight')}>
-        <Icon icon={weightHanging} style={{ fontSize: '71px' }} />
+      <div className="btn weight" onClick={handleClick('weight')}>
+        <Icon
+          className="icon"
+          icon={weightHanging}
+          style={{ fontSize: '71px' }}
+        />
         <p>Hmotnost</p>
-        <p>{udajeVahy.weight}</p>
-        <p>Kg</p>
+        <div className="value">
+          <p className="number">{udajeVahy.weight}</p>
+          <p className="metric">Kg</p>
+        </div>
       </div>
-      <div className="temperature" onClick={handleClick('temperatureOut')}>
-        <Icon icon={tempIcon} style={{ fontSize: '82px' }} />
+      <div className="btn temperature" onClick={handleClick('temperatureOut')}>
+        <Icon className="icon" icon={tempIcon} style={{ fontSize: '82px' }} />
         <p>Teplota </p>
-        <div className="temperature-in">
-          <p>in</p>
-          <div className="temperature-in group">
-            <p>{udajeVahy.temperatureIn || '0'}</p>
-            <p>°C</p>
+        <div className="value">
+          <div className="temperature-in">
+            <p>in</p>
+            <div className="temperature-in group">
+              <p className="number">{udajeVahy.temperatureIn || '0'}</p>
+              <p className="metric">°C</p>
+            </div>
           </div>
         </div>
-        <div className="temperature-out">
-          <p>out</p>
-          <div className="temperature-out group">
-            <p>{udajeVahy.temperatureOut}</p>
-            <p>°C</p>
+        <div className="value">
+          <div className="temperature-out">
+            <p>out</p>
+            <div className="temperature-out group">
+              <p className="number">{udajeVahy.temperatureOut}</p>
+              <p className="metric">°C</p>
+            </div>
           </div>
         </div>
       </div>
-      <div className="humidity" onClick={handleClick('humidity')}>
-        <Icon icon={humidityIcon} style={{ fontSize: '82px' }} />
+      <div className="btn humidity" onClick={handleClick('humidity')}>
+        <Icon
+          className="icon"
+          icon={humidityIcon}
+          style={{ fontSize: '82px' }}
+        />
         <p>Vlhkost</p>
-        <p>{udajeVahy.humidity}</p>
-        <p>%</p>
+        <p className="number">{udajeVahy.humidity}</p>
+        <p className="metric">%</p>
       </div>
-      <div className="voltage" onClick={handleClick('voltage')}>
-        <Icon icon={batteryIcon} style={{ fontSize: '80px' }} rotate="270deg" />
+      <div className="btn voltage" onClick={handleClick('voltage')}>
+        <Icon
+          className="icon"
+          icon={batteryIcon}
+          style={{ fontSize: '80px' }}
+          rotate="270deg"
+        />
         <p>Stav baterie</p>
-        <p>{udajeVahy.voltage}</p>
-        <p>%</p>
+        <p className="number">{udajeVahy.voltage}</p>
+        <p className="metric">%</p>
       </div>
     </>
   );
