@@ -89,6 +89,8 @@ const App = () => {
               <Prehled posledniData={posledniData} />
               {console.log(`posledniData z indexu:`)}
               {console.log(posledniData)}
+              {console.log('co je v transformedData')}
+              {console.log(transformedData)}
             </Route>
             <Route path="/settings">
               <Settings />

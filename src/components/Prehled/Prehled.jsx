@@ -9,33 +9,34 @@ import batteryIcon from '@iconify/icons-fa/battery';
 import { Link } from 'react-router-dom';
 
 const JedenPrehled = (props) => {
+  console.log('Jeden přehled props.prehled');
   console.log(props.prehled); //zbrazuje ověření id váhy;
   return (
     <>
       <div>
         <Icon icon={weightHanging} style={{ fontSize: '20px' }} />
-        <div className="hmotnost">{props.prehled}</div>
+        <div className="hmotnost">{props.prehled.weight}</div>
         <div className="jednotka">kg</div>
       </div>
       <div className="vedlejsiPrehled">
         <div className="hodnoty">
           <Icon icon={tempIcon} style={{ fontSize: '20px' }} />
-          <div className="hodnota">56</div>
+          <div className="hodnota">{props.prehled.temperatureIn}</div>
           <div className="jednotka">°C</div>
         </div>
         <div className="hodnoty">
           <Icon icon={humidityIcon} style={{ fontSize: '20px' }} />
-          <div className="hodnota">56</div>
+          <div className="hodnota">{props.prehled.temperatureOut}</div>
           <div className="jednotka">°C</div>
         </div>
         <div className="hodnoty">
           <Icon icon={humidityIcon} style={{ fontSize: '20px' }} />
-          <div className="hodnota">56</div>
+          <div className="hodnota">{props.prehled.humidity}</div>
           <div className="jednotka">%</div>
         </div>
         <div className="baterie">
           <Icon icon={batteryIcon} style={{ fontSize: '20px' }} />
-          <div className="hodnota">56</div>
+          <div className="hodnota">{props.prehled.voltage}</div>
           <div className="jednotka">kg</div>
         </div>
       </div>
@@ -68,11 +69,11 @@ const Prehled = (props) => {
           {localStorageScaleList.map((scale) => {
             return (
               <Link to={`/dashboard/${scale.SigfoxID}`}>
-                <JednaVaha key={scale.SigfoxID} name={scale.name} />
+                <JednaVaha key={scale.name} name={scale.name} />
                 <JedenPrehled
-                  key={scale.name}
+                  key={scale.SigfoxID}
                   prehled={props.posledniData[scale.SigfoxID]}
-                />{' '}
+                />
               </Link>
             );
           })}
