@@ -24,7 +24,7 @@ const VyberVahu = (props) => {
   return (
     <>
       <form>
-        <label>Vyber váhu pro zobrazení: </label>
+        <label>Údaje pro váhu:</label>
         <select
           value={props.vybranaVaha}
           name="vahy"
