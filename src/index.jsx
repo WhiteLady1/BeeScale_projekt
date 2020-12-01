@@ -74,7 +74,7 @@ const App = () => {
   const posledniData = {};
   for (const [id, list] of Object.entries(transformedData)) {
     if (!posledniData[id]) {
-      posledniData[id] = list[list.lenght - 1];
+      posledniData[id] = list[list.length - 1];
     }
   }
 
