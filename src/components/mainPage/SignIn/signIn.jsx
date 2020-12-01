@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from '../Logo';
 import { Link } from 'react-router-dom';
 import './style.css';
+import GoogleBtn from '../../../GoogleBtn/GoogleBtn';
 
 const SignIn = () => {
   return (
@@ -15,6 +16,7 @@ const SignIn = () => {
             <button>
               <Link to="/prehled">Přihlásit</Link>
             </button>
+            <GoogleBtn />
 
             <p className="message">
               Ještě nejsi registrovaný?
