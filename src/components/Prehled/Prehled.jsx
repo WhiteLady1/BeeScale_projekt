@@ -14,6 +14,7 @@ const JedenPrehled = (props) => {
   return (
     <>
       <div>
+        <p>Údaje k: {props.prehled.time}</p>
         <Icon icon={weightHanging} style={{ fontSize: '20px' }} />
         <div className="hmotnost">{props.prehled.weight}</div>
         <div className="jednotka">kg</div>
