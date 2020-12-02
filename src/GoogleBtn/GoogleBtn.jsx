@@ -44,6 +44,8 @@ class GoogleBtn extends Component {
   }
 
   render() {
+    //const responseGoogle = () => <Link to="/prehled"></Link>
+
     return (
       <div>
         {this.state.isLogined ? (

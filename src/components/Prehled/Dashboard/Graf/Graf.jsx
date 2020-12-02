@@ -21,10 +21,12 @@ const Graf = (props) => {
   console.log(props);
   return (
     <>
-      <button onClick={() => props.setTimeOffset(24)}>24h</button>
-      <button onClick={() => props.setTimeOffset(48)}>48h</button>
-      <button onClick={() => props.setTimeOffset(24 * 7)}>7d</button>
-      <button onClick={() => props.setTimeOffset(24 * 30)}>30d</button>
+      <div className="btn-all">
+        <button onClick={() => props.setTimeOffset(24)}>24h</button>
+        <button onClick={() => props.setTimeOffset(48)}>48h</button>
+        <button onClick={() => props.setTimeOffset(24 * 7)}>7d</button>
+        <button onClick={() => props.setTimeOffset(24 * 30)}>30d</button>
+      </div>
       <div className="graf">
         <LineChart
           width={1000}

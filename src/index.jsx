@@ -6,7 +6,7 @@ import './style.css';
 import Dashboard from './components/Prehled/Dashboard/Dashboard';
 import SignIn from './components/MainPage/SignIn/signIn';
 import Registration from './components/MainPage/Registrace/registration';
-import Header from './components/Header/header';
+import Header from './components/Header/NavBar';
 import Settings from './components/Settings/Settings';
 import Prehled from './components/Prehled/Prehled';
 import data from './components/data/data.js';
