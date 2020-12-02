@@ -20,9 +20,11 @@ import subHours from 'date-fns/subHours';
 import { parseDateTime } from './components/Prehled/Dashboard/Graf/Graf';
 import differenceInHours from 'date-fns/differenceInHours';
 import { localStorageToken } from './GoogleBtn/GoogleBtn';
+import { scaleList, usePersistedState } from './components/';
 const App = () => {
   const [timeOffset, setTimeOffset] = useState(24);
   const [isLogedIn, setisLogedIn] = useState();
+  const [localStorageScaleList] = usePersistedState(scaleList, 'scaleList');
   useEffect(() => {
     setisLogedIn(Boolean(localStorage.getItem(localStorageToken)));
   }, []);
@@ -33,6 +35,7 @@ const App = () => {
     return parseTime > selectedTimeFrame;
   };
   const transformedData = {};
+  const transformedDataAll = {};
   let lastEnteredDate = '1.1.1970';
   let lastEnteredFullDateWithHours = '1.1.1970 00:00';
   const podminkaA = (val) => timeOffset === 24 * 30 && val !== lastEnteredDate;
@@ -75,20 +78,18 @@ const App = () => {
         lastEnteredFullDateWithHours = item.time;
       }
     }
-  });
-  const transformedDataAll = {};
-  data.forEach((item) => {
     if (!transformedDataAll[item.de6ce]) {
       transformedDataAll[item.de6ce] = [];
     }
     transformedDataAll[item.de6ce].push(item);
   });
   const posledniData = {};
-  for (const [id, list] of Object.entries(transformedDataAll)) {
-    if (!posledniData[id]) {
-      posledniData[id] = list[list.length - 1];
+  localStorageScaleList.map((item) => {
+    if (!posledniData[item.SigfoxID]) {
+      const list = transformedDataAll[item.SigfoxID];
+      if (list) posledniData[item.SigfoxID] = list[list.length - 1];
     }
-  }
+  });
   return (
     <>
       <GlobalStyle />
@@ -110,7 +111,7 @@ const App = () => {
               <Dashboard
                 transformedData={transformedData}
                 setTimeOffset={setTimeOffset}
-                transformedDataAll={transformedDataAll}
+                posledniData={posledniData}
               />
             </Route>
             <Route path="/registration">
