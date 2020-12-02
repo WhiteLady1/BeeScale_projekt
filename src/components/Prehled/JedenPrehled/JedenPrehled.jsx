@@ -11,30 +11,30 @@ const JedenPrehled = (props) => {
   return (
     <>
       <div>
-        <p>Údaje k: {props.prehled.time}</p>
+        <p>Údaje k: {props.prehled?.time}</p>
         <Icon icon={weightHanging} style={{ fontSize: '20px' }} />
-        <div className="hmotnost">{props.prehled.weight}</div>
+        <div className="hmotnost">{props.prehled?.weight}</div>
         <div className="jednotka">kg</div>
       </div>
       <div className="vedlejsiPrehled">
         <div className="hodnoty">
           <Icon icon={tempIcon} style={{ fontSize: '20px' }} />
-          <div className="hodnota">{props.prehled.temperatureIn}</div>
+          <div className="hodnota">{props.prehled?.temperatureIn}</div>
           <div className="jednotka">°C</div>
         </div>
         <div className="hodnoty">
           <Icon icon={humidityIcon} style={{ fontSize: '20px' }} />
-          <div className="hodnota">{props.prehled.temperatureOut}</div>
+          <div className="hodnota">{props.prehled?.temperatureOut}</div>
           <div className="jednotka">°C</div>
         </div>
         <div className="hodnoty">
           <Icon icon={humidityIcon} style={{ fontSize: '20px' }} />
-          <div className="hodnota">{props.prehled.humidity}</div>
+          <div className="hodnota">{props.prehled?.humidity}</div>
           <div className="jednotka">%</div>
         </div>
         <div className="baterie">
           <Icon icon={batteryIcon} style={{ fontSize: '20px' }} />
-          <div className="hodnota">{props.prehled.voltage}</div>
+          <div className="hodnota">{props.prehled?.voltage}</div>
           <div className="jednotka">kg</div>
         </div>
       </div>
