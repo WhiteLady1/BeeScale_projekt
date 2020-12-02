@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import { render } from 'react-dom';
 import './index.html';
 import './style.css';
+import GlobalStyle from './globalStyle';
 import Dashboard from './components/Prehled/Dashboard/Dashboard';
 import SignIn from './components/MainPage/SignIn/signIn';
 import Registration from './components/MainPage/Registrace/registration';
@@ -13,17 +19,19 @@ import data from './components/data/data.js';
 import subHours from 'date-fns/subHours';
 import { parseDateTime } from './components/Prehled/Dashboard/Graf/Graf';
 import differenceInHours from 'date-fns/differenceInHours';
-
+import { localStorageToken } from './GoogleBtn/GoogleBtn';
 const App = () => {
   const [timeOffset, setTimeOffset] = useState(24);
-
+  const [isLogedIn, setisLogedIn] = useState();
+  useEffect(() => {
+    setisLogedIn(Boolean(localStorage.getItem(localStorageToken)));
+  }, []);
   const isInSelectedTimeframe = (dateTime) => {
     const parseTime = parseDateTime(dateTime);
     const today = new Date(2020, 7, 31, 23, 50);
     const selectedTimeFrame = subHours(today, timeOffset);
     return parseTime > selectedTimeFrame;
   };
-
   const transformedData = {};
   let lastEnteredDate = '1.1.1970';
   let lastEnteredFullDateWithHours = '1.1.1970 00:00';
@@ -43,7 +51,6 @@ const App = () => {
     );
     return timeOffset === 48 && difference > 3;
   };
-
   const podminkaD = (val, val2) => {
     const difference = differenceInHours(
       parseDateTime(val),
@@ -51,7 +58,6 @@ const App = () => {
     );
     return timeOffset === 24 && difference > 1;
   };
-
   data.forEach((item) => {
     if (isInSelectedTimeframe(item.time)) {
       const currentDate = item.time.split(' ')[0];
@@ -70,7 +76,6 @@ const App = () => {
       }
     }
   });
-
   const transformedDataAll = {};
   data.forEach((item) => {
     if (!transformedDataAll[item.de6ce]) {
@@ -78,20 +83,18 @@ const App = () => {
     }
     transformedDataAll[item.de6ce].push(item);
   });
-
   const posledniData = {};
   for (const [id, list] of Object.entries(transformedDataAll)) {
     if (!posledniData[id]) {
       posledniData[id] = list[list.length - 1];
     }
   }
-
   return (
     <>
+      <GlobalStyle />
       <Router>
         <div>
           <Header />
-
           <Switch>
             <Route path="/prehled">
               <Prehled posledniData={posledniData} />
@@ -107,13 +110,14 @@ const App = () => {
               <Dashboard
                 transformedData={transformedData}
                 setTimeOffset={setTimeOffset}
+                transformedDataAll={transformedDataAll}
               />
             </Route>
             <Route path="/registration">
               <Registration />
             </Route>
             <Route path="/">
-              <SignIn />
+              {isLogedIn ? <Redirect to="/prehled" /> : <SignIn />}
             </Route>
           </Switch>
         </div>
@@ -121,5 +125,4 @@ const App = () => {
     </>
   );
 };
-
 render(<App />, document.querySelector('#app'));
