@@ -20,8 +20,7 @@ const Prehled = (props) => {
   return (
     <>
       <div>
-        Jsem ultra mega vytuněnej přehled :) a mám v sobě globální styly :D :D
-        :D
+        Jsem ultra mega vytuněnej přehled a mám v sobě globální styly :D :D :D
       </div>
       <div className="prehledVah">
         <div className="prehledVahy">

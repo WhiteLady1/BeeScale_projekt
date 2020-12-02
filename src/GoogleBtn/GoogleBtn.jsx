@@ -55,6 +55,8 @@ class GoogleBtn extends Component {
     alert('Failed to log out');
   }
   render() {
+    //const responseGoogle = () => <Link to="/prehled"></Link>
+
     return (
       <div>
         {this.state.isLogined ? (
