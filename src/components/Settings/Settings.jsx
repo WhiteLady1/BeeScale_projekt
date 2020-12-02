@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import SettingsScales from './SettingsScales/SettingsScales';
 import SettingsUser from './SettingsUser/SettingsUser';
-
+import GoogleBtn from '../../GoogleBtn/GoogleBtn';
 const Settings = () => {
   let { path, url } = useRouteMatch();
   return (
@@ -24,6 +24,7 @@ const Settings = () => {
           </li>
         </ul>
       </div>
+      <GoogleBtn />
       <Switch>
         <Route exact path={path}></Route>
         <Route path={`${path}/:topicId`}>
@@ -37,7 +38,6 @@ const Settings = () => {
   );
 };
 export default Settings;
-
 function Topic() {
   let { topicId } = useParams();
   if (topicId === 'user') {

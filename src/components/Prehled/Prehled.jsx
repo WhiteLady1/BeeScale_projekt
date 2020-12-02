@@ -4,6 +4,12 @@ import { scaleList } from '../index';
 import JedenPrehled from './JedenPrehled/JedenPrehled';
 import JednaVaha from './JednaVaha/JednaVaha';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  background-color: rgb(235, 235, 235);
+  display: flex;
+`;
 
 const Prehled = (props) => {
   const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
@@ -19,17 +25,19 @@ const Prehled = (props) => {
       </div>
       <div className="prehledVah">
         <div className="prehledVahy">
-          {localStorageScaleList.map((scale) => {
-            return (
-              <Link to={`/dashboard/${scale.SigfoxID}`}>
-                <JednaVaha key={scale.name} name={scale.name} />
-                <JedenPrehled
-                  key={scale.SigfoxID}
-                  prehled={props.posledniData[scale.SigfoxID]}
-                />
-              </Link>
-            );
-          })}
+          <Wrapper>
+            {localStorageScaleList.map((scale) => {
+              return (
+                <Link to={`/dashboard/${scale.SigfoxID}`}>
+                  <JednaVaha key={scale.name} name={scale.name} />
+                  <JedenPrehled
+                    key={scale.SigfoxID}
+                    prehled={props.posledniData[scale.SigfoxID]}
+                  />
+                </Link>
+              );
+            })}
+          </Wrapper>
         </div>
       </div>
     </>
