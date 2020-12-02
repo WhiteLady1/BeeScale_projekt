@@ -3,6 +3,7 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { render } from 'react-dom';
 import './index.html';
 import './style.css';
+import GlobalStyle from './globalStyle';
 import Dashboard from './components/Prehled/Dashboard/Dashboard';
 import SignIn from './components/MainPage/SignIn/signIn';
 import Registration from './components/MainPage/Registrace/registration';
@@ -88,6 +89,7 @@ const App = () => {
 
   return (
     <>
+      <GlobalStyle />
       <Router>
         <div>
           <Header />
@@ -107,6 +109,7 @@ const App = () => {
               <Dashboard
                 transformedData={transformedData}
                 setTimeOffset={setTimeOffset}
+                transformedDataAll={transformedDataAll}
               />
             </Route>
             <Route path="/registration">
