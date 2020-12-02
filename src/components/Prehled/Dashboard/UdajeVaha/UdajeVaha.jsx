@@ -15,6 +15,7 @@ const UdajeVaha = (props) => {
 
   return (
     <>
+      <div>Zobrazená data z: {udajeVahy.time}</div>
       <div className="btn weight" onClick={handleClick('weight')}>
         <Icon
           className="icon"

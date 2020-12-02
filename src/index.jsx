@@ -71,8 +71,16 @@ const App = () => {
     }
   });
 
+  const transformedDataAll = {};
+  data.forEach((item) => {
+    if (!transformedDataAll[item.de6ce]) {
+      transformedDataAll[item.de6ce] = [];
+    }
+    transformedDataAll[item.de6ce].push(item);
+  });
+
   const posledniData = {};
-  for (const [id, list] of Object.entries(transformedData)) {
+  for (const [id, list] of Object.entries(transformedDataAll)) {
     if (!posledniData[id]) {
       posledniData[id] = list[list.length - 1];
     }
