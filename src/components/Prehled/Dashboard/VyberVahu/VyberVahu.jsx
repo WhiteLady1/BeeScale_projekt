@@ -3,24 +3,14 @@ import { Icon, InlineIcon } from '@iconify/react';
 import pensilIcon from '@iconify/icons-raphael/pensil';
 import { scaleList, usePersistedState } from '../../..';
 import { Link } from 'react-router-dom';
-
 const SeznamVah = (props) => {
-  const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
-    scaleList,
-    'scaleList',
-  );
-
-  const name = localStorageScaleList.find(
-    (scale) => scale.SigfoxID === props.kod,
-  ).name;
-  return <option value={props.kod}>{name}</option>;
+  return <option value={props.kod}>{props.name}</option>;
 };
-
 const VyberVahu = (props) => {
+  const [localStorageScaleList] = usePersistedState(scaleList, 'scaleList');
   const handleClick = (choice) => {
     props.nastavVahu(choice);
   };
-
   return (
     <>
       <form>
@@ -31,13 +21,17 @@ const VyberVahu = (props) => {
           id="vaha"
           onChange={(e) => handleClick(e.target.value)}
         >
-          {props.vahyOptions.find(
-            (option) => option === props.vybranaVaha,
+          {localStorageScaleList.find(
+            (option) => option.SigfoxID === props.vybranaVaha,
           ) ? null : (
             <option value={props.vybranaVaha}></option>
           )}
-          {props.vahyOptions.map((entry) => (
-            <SeznamVah key={entry} kod={entry} />
+          {localStorageScaleList.map((entry) => (
+            <SeznamVah
+              key={entry.SigfoxID}
+              kod={entry.SigfoxID}
+              name={entry.name}
+            />
           ))}
         </select>
       </form>
