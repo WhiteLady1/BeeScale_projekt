@@ -8,11 +8,9 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   margine: 0;
-  padding: 5px;
   background-color: rgba(255, 255, 255);
   text-align: center;
   width: 300px;
-  padding-top: 20px;
 `;
 
 const WrapperHeader = styled.div`
@@ -21,6 +19,10 @@ const WrapperHeader = styled.div`
   justify-content: center;
   font-size: 25px;
   font-weight: 600;
+  &:hover {
+    background: #f2b705;
+    color: white;
+  }
 `;
 const Weight = styled.div`
   padding-left: 5px;
@@ -31,6 +33,10 @@ const WrapperBody = styled.div`
   justify-content: space-around;
   padding-top: 20px;
   padding-bottom: 20px;
+  &:hover {
+    background: #f2b705;
+    color: white;
+  }
 `;
 const Values = styled.div`
   display: flex;
