@@ -13,8 +13,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
+  @media (min-width: 600px) {
+    align-items: center;
+  }
 `;
 const Scale = styled.div`
   width: 100%;

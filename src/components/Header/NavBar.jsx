@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
   width: 100%;
   height: 55px;
   border-bottom: 2px solid #f1f1f1;
-  padding: 0 20px;
+  padding: 0 0px;
   display: flex;
   justify-content: space-between;
 
