@@ -5,7 +5,7 @@ const WrapperName = styled.div`
   margine: 0;
   background-color: rgba(255, 255, 255);
   text-align: center;
-  width: 300px;
+  width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 30px;
