@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 const WrapperName = styled.div`
   background-color: rgba(255, 255, 255);
-  padding-top: 10px;
+  padding-top: 20px;
+  padding-button: 20px;
   font-size: 30px;
   font-weight: 600;
 `;

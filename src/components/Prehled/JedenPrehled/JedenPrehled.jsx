@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   background-color: rgba(255, 255, 255);
   text-align: center;
   width: 300px;
+  padding-top: 20px;
 `;
 
 const WrapperHeader = styled.div`
@@ -28,6 +29,8 @@ const WrapperBody = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding-top: 20px;
+  padding-bottom: 20px;
 `;
 const Values = styled.div`
   display: flex;
