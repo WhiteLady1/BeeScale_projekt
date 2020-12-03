@@ -9,6 +9,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   margine: 0;
   padding: 0;
+  padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
   text-align: center;
@@ -17,7 +18,7 @@ const Wrapper = styled.div`
 `;
 const Scale = styled.div`
   width: 100%;
-  padding-bottom: 15px;
+  padding-bottom: 30px;
 `;
 
 const Prehled = (props) => {
@@ -28,26 +29,21 @@ const Prehled = (props) => {
 
   return (
     <>
-      <div>
-        Jsem ultra mega vytuněnej přehled a mám v sobě globální styly :D :D :D
-      </div>
-      <div className="prehledVah">
-        <Wrapper>
-          {localStorageScaleList.map((scale) => {
-            return (
-              <Link to={`/dashboard/${scale.SigfoxID}`}>
-                <Scale>
-                  <JednaVaha key={scale.name} name={scale.name} />
-                  <JedenPrehled
-                    key={scale.SigfoxID}
-                    prehled={props.posledniData[scale.SigfoxID]}
-                  />
-                </Scale>
-              </Link>
-            );
-          })}
-        </Wrapper>
-      </div>
+      <Wrapper>
+        {localStorageScaleList.map((scale) => {
+          return (
+            <Link to={`/dashboard/${scale.SigfoxID}`}>
+              <Scale>
+                <JednaVaha key={scale.name} name={scale.name} />
+                <JedenPrehled
+                  key={scale.SigfoxID}
+                  prehled={props.posledniData[scale.SigfoxID]}
+                />
+              </Scale>
+            </Link>
+          );
+        })}
+      </Wrapper>
     </>
   );
 };

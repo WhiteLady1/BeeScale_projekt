@@ -8,27 +8,50 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   margine: 0;
-  padding: 0;
   padding: 5px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255);
   text-align: center;
   width: 300px;
 `;
 
 const WrapperHeader = styled.div`
   display: flex;
-  justify-content: space-around;
-  padding: 5px;
+  padding: 15px;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 600;
+`;
+const Weight = styled.div`
+  padding-left: 5px;
 `;
 const WrapperBody = styled.div`
   display: flex;
-  width:50%
-  padding: 5px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: rgb(231, 234, 241, 0.849) 0.5px solid;
 `;
 const Values = styled.div`
   display: flex;
+  width: 35%;
+  padding: 15px;
+  font-size: 18px;
 `;
-const Unite = styled.div``;
+const TemperatureIn = styled(Values)``;
+const WrapperIkon = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const Value = styled.div`
+  padding: 0;
+  padding-left: 5px;
+`;
+const Unite = styled.div`
+  padding-left: 1px;
+`;
+const LastMeasurement = styled.div`
+  font-size: 15px;
+  padding: 15px;
+`;
 
 const JedenPrehled = (props) => {
   console.log('Jeden přehled props.prehled');
@@ -37,35 +60,41 @@ const JedenPrehled = (props) => {
     <>
       <Wrapper>
         <WrapperHeader>
-          <Icon icon={weightHanging} style={{ fontSize: '20px' }} />
-          <div className="hmotnost">{props.prehled?.weight}</div>
+          <Icon icon={weightHanging} style={{ fontSize: '30px' }} />
+          <Weight>{props.prehled?.weight}</Weight>
           <Unite>kg</Unite>
         </WrapperHeader>
         <WrapperBody>
           <Values>
-            <Icon icon={tempIcon} style={{ fontSize: '25px' }} />
-            <p>in</p>
-            <div className="hodnota">{props.prehled?.temperatureIn}</div>
+            <WrapperIkon>
+              <Icon icon={tempIcon} style={{ fontSize: '25px' }} />
+              in
+            </WrapperIkon>
+            <Value>{props.prehled?.temperatureIn}</Value>
             <Unite>°C</Unite>
           </Values>
           <Values>
-            <Icon icon={tempIcon} style={{ fontSize: '25px' }} />
-            <p>out</p>
-            <div className="hodnota">{props.prehled?.temperatureOut}</div>
+            <WrapperIkon>
+              <Icon icon={tempIcon} style={{ fontSize: '25px' }} />
+              out
+            </WrapperIkon>
+            <Value>{props.prehled?.temperatureOut}</Value>
             <Unite>°C</Unite>
           </Values>
           <Values>
             <Icon icon={humidityIcon} style={{ fontSize: '25px' }} />
-            <div className="hodnota">{props.prehled?.humidity}</div>
+            <Value>{props.prehled?.humidity}</Value>
             <Unite>%</Unite>
           </Values>
           <Values>
             <Icon icon={batteryIcon} style={{ fontSize: '20px' }} />
-            <div className="hodnota">{props.prehled?.voltage}</div>
+            <Value>{props.prehled?.voltage}</Value>
             <Unite>%</Unite>
           </Values>
         </WrapperBody>
-        Údaje k: {props.prehled?.time}
+        <LastMeasurement>
+          Údaje k<br></br> {props.prehled?.time}
+        </LastMeasurement>
       </Wrapper>
     </>
   );
