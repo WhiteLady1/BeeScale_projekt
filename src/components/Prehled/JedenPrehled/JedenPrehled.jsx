@@ -6,12 +6,7 @@ import humidityIcon from '@iconify/icons-carbon/humidity';
 import batteryIcon from '@iconify/icons-fa/battery';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  margine: 0;
-  background-color: rgba(255, 255, 255);
-  text-align: center;
-  width: 300px;
-`;
+const Wrapper = styled.div``;
 
 const WrapperHeader = styled.div`
   display: flex;

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  margine: 0;
+  margin: 0;
   padding: 0;
   padding-top: 20px;
   display: flex;
@@ -20,8 +20,14 @@ const Wrapper = styled.div`
   }
 `;
 const Scale = styled.div`
-  width: 100%;
-  padding-bottom: 30px;
+  margin: 20px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 320px;
+  background-color: white;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 `;
 
 const Prehled = (props) => {
