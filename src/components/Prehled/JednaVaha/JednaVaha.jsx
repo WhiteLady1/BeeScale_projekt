@@ -1,12 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const WrapperName = styled.div`
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-top: 10px;
+  font-size: 30px;
+  font-weight: 600;
+`;
 
 const JednaVaha = (props) => {
   //console.log(`JednaVaha: ${props}`);
   return (
     <>
-      <div className="hlavniPrehled">
-        <div className="jmenoVaha">{props.name}</div>
-      </div>
+      <WrapperName>{props.name}</WrapperName>
     </>
   );
 };
