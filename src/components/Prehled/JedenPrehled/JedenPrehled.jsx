@@ -28,7 +28,6 @@ const WrapperBody = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  border: rgb(231, 234, 241, 0.849) 0.5px solid;
 `;
 const Values = styled.div`
   display: flex;
@@ -36,7 +35,25 @@ const Values = styled.div`
   padding: 15px;
   font-size: 18px;
 `;
-const TemperatureIn = styled(Values)``;
+const TemperatureIn = styled(Values)`
+  border-bottom: #f7f8fa 1px solid;
+  border-right: #f7f8fa 1px solid;
+`;
+const TemperatureOut = styled(Values)`
+  border-bottom: #f7f8fa 1px solid;
+  border-left: #f7f8fa 1px solid;
+`;
+const Humidity = styled(Values)`
+  margin-top: 10px;
+  border-top: #f7f8fa 1px solid;
+  border-right: #f7f8fa 1px solid;
+  text-align: right;
+`;
+const Voltage = styled(Values)`
+  margin-top: 10px;
+  border-top: #f7f8fa 1px solid;
+  border-left: #f7f8fa 1px solid; ;
+`;
 const WrapperIkon = styled.div`
   display: flex;
   align-items: center;
@@ -65,32 +82,32 @@ const JedenPrehled = (props) => {
           <Unite>kg</Unite>
         </WrapperHeader>
         <WrapperBody>
-          <Values>
+          <TemperatureIn>
             <WrapperIkon>
               <Icon icon={tempIcon} style={{ fontSize: '25px' }} />
               in
             </WrapperIkon>
             <Value>{props.prehled?.temperatureIn}</Value>
             <Unite>°C</Unite>
-          </Values>
-          <Values>
+          </TemperatureIn>
+          <TemperatureOut>
             <WrapperIkon>
               <Icon icon={tempIcon} style={{ fontSize: '25px' }} />
               out
             </WrapperIkon>
             <Value>{props.prehled?.temperatureOut}</Value>
             <Unite>°C</Unite>
-          </Values>
-          <Values>
+          </TemperatureOut>
+          <Humidity>
             <Icon icon={humidityIcon} style={{ fontSize: '25px' }} />
             <Value>{props.prehled?.humidity}</Value>
             <Unite>%</Unite>
-          </Values>
-          <Values>
+          </Humidity>
+          <Voltage>
             <Icon icon={batteryIcon} style={{ fontSize: '20px' }} />
             <Value>{props.prehled?.voltage}</Value>
             <Unite>%</Unite>
-          </Values>
+          </Voltage>
         </WrapperBody>
         <LastMeasurement>
           Údaje k<br></br> {props.prehled?.time}
