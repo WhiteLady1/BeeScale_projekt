@@ -13,7 +13,8 @@ const StyledHeader = styled.header`
   justify-content: space-between;
 
   .navbar-logo {
-    padding: 15px 0;
+    padding: 10px 10px;
+    font-size: 20px;
   }
 `;
 
