@@ -6,14 +6,7 @@ import humidityIcon from '@iconify/icons-carbon/humidity';
 import batteryIcon from '@iconify/icons-fa/battery';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  margine: 0;
-  padding: 5px;
-  background-color: rgba(255, 255, 255);
-  text-align: center;
-  width: 300px;
-  padding-top: 20px;
-`;
+const Wrapper = styled.div``;
 
 const WrapperHeader = styled.div`
   display: flex;
@@ -21,6 +14,11 @@ const WrapperHeader = styled.div`
   justify-content: center;
   font-size: 25px;
   font-weight: 600;
+  color: rgb(56, 53, 37);
+  &:hover {
+    background: #f2b705;
+    color: white;
+  }
 `;
 const Weight = styled.div`
   padding-left: 5px;
@@ -31,6 +29,10 @@ const WrapperBody = styled.div`
   justify-content: space-around;
   padding-top: 20px;
   padding-bottom: 20px;
+  &:hover {
+    background: #f2b705;
+    color: white;
+  }
 `;
 const Values = styled.div`
   display: flex;
@@ -71,11 +73,14 @@ const Unite = styled.div`
 const LastMeasurement = styled.div`
   font-size: 15px;
   padding: 15px;
+  font-weight: 200;
+  &:hover {
+    background: #f2b705;
+    color: white;
+  }
 `;
 
 const JedenPrehled = (props) => {
-  console.log('Jeden přehled props.prehled');
-  console.log(props.prehled); //zbrazuje ověření id váhy;
   return (
     <>
       <Wrapper>
