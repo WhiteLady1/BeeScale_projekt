@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const WrapperName = styled.div`
   margine: 0;
   background-color: rgba(255, 255, 255);
+  color: rgb(56, 53, 37);
   text-align: center;
   width: 100%;
   padding-top: 20px;

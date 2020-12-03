@@ -14,6 +14,7 @@ const WrapperHeader = styled.div`
   justify-content: center;
   font-size: 25px;
   font-weight: 600;
+  color: rgb(56, 53, 37);
   &:hover {
     background: #f2b705;
     color: white;
@@ -72,6 +73,11 @@ const Unite = styled.div`
 const LastMeasurement = styled.div`
   font-size: 15px;
   padding: 15px;
+  font-weight: 200;
+  &:hover {
+    background: #f2b705;
+    color: white;
+  }
 `;
 
 const JedenPrehled = (props) => {
