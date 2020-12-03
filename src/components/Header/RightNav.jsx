@@ -27,6 +27,7 @@ const Ul = styled.ul`
 
     li {
       color: black;
+      margin-top: 10px;
     }
   }
 `;
