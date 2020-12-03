@@ -29,7 +29,7 @@ const Graf = (props) => {
       </div>
       <div className="graf">
         <LineChart
-          width={1000}
+          width={500}
           height={300}
           data={props.data.map((item) => ({
             ...item,

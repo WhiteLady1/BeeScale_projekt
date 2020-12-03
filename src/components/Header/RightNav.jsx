@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import { Icon } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import styled from 'styled-components';
+import settingsIcon from '@iconify/icons-carbon/settings';
 
 const Ul = styled.ul`
   list-style: none;
@@ -45,12 +46,12 @@ const RightNav = ({ open }) => {
             Dashboard
           </Link>
         </li>
-        {/*<li>
+        <li>
           <Link className="nav nav-link" to="/settings">
             <Icon icon={settingsIcon} />
             Nastavení
-  </Link>
-        </li>*/}
+          </Link>
+        </li>
       </Ul>
     </>
   );
