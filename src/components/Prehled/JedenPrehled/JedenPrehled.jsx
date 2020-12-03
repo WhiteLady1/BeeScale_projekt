@@ -25,7 +25,9 @@ const WrapperBody = styled.div`
   width:50%
   padding: 5px;
 `;
-
+const Values = styled.div`
+  display: flex;
+`;
 const Unite = styled.div``;
 
 const JedenPrehled = (props) => {
@@ -40,28 +42,28 @@ const JedenPrehled = (props) => {
           <Unite>kg</Unite>
         </WrapperHeader>
         <WrapperBody>
-          <div className="hodnoty">
+          <Values>
             <Icon icon={tempIcon} style={{ fontSize: '25px' }} />
             <p>in</p>
             <div className="hodnota">{props.prehled?.temperatureIn}</div>
             <Unite>°C</Unite>
-          </div>
-          <div className="hodnoty">
+          </Values>
+          <Values>
             <Icon icon={tempIcon} style={{ fontSize: '25px' }} />
             <p>out</p>
             <div className="hodnota">{props.prehled?.temperatureOut}</div>
             <Unite>°C</Unite>
-          </div>
-          <div className="hodnoty">
+          </Values>
+          <Values>
             <Icon icon={humidityIcon} style={{ fontSize: '25px' }} />
             <div className="hodnota">{props.prehled?.humidity}</div>
             <Unite>%</Unite>
-          </div>
-          <div className="baterie">
+          </Values>
+          <Values>
             <Icon icon={batteryIcon} style={{ fontSize: '20px' }} />
             <div className="hodnota">{props.prehled?.voltage}</div>
             <Unite>%</Unite>
-          </div>
+          </Values>
         </WrapperBody>
         Údaje k: {props.prehled?.time}
       </Wrapper>
