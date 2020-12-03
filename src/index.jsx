@@ -21,32 +21,39 @@ import { parseDateTime } from './components/Prehled/Dashboard/Graf/Graf';
 import differenceInHours from 'date-fns/differenceInHours';
 import { localStorageToken } from './GoogleBtn/GoogleBtn';
 import { scaleList, usePersistedState } from './components/';
+
 const App = () => {
   const [timeOffset, setTimeOffset] = useState(24);
   const [isLogedIn, setisLogedIn] = useState();
   const [localStorageScaleList] = usePersistedState(scaleList, 'scaleList');
+
   useEffect(() => {
     setisLogedIn(Boolean(localStorage.getItem(localStorageToken)));
   }, []);
+
   const isInSelectedTimeframe = (dateTime) => {
     const parseTime = parseDateTime(dateTime);
     const today = new Date(2020, 7, 31, 23, 50);
     const selectedTimeFrame = subHours(today, timeOffset);
     return parseTime > selectedTimeFrame;
   };
+
   const transformedData = {};
   const transformedDataAll = {};
+
   let lastEnteredDate = '1.1.1970';
   let lastEnteredFullDateWithHours = '1.1.1970 00:00';
+
   const podminkaA = (val) => timeOffset === 24 * 30 && val !== lastEnteredDate;
+
   const podminkaB = (val, val2) => {
-    //console.log(differenceInHours(parseDateTime(val), parseDateTime(val2)));
     const difference = differenceInHours(
       parseDateTime(val),
       parseDateTime(val2),
     );
     return timeOffset === 24 * 7 && difference > 6;
   };
+
   const podminkaC = (val, val2) => {
     const difference = differenceInHours(
       parseDateTime(val),
@@ -54,6 +61,7 @@ const App = () => {
     );
     return timeOffset === 48 && difference > 3;
   };
+
   const podminkaD = (val, val2) => {
     const difference = differenceInHours(
       parseDateTime(val),
@@ -61,6 +69,7 @@ const App = () => {
     );
     return timeOffset === 24 && difference > 1;
   };
+
   data.forEach((item) => {
     if (isInSelectedTimeframe(item.time)) {
       const currentDate = item.time.split(' ')[0];
@@ -83,6 +92,7 @@ const App = () => {
     }
     transformedDataAll[item.de6ce].push(item);
   });
+
   const posledniData = {};
   localStorageScaleList.map((item) => {
     if (!posledniData[item.SigfoxID]) {
@@ -99,10 +109,6 @@ const App = () => {
           <Switch>
             <Route path="/prehled">
               <Prehled posledniData={posledniData} />
-              {console.log(`posledniData z indexu:`)}
-              {console.log(posledniData)}
-              {console.log('co je v transformedData')}
-              {console.log(transformedData)}
             </Route>
             <Route path="/settings">
               <Settings />

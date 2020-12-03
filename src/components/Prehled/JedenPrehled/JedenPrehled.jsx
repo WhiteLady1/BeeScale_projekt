@@ -81,8 +81,6 @@ const LastMeasurement = styled.div`
 `;
 
 const JedenPrehled = (props) => {
-  console.log('Jeden přehled props.prehled');
-  console.log(props.prehled); //zbrazuje ověření id váhy;
   return (
     <>
       <Wrapper>
