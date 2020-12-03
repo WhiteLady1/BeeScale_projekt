@@ -7,11 +7,10 @@ import settingsIcon from '@iconify/icons-carbon/settings';
 const Ul = styled.ul`
   list-style: none;
   display: flex;
-  flex-flow: row nowrap;
 
   li {
-    padding-top: 20px;
     text-transform: uppercase;
+    margin-right: 25px;
   }
 
   @media (max-width: 768px) {
