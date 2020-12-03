@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import { Icon } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import styled from 'styled-components';
+import settingsIcon from '@iconify/icons-carbon/settings';
 
 const Ul = styled.ul`
   list-style: none;
   display: flex;
-  flex-flow: row nowrap;
 
   li {
-    padding-top: 20px;
     text-transform: uppercase;
+    margin-right: 25px;
   }
 
   @media (max-width: 768px) {
@@ -45,12 +45,12 @@ const RightNav = ({ open }) => {
             Dashboard
           </Link>
         </li>
-        {/*<li>
+        <li>
           <Link className="nav nav-link" to="/settings">
             <Icon icon={settingsIcon} />
             Nastavení
-  </Link>
-        </li>*/}
+          </Link>
+        </li>
       </Ul>
     </>
   );
