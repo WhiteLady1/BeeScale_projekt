@@ -1,4 +1,8 @@
 import React from 'react';
+<<<<<<< HEAD
+
+=======
+>>>>>>> e5d64e54f0253ecf4d12be26d982c884405e8f89
 import { Link } from 'react-router-dom';
 import './style.css';
 import GoogleBtn from '../../../GoogleBtn/GoogleBtn';
@@ -22,7 +26,9 @@ const LogInGoogle = styled.div`
 const SignIn = () => {
   return (
     <>
+
       <WelcomeUser>Přihlášení do BeeScale</WelcomeUser>
+
       <div className="login-page">
         <div className="form">
           <form className="login-form">
