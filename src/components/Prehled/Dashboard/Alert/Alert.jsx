@@ -1,9 +1,10 @@
 import React from 'react';
+import { Diary } from './Diary';
 
 const Aletr = () => {
   return (
     <>
-      <div>Uletěli ti včelky</div>
+      <Diary>Deníček ve výstavbě</Diary>
     </>
   );
 };

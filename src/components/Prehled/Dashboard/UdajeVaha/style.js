@@ -13,6 +13,7 @@ export const Time = styled.div`
 export const Wrapper = styled.div`
   margin: 0;
   padding-top: 20px;
+  padding-left: 10px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -29,7 +30,8 @@ export const Values = styled.div`
   padding: 10px 50px 10px 50px;
   background-color: white;
   border-radius: 50px;
-  margin-bottom: 20px;
+  margin-right: 15px;
+  margin-bottom: 10px;
   &:hover {
     background: #ffb802;
     color: white;
