@@ -17,7 +17,7 @@ const Overview = (props) => {
       <Wrapper>
         {localStorageScaleList.map((scale) => {
           return (
-            <Link to={`/dashboard/${scale.SigfoxID}`}>
+            <Link key={scale.SigfoxID} to={`/dashboard/${scale.SigfoxID}`}>
               <Scale>
                 <JednaVaha key={scale.name} name={scale.name} />
                 <OneOverview
