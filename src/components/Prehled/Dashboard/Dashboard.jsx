@@ -19,7 +19,6 @@ const Dashboard = (props) => {
 
   return (
     <>
-      <p>Dashboard</p>
       <p>vybraná váha je: {vahaId}</p>
       <VyberVahu
         vybranaVaha={vahaId}

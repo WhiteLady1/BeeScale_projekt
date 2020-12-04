@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../Logo';
+
 import { Link } from 'react-router-dom';
 import './style.css';
 import GoogleBtn from '../../../GoogleBtn/GoogleBtn';
@@ -7,7 +7,6 @@ import GoogleBtn from '../../../GoogleBtn/GoogleBtn';
 const SignIn = () => {
   return (
     <>
-      <Logo />
       <div className="login-page">
         <div className="form">
           <form className="login-form">
