@@ -9,11 +9,11 @@ import { render } from 'react-dom';
 import './index.html';
 import GlobalStyle from './globalStyle';
 import Dashboard from './components/Overview/Dashboard/Dashboard';
-import SignIn from './components/MainPage/SignIn/signIn';
-import Registration from './components/MainPage/Registrace/registration';
+import SignIn from './components/mainPage/SignIn/SignIn';
+import Registration from './components/mainPage/Registrace/Registration';
 import Header from './components/Header/NavBar';
 import Settings from './components/Settings/Settings';
-import Overview from './components/Overview/Overview2';
+import Overview2 from './components/Overview/Overview2';
 import data from './components/data/data.js';
 import subHours from 'date-fns/subHours';
 import { parseDateTime } from './components/Overview/Dashboard/Graf/Graf';
@@ -107,7 +107,7 @@ const App = () => {
           <Header />
           <Switch>
             <Route path="/prehled">
-              <Overview posledniData={posledniData} />
+              <Overview2 posledniData={posledniData} />
             </Route>
             <Route path="/settings">
               <Settings />
