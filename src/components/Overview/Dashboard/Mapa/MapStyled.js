@@ -11,6 +11,8 @@ export const MapSeznam = styled.div`
 `;
 export const MapStyled = styled.div`
   margin: 10px 10px 0 10px;
+  border: 1px solid #ededed;
+  border-radius: 10px;
 `;
 
 export const MarkerBtn = styled.button`

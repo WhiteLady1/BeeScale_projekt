@@ -28,6 +28,7 @@ export const Chart = styled.div`
   height: 400px;
   background-color: white;
   border-radius: 10px;
+  border: 1px solid #ededed;
   li {
     padding-bottom: 15px;
   }

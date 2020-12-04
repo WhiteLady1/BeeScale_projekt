@@ -10,6 +10,7 @@ export const Diary = styled.div`
   background-color: white;
   border-radius: 10px;
   margin: 10px;
+  border: 1px solid #ededed;
   @media (min-width: 1025px) {
     height: 100%;
   }
