@@ -29,6 +29,7 @@ export const Values = styled.div`
   font-size: 20px;
   padding: 10px 50px 10px 50px;
   background-color: white;
+  border: 1px solid #ededed;
   border-radius: 50px;
   margin-right: 15px;
   margin-bottom: 10px;
@@ -40,11 +41,16 @@ export const Values = styled.div`
     padding: 5px 20px 5px 20px;
     margin-right: 20px;
     width: 100%;
+    border: 1px solid #ededed;
+
+    display: flex;
+    justify-content: center;
   }
 `;
 export const WrapperTem = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: space-between;
   width: 100%;
   @media (min-width: 1025px) {
     flex-direction: row;
@@ -79,6 +85,7 @@ export const WrapperValue = styled.div`
   padding-right: 20px;
   @media (min-width: 1025px) {
     padding-right: 0px;
+    padding-left: 10px;
   }
 `;
 export const Value = styled.div`

@@ -34,6 +34,7 @@ export const Button = styled.div`
   text-align: center;
   background-color: white;
   border-radius: 50px;
+  border: 1px solid #ededed;
   margin: 5px;
   padding: 5px 10px 5px 10px;
   &:hover {
