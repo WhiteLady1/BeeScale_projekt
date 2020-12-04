@@ -13,7 +13,7 @@ import SignIn from './components/mainPage/SignIn/SignIn';
 import Registration from './components/mainPage/Registrace/Registration';
 import Header from './components/Header/NavBar';
 import Settings from './components/Settings/Settings';
-import Overview2 from './components/Overview/Overview2';
+import Overview from './components/Overview/OverviewX';
 import data from './components/data/data.js';
 import subHours from 'date-fns/subHours';
 import { parseDateTime } from './components/Overview/Dashboard/Graf/Graf';
@@ -107,7 +107,7 @@ const App = () => {
           <Header />
           <Switch>
             <Route path="/prehled">
-              <Overview2 posledniData={posledniData} />
+              <Overview posledniData={posledniData} />
             </Route>
             <Route path="/settings">
               <Settings />
