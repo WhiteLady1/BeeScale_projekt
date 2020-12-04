@@ -4,81 +4,21 @@ import weightHanging from '@iconify/icons-fa-solid/weight-hanging';
 import tempIcon from '@iconify/icons-raphael/temp';
 import humidityIcon from '@iconify/icons-carbon/humidity';
 import batteryIcon from '@iconify/icons-fa/battery';
-import styled from 'styled-components';
 
-const Wrapper = styled.div``;
-
-const WrapperHeader = styled.div`
-  display: flex;
-  padding: 15px;
-  justify-content: center;
-  font-size: 25px;
-  font-weight: 600;
-  color: rgb(56, 53, 37);
-  &:hover {
-    background: #ffb802;
-    color: white;
-  }
-`;
-const Weight = styled.div`
-  padding-left: 5px;
-`;
-const WrapperBody = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  &:hover {
-    background: #ffb802;
-    color: white;
-  }
-`;
-const Values = styled.div`
-  display: flex;
-  width: 35%;
-  padding: 15px;
-  font-size: 18px;
-`;
-const TemperatureIn = styled(Values)`
-  border-bottom: #f7f8fa 1px solid;
-  border-right: #f7f8fa 1px solid;
-`;
-const TemperatureOut = styled(Values)`
-  border-bottom: #f7f8fa 1px solid;
-  border-left: #f7f8fa 1px solid;
-`;
-const Humidity = styled(Values)`
-  margin-top: 10px;
-  border-top: #f7f8fa 1px solid;
-  border-right: #f7f8fa 1px solid;
-  text-align: right;
-`;
-const Voltage = styled(Values)`
-  margin-top: 10px;
-  border-top: #f7f8fa 1px solid;
-  border-left: #f7f8fa 1px solid; ;
-`;
-const WrapperIcon = styled.div`
-  display: flex;
-  align-items: center;
-`;
-const Value = styled.div`
-  padding: 0;
-  padding-left: 5px;
-`;
-const Unite = styled.div`
-  padding-left: 1px;
-`;
-const LastMeasurement = styled.div`
-  font-size: 15px;
-  padding: 15px;
-  font-weight: 200;
-  &:hover {
-    background: #ffb802;
-    color: white;
-  }
-`;
+import {
+  Humidity,
+  LastMeasurement,
+  TemperatureIn,
+  TemperatureOut,
+  Unite,
+  Value,
+  Voltage,
+  Weight,
+  Wrapper,
+  WrapperBody,
+  WrapperHeader,
+  WrapperIcon,
+} from './oneOverview';
 
 const OneOverview = (props) => {
   return (
