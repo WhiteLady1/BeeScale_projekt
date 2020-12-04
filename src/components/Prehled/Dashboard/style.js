@@ -11,7 +11,7 @@ export const Container = styled.div`
   }
 `;
 
-export const ChoisMenu = styled.div`
+export const SelectedMenu = styled.div`
   display: flex;
   flex-direction: column;
   grid-row: 1/2;

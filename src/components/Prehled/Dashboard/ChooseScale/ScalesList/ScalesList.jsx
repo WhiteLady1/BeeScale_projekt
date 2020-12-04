@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SeznamVah = (props) => {
+const ScalesList = (props) => {
   return <option value={props.kod}>{props.name}</option>;
 };
-export default SeznamVah;
+export default ScalesList;

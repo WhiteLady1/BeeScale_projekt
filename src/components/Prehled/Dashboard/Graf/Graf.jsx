@@ -67,7 +67,6 @@ const Graf = (props) => {
                 left: 20,
                 bottom: 5,
               }}
-              padding={{ bottom: 10 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis
