@@ -33,6 +33,7 @@ export const Values = styled.div`
   border-radius: 50px;
   margin-right: 15px;
   margin-bottom: 10px;
+  cursor: pointer;
   &:hover {
     background: #ffb802;
     color: white;
