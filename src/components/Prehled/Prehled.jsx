@@ -26,6 +26,7 @@ const Scale = styled.div`
   flex-wrap: wrap;
   text-align: center;
   width: 320px;
+  height: 377px;
   background-color: white;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 `;

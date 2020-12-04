@@ -11,10 +11,15 @@ const StyledHeader = styled.header`
   padding: 0 0px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: white;
 
   .navbar-logo {
     padding: 10px 10px;
-    font-size: 20px;
+    font-size: 30px;
+  }
+  .navbar-logo :hover {
+    color: #ffb802;
   }
 `;
 

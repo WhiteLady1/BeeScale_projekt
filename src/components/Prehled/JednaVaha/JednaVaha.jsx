@@ -12,7 +12,7 @@ const WrapperName = styled.div`
   font-size: 30px;
   font-weight: 600;
   &:hover {
-    background: #f2b705;
+    background: #ffb802;
     color: white;
   }
 `;
