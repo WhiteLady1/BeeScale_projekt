@@ -5,20 +5,15 @@ export const Time = styled.div`
   font-weight: 300;
   text-align: center;
   padding: 10px;
-  @media (min-width: 1025px) {
-    text-align: right;
-  }
 `;
 
 export const Wrapper = styled.div`
   margin: 0;
   padding-top: 20px;
-  padding-left: 10px;
   display: flex;
   flex-direction: column;
   width: 100%;
-  @media (min-width: 1025px) {
-    flex-direction: row;
+  @media (min-width: 600px) {
   }
 `;
 
@@ -29,27 +24,13 @@ export const Values = styled.div`
   font-size: 20px;
   padding: 10px 50px 10px 50px;
   background-color: white;
-  border-radius: 50px;
-  margin-right: 15px;
-  margin-bottom: 10px;
-  &:hover {
-    background: #ffb802;
-    color: white;
-  }
-  @media (min-width: 1025px) {
-    padding: 5px 20px 5px 20px;
-    margin-right: 20px;
-    width: 100%;
-  }
+  border-radius: 30px;
+  margin-bottom: 20px;
 `;
 export const WrapperTem = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  @media (min-width: 1025px) {
-    flex-direction: row;
-    align-items: center;
-  }
 `;
 export const TemIn = styled.div`
   display: flex;
@@ -57,9 +38,6 @@ export const TemIn = styled.div`
   justify-content: space-between;
   font-size: 20px;
   padding-bottom: 10px;
-  @media (min-width: 1025px) {
-    padding-bottom: 0px;
-  }
 `;
 
 export const TemOut = styled.div`
@@ -77,15 +55,8 @@ export const WrapperIcon = styled.div`
 export const WrapperValue = styled.div`
   display: flex;
   padding-right: 20px;
-  @media (min-width: 1025px) {
-    padding-right: 0px;
-  }
 `;
-export const Value = styled.div`
-  @media (min-width: 1025px) {
-    padding-left: 5px;
-  }
-`;
+export const Value = styled.div``;
 export const Unite = styled.div`
   padding-left: 3px;
 `;

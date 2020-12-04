@@ -80,7 +80,7 @@ const LastMeasurement = styled.div`
   }
 `;
 
-const JedenPrehled = (props) => {
+const OneOverview = (props) => {
   return (
     <>
       <Wrapper>
@@ -124,4 +124,4 @@ const JedenPrehled = (props) => {
     </>
   );
 };
-export default JedenPrehled;
+export default OneOverview;

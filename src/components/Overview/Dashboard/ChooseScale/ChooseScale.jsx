@@ -9,22 +9,22 @@ import { FormGroup, Label, Select } from './style';
 const ChooseScale = (props) => {
   const [localStorageScaleList] = usePersistedState(scaleList, 'scaleList');
   const handleClick = (choice) => {
-    props.nastavVahu(choice);
+    props.setTheScale(choice);
   };
   return (
     <>
       <FormGroup>
         <Label>Zobraz údaje pro váhu:</Label>
         <Select
-          value={props.vybranaVaha}
+          value={props.chosenScale}
           name="vahy"
           id="vaha"
           onChange={(e) => handleClick(e.target.value)}
         >
           {localStorageScaleList.find(
-            (option) => option.SigfoxID === props.vybranaVaha,
+            (option) => option.SigfoxID === props.chosenScale,
           ) ? null : (
-            <option value={props.vybranaVaha}></option>
+            <option value={props.chosenScale}></option>
           )}
           {localStorageScaleList.map((entry) => (
             <ScalesList

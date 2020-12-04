@@ -8,15 +8,15 @@ import {
 import { render } from 'react-dom';
 import './index.html';
 import GlobalStyle from './globalStyle';
-import Dashboard from './components/Prehled/Dashboard/Dashboard';
+import Dashboard from './components/Overview/Dashboard/Dashboard';
 import SignIn from './components/MainPage/SignIn/signIn';
 import Registration from './components/MainPage/Registrace/registration';
 import Header from './components/Header/NavBar';
 import Settings from './components/Settings/Settings';
-import Prehled from './components/Prehled/Prehled';
+import Overview from './components/Overview/Overview';
 import data from './components/data/data.js';
 import subHours from 'date-fns/subHours';
-import { parseDateTime } from './components/Prehled/Dashboard/Graf/Graf';
+import { parseDateTime } from './components/Overview/Dashboard/Graf/Graf';
 import differenceInHours from 'date-fns/differenceInHours';
 import { localStorageToken } from './GoogleBtn/GoogleBtn';
 import { scaleList, usePersistedState } from './components/';
@@ -107,7 +107,7 @@ const App = () => {
           <Header />
           <Switch>
             <Route path="/prehled">
-              <Prehled posledniData={posledniData} />
+              <Overview posledniData={posledniData} />
             </Route>
             <Route path="/settings">
               <Settings />

@@ -12,32 +12,32 @@ const Dashboard = (props) => {
   const [metric, setMetric] = useState('weight');
   const { transformedData, setTimeOffset } = props;
 
-  const [vahaId, setVaha] = useState(id || Object.keys(transformedData)[0]);
-  const nastavujuVahu = (choiceScale) => {
-    setVaha(choiceScale);
+  const [scaleID, setScaleID] = useState(id || Object.keys(transformedData)[0]);
+  const setScale = (choiceScale) => {
+    setScaleID(choiceScale);
   };
-  const data = vahaId in transformedData ? transformedData[vahaId] : [];
+  const data = scaleID in transformedData ? transformedData[scaleID] : [];
 
   return (
     <>
       <Container>
         <SelectedMenu>
           <ChooseScale
-            vybranaVaha={vahaId}
-            nastavVahu={nastavujuVahu}
-            vahyOptions={Object.keys(transformedData)}
+            chosenScale={scaleID}
+            setTheScale={setScale}
+            scaleOptions={Object.keys(transformedData)}
           />
         </SelectedMenu>
         <Values>
           {data.length === 0 ? (
-            <DataOfScale vaha={vahaId} data={[{}]} setMetric={setMetric} />
+            <DataOfScale vaha={scaleID} data={[{}]} setMetric={setMetric} />
           ) : (
-            <DataOfScale vaha={vahaId} data={data} setMetric={setMetric} />
+            <DataOfScale vaha={scaleID} data={data} setMetric={setMetric} />
           )}
         </Values>
         <Chart>
           <Graf
-            vaha={vahaId}
+            vaha={scaleID}
             data={data}
             setTimeOffset={setTimeOffset}
             metric={metric}
@@ -47,7 +47,7 @@ const Dashboard = (props) => {
           <Alert />
         </Comments>
         <Map>
-          <Mapa vaha={vahaId} />
+          <Mapa vaha={scaleID} />
         </Map>
       </Container>
     </>

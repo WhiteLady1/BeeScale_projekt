@@ -1,0 +1,55 @@
+.graf {
+  width: auto;
+  height: 400px;
+}
+
+li {
+  padding-bottom: 15px;
+}
+
+.btn-all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-first,
+.btn-second,
+.btn-third,
+.btn-fourt {
+  text-decoration: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 800;
+  height: 60px;
+  width: 100px;
+
+  color: rgb(56, 53, 37);
+  background-color: #f7f8fa;
+
+  display: flex;
+  justify-content: center;
+}
+
+.btn-second,
+.btn-fourt {
+  border-left: #9da2ac 1px solid;
+}
+
+.btn-first:hover,
+.btn-second:hover,
+.btn-third:hover,
+.btn-fourt:hover {
+  background: #f2b705;
+  color: white;
+}
+
+.btn-upper,
+.btn-lower {
+  display: flex;
+}
+
+.btn-lower {
+  border-top: #9da2ac 1px solid;
+}
