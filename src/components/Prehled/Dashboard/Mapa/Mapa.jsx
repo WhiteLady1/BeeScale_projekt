@@ -12,8 +12,10 @@ import './mapaSeznam.css';
 import './mapa.css';
 import './ovladani.css';
 import { scaleList, usePersistedState } from '../../..';
+
 const TOKEN =
   'pk.eyJ1Ijoid2hpdGVsYWR5IiwiYSI6ImNraHVvMmozODFldGoycGt6ZDZlNjRwZmUifQ.vejjMGJgs0GlqR9Ccy6xeg';
+
 export const Mapa = (props) => {
   const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
     scaleList,
@@ -72,7 +74,7 @@ export const Mapa = (props) => {
     <ReactMapGL
       {...viewport}
       width="100%"
-      height={400}
+      height={200}
       onViewportChange={(nextViewport) => setViewport(nextViewport)}
       mapboxApiAccessToken="pk.eyJ1Ijoid2hpdGVsYWR5IiwiYSI6ImNraHVvMmozODFldGoycGt6ZDZlNjRwZmUifQ.vejjMGJgs0GlqR9Ccy6xeg"
       mapStyle={seznamMapy}
