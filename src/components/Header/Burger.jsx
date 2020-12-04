@@ -4,6 +4,7 @@ import RightNav from './RightNav';
 
 const Burger = () => {
   const [open, setOpen] = useState(false);
+  const [close, setClose] = useState(true);
 
   return (
     <>
