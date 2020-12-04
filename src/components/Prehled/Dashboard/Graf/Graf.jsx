@@ -53,7 +53,7 @@ const Graf = (props) => {
       </div>
       {props.data.length ? (
         <div className="graf">
-          <ResponsiveContainer width="100%" height="80%">
+          <ResponsiveContainer width="100%" height="100%">
             <LineChart
               //width={1000}
               //height={300}
@@ -62,18 +62,25 @@ const Graf = (props) => {
                 temperatureOut: parseFloat(item.temperatureOut, 10),
               }))}
               margin={{
-                top: 5,
+                top: 10,
                 right: 30,
                 left: 20,
                 bottom: 5,
               }}
+              padding={{ bottom: 10 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="time" tickCount={5} angle={30} />,
+              <XAxis
+                dataKey="time"
+                tickCount={10}
+                angle={30}
+                textAnchor="start"
+              />
+              ,
               <YAxis tickCount={15} />
               <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey={props.metric} stroke="#82ca9d" />
+              <Line type="monotone" dataKey={props.metric} stroke="#ffb802" />
+              <Legend verticalAlign="top" />
             </LineChart>
           </ResponsiveContainer>
           ;

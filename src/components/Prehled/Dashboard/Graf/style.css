@@ -1,6 +1,10 @@
 .graf {
   width: auto;
-  height: 300px;
+  height: 400px;
+}
+
+li {
+  padding-bottom: 15px;
 }
 
 .btn-all {
