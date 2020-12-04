@@ -8,10 +8,8 @@ import ReactMapGL, {
 } from 'react-map-gl';
 import spendlikUrl from './img/pin.svg';
 import mapySeznam from './img/mapy_logo.svg';
-import './mapaSeznam.css';
-import './mapa.css';
-import './ovladani.css';
 import { scaleList, usePersistedState } from '../../..';
+import { MapSeznam, MapStyled, MarkerBtn, Navigation } from './MapStyled';
 
 const TOKEN =
   'pk.eyJ1Ijoid2hpdGVsYWR5IiwiYSI6ImNraHVvMmozODFldGoycGt6ZDZlNjRwZmUifQ.vejjMGJgs0GlqR9Ccy6xeg';
@@ -71,41 +69,50 @@ export const Mapa = (props) => {
   };
   const [popupOtevren, setPopupOtevren] = useState(false);
   return (
-    <ReactMapGL
-      {...viewport}
-      width="100%"
-      height={200}
-      onViewportChange={(nextViewport) => setViewport(nextViewport)}
-      mapboxApiAccessToken="pk.eyJ1Ijoid2hpdGVsYWR5IiwiYSI6ImNraHVvMmozODFldGoycGt6ZDZlNjRwZmUifQ.vejjMGJgs0GlqR9Ccy6xeg"
-      mapStyle={seznamMapy}
-    >
-      <div className="ovladani">
-        <NavigationControl />
-        <GeolocateControl />
-      </div>
-      {mesto && (
-        <Marker
-          latitude={mesto.latitude}
-          longitude={mesto.longitude}
-          offsetLeft={-25}
-          offsetTop={-50}
-        >
-          <button className="marker-btn" onClick={() => setPopupOtevren(true)}>
-            <img src={spendlikUrl} width={50} height={50} alt="Přibyslavská" />
-          </button>
-        </Marker>
-      )}
-      {popupOtevren && mesto && (
-        <Popup
-          latitude={mesto.latitude}
-          longitude={mesto.longitude}
-          offsetTop={-50}
-          onClose={() => setPopupOtevren(false)}
-        >
-          {city}
-        </Popup>
-      )}
-      <img className="mapaSeznam" src={mapySeznam} alt="Seznam mapy" />
-    </ReactMapGL>
+    <MapStyled>
+      <ReactMapGL
+        {...viewport}
+        width="100%"
+        height={200}
+        onViewportChange={(nextViewport) => setViewport(nextViewport)}
+        mapboxApiAccessToken="pk.eyJ1Ijoid2hpdGVsYWR5IiwiYSI6ImNraHVvMmozODFldGoycGt6ZDZlNjRwZmUifQ.vejjMGJgs0GlqR9Ccy6xeg"
+        mapStyle={seznamMapy}
+      >
+        <Navigation className="ovladani">
+          <NavigationControl />
+          <GeolocateControl />
+        </Navigation>
+        {mesto && (
+          <Marker
+            latitude={mesto.latitude}
+            longitude={mesto.longitude}
+            offsetLeft={-25}
+            offsetTop={-50}
+          >
+            <MarkerBtn onClick={() => setPopupOtevren(true)}>
+              <img
+                src={spendlikUrl}
+                width={50}
+                height={50}
+                alt="Přibyslavská"
+              />
+            </MarkerBtn>
+          </Marker>
+        )}
+        {popupOtevren && mesto && (
+          <Popup
+            latitude={mesto.latitude}
+            longitude={mesto.longitude}
+            offsetTop={-50}
+            onClose={() => setPopupOtevren(false)}
+          >
+            {city}
+          </Popup>
+        )}
+        <MapSeznam>
+          <img src={mapySeznam} alt="Seznam mapy" />
+        </MapSeznam>
+      </ReactMapGL>
+    </MapStyled>
   );
 };
