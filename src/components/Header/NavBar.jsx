@@ -14,6 +14,10 @@ const StyledHeader = styled.header`
   align-items: center;
   background-color: white;
 
+  li {
+    margin-top: 15px;
+  }
+
   .navbar-logo {
     padding: 10px 10px;
     font-size: 30px;
