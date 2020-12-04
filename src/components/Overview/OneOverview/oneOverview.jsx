@@ -86,7 +86,7 @@ const OneOverview = (props) => {
       <Wrapper>
         <WrapperHeader>
           <Icon icon={weightHanging} style={{ fontSize: '30px' }} />
-          <Weight>{props.prehled?.weight}</Weight>
+          <Weight>{props.overview?.weight}</Weight>
           <Unite>kg</Unite>
         </WrapperHeader>
         <WrapperBody>
@@ -95,7 +95,7 @@ const OneOverview = (props) => {
               <Icon icon={tempIcon} style={{ fontSize: '25px' }} />
               in
             </WrapperIcon>
-            <Value>{props.prehled?.temperatureIn}</Value>
+            <Value>{props.overview?.temperatureIn}</Value>
             <Unite>°C</Unite>
           </TemperatureIn>
           <TemperatureOut>
@@ -103,22 +103,22 @@ const OneOverview = (props) => {
               <Icon icon={tempIcon} style={{ fontSize: '25px' }} />
               out
             </WrapperIcon>
-            <Value>{props.prehled?.temperatureOut}</Value>
+            <Value>{props.overview?.temperatureOut}</Value>
             <Unite>°C</Unite>
           </TemperatureOut>
           <Humidity>
             <Icon icon={humidityIcon} style={{ fontSize: '25px' }} />
-            <Value>{props.prehled?.humidity}</Value>
+            <Value>{props.overview?.humidity}</Value>
             <Unite>%</Unite>
           </Humidity>
           <Voltage>
             <Icon icon={batteryIcon} style={{ fontSize: '20px' }} />
-            <Value>{props.prehled?.voltage}</Value>
+            <Value>{props.overview?.voltage}</Value>
             <Unite>%</Unite>
           </Voltage>
         </WrapperBody>
         <LastMeasurement>
-          Údaje k<br></br> {props.prehled?.time}
+          Údaje k<br></br> {props.overview?.time}
         </LastMeasurement>
       </Wrapper>
     </>
