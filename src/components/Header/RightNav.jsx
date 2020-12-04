@@ -1,8 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Ul from './rightNavstyle';
 
 const RightNav = ({ open }) => {
+  /*const location = useLocation();
+  if (location.pathname === '/dashboard') {
+    return null;
+  }*/
   return (
     <>
       <Ul open={open}>
