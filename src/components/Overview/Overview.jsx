@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePersistedState } from '../index';
 import { scaleList } from '../index';
-import JedenPrehled from './JedenPrehled/JedenPrehled';
+import OneOverview from './OneOverview/oneOverview';
 import JednaVaha from './JednaVaha/JednaVaha';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -31,7 +31,7 @@ const Scale = styled.div`
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
 `;
 
-const Prehled = (props) => {
+const Overview = (props) => {
   const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
     scaleList,
     'scaleList',
@@ -45,9 +45,9 @@ const Prehled = (props) => {
             <Link to={`/dashboard/${scale.SigfoxID}`}>
               <Scale>
                 <JednaVaha key={scale.name} name={scale.name} />
-                <JedenPrehled
+                <OneOverview
                   key={scale.SigfoxID}
-                  prehled={props.posledniData[scale.SigfoxID]}
+                  overview={props.posledniData[scale.SigfoxID]}
                 />
               </Scale>
             </Link>
@@ -57,7 +57,7 @@ const Prehled = (props) => {
     </>
   );
 };
-export default Prehled;
+export default Overview;
 
 /* Ikony baterií
 prázdná baterie <Icon icon={battery0} style={{fontSize: '80px'}} />
