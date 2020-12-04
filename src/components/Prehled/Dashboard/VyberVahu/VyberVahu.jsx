@@ -3,9 +3,9 @@ import { Icon, InlineIcon } from '@iconify/react';
 import pensilIcon from '@iconify/icons-raphael/pensil';
 import { scaleList, usePersistedState } from '../../..';
 import { Link } from 'react-router-dom';
-const SeznamVah = (props) => {
-  return <option value={props.kod}>{props.name}</option>;
-};
+import SeznamVah from './SeznamVah/SeznamVah';
+import { FormGroup, Label, Select } from './style';
+
 const VyberVahu = (props) => {
   const [localStorageScaleList] = usePersistedState(scaleList, 'scaleList');
   const handleClick = (choice) => {
@@ -13,9 +13,9 @@ const VyberVahu = (props) => {
   };
   return (
     <>
-      <form>
-        <label>Údaje pro váhu:</label>
-        <select
+      <FormGroup>
+        <Label>Zobraz údaje pro váhu:</Label>
+        <Select
           value={props.vybranaVaha}
           name="vahy"
           id="vaha"
@@ -33,11 +33,11 @@ const VyberVahu = (props) => {
               name={entry.name}
             />
           ))}
-        </select>
-      </form>
-      <Link to="/settings/scales">
-        <Icon icon={pensilIcon} />
-      </Link>
+        </Select>
+        <Link to="/settings/scales">
+          <Icon icon={pensilIcon} />
+        </Link>
+      </FormGroup>
     </>
   );
 };
