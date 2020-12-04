@@ -1,8 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-
-=======
->>>>>>> e5d64e54f0253ecf4d12be26d982c884405e8f89
 import { Link } from 'react-router-dom';
 import './style.css';
 import GoogleBtn from '../../../GoogleBtn/GoogleBtn';
@@ -19,13 +15,10 @@ const WelcomeUser = styled.div`
 const SignIn = () => {
   return (
     <>
-<<<<<<< HEAD
-=======
       <WelcomeUser>
         <p>Vítejte ve webovém rozhraní Vašich BeeScale.</p>
         <p> Pro pokračování do aplikace se přihlaste.</p>
       </WelcomeUser>
->>>>>>> e5d64e54f0253ecf4d12be26d982c884405e8f89
       <div className="login-page">
         <div className="form">
           <form className="login-form">
