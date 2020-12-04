@@ -24,7 +24,7 @@ export const TimeSelection = styled.div`
 `;
 
 export const Chart = styled.div`
-  width: 100%;
+  width: 90%;
   height: 400px;
   background-color: white;
   border-radius: 10px;

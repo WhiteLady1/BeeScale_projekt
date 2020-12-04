@@ -16,7 +16,6 @@ export const Wrapper = styled.div`
   padding-left: 10px;
   display: flex;
   flex-direction: column;
-  width: 100%;
   @media (min-width: 1025px) {
     flex-direction: row;
   }
@@ -52,7 +51,6 @@ export const WrapperTem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  width: 100%;
   @media (min-width: 1025px) {
     flex-direction: row;
     align-items: center;

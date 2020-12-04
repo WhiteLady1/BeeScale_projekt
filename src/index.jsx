@@ -13,7 +13,7 @@ import SignIn from './components/MainPage/SignIn/signIn';
 import Registration from './components/MainPage/Registrace/registration';
 import Header from './components/Header/NavBar';
 import Settings from './components/Settings/Settings';
-import Overview from './components/Overview/Overview';
+import Overview from './components/Overview/Overview2';
 import data from './components/data/data.js';
 import subHours from 'date-fns/subHours';
 import { parseDateTime } from './components/Overview/Dashboard/Graf/Graf';
