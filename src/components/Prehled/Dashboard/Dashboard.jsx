@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Mapa } from './Mapa/Mapa';
-import UdajeVaha from './UdajeVaha/UdajeVaha';
-import VyberVahu from './VyberVahu/VyberVahu';
+import DataOfScale from './ScaleData/DataOfScale';
+import ChooseScale from './ChooseScale/ChooseScale';
 import Graf from './Graf/Graf';
 import Alert from './Alert/Alert';
 import { useParams } from 'react-router-dom';
-import { Chart, ChoisMenu, Comments, Container, Values, Map } from './style';
+import { Chart, SelectedMenu, Comments, Container, Values, Map } from './style';
 
 const Dashboard = (props) => {
   const { id } = useParams();
@@ -21,18 +21,18 @@ const Dashboard = (props) => {
   return (
     <>
       <Container>
-        <ChoisMenu>
-          <VyberVahu
+        <SelectedMenu>
+          <ChooseScale
             vybranaVaha={vahaId}
             nastavVahu={nastavujuVahu}
             vahyOptions={Object.keys(transformedData)}
           />
-        </ChoisMenu>
+        </SelectedMenu>
         <Values>
           {data.length === 0 ? (
-            <UdajeVaha vaha={vahaId} data={[{}]} setMetric={setMetric} />
+            <DataOfScale vaha={vahaId} data={[{}]} setMetric={setMetric} />
           ) : (
-            <UdajeVaha vaha={vahaId} data={data} setMetric={setMetric} />
+            <DataOfScale vaha={vahaId} data={data} setMetric={setMetric} />
           )}
         </Values>
         <Chart>

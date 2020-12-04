@@ -9,7 +9,7 @@ import {
   Values,
   Value,
   Wrapper,
-  WrapperIkon,
+  WrapperIcon,
   Unite,
   WrapperValue,
   TemIn,
@@ -17,8 +17,8 @@ import {
   WrapperTem,
 } from './style';
 
-const UdajeVaha = (props) => {
-  const udajeVahy = props.data[props.data.length - 1];
+const DataOfScale = (props) => {
+  const ScalesData = props.data[props.data.length - 1];
 
   const handleClick = (oneMetric) => () => {
     props.setMetric(oneMetric);
@@ -28,15 +28,15 @@ const UdajeVaha = (props) => {
     <>
       <Wrapper>
         <Values className="btn weight" onClick={handleClick('weight')}>
-          <WrapperIkon>
+          <WrapperIcon>
             <Icon
               className="icon"
               icon={weightHanging}
               style={{ fontSize: '50px' }}
             />
-          </WrapperIkon>
+          </WrapperIcon>
           <WrapperValue>
-            <Value className="number">{udajeVahy.weight}</Value>
+            <Value className="number">{ScalesData.weight}</Value>
             <Unite className="metric">Kg</Unite>
           </WrapperValue>
         </Values>
@@ -46,67 +46,67 @@ const UdajeVaha = (props) => {
         >
           <WrapperTem>
             <TemIn>
-              <WrapperIkon>
+              <WrapperIcon>
                 <Icon
                   className="icon"
                   icon={tempIcon}
                   style={{ fontSize: '50px' }}
                 />
                 <p>in</p>
-              </WrapperIkon>
+              </WrapperIcon>
               <WrapperValue>
                 <Value className="number">
-                  {udajeVahy.temperatureIn || '0'}
+                  {ScalesData.temperatureIn || '0'}
                 </Value>
                 <Unite className="metric">°C</Unite>
               </WrapperValue>
             </TemIn>
             <TemOut>
-              <WrapperIkon>
+              <WrapperIcon>
                 <Icon
                   className="icon"
                   icon={tempIcon}
                   style={{ fontSize: '50px' }}
                 />
                 <p>out</p>
-              </WrapperIkon>
+              </WrapperIcon>
               <WrapperValue>
-                <Value className="number">{udajeVahy.temperatureOut}</Value>
+                <Value className="number">{ScalesData.temperatureOut}</Value>
                 <Unite className="metric">°C</Unite>
               </WrapperValue>
             </TemOut>
           </WrapperTem>
         </Values>
         <Values className="btn humidity" onClick={handleClick('humidity')}>
-          <WrapperIkon>
+          <WrapperIcon>
             <Icon
               className="icon"
               icon={humidityIcon}
               style={{ fontSize: '50px' }}
             />
-          </WrapperIkon>
+          </WrapperIcon>
           <WrapperValue>
-            <Value className="number">{udajeVahy.humidity}</Value>
+            <Value className="number">{ScalesData.humidity}</Value>
             <Unite className="metric">%</Unite>
           </WrapperValue>
         </Values>
         <Values className="btn voltage" onClick={handleClick('voltage')}>
-          <WrapperIkon>
+          <WrapperIcon>
             <Icon
               className="icon"
               icon={batteryIcon}
               style={{ paddingLeft: '10px', fontSize: '50px' }}
               rotate="270deg"
             />
-          </WrapperIkon>
+          </WrapperIcon>
           <WrapperValue>
-            <Value className="number">{udajeVahy.voltage}</Value>
+            <Value className="number">{ScalesData.voltage}</Value>
             <Unite className="metric">%</Unite>
           </WrapperValue>
         </Values>
       </Wrapper>
-      <Time>Zobrazená data z: {udajeVahy.time}</Time>
+      <Time>Zobrazená data z: {ScalesData.time}</Time>
     </>
   );
 };
-export default UdajeVaha;
+export default DataOfScale;

@@ -69,7 +69,7 @@ export const TemOut = styled.div`
   font-size: 20px;
 `;
 
-export const WrapperIkon = styled.div`
+export const WrapperIcon = styled.div`
   display: flex;
   align-items: center;
   text-align: center;

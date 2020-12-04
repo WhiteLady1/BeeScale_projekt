@@ -59,7 +59,7 @@ const Voltage = styled(Values)`
   border-top: #f7f8fa 1px solid;
   border-left: #f7f8fa 1px solid; ;
 `;
-const WrapperIkon = styled.div`
+const WrapperIcon = styled.div`
   display: flex;
   align-items: center;
 `;
@@ -91,18 +91,18 @@ const JedenPrehled = (props) => {
         </WrapperHeader>
         <WrapperBody>
           <TemperatureIn>
-            <WrapperIkon>
+            <WrapperIcon>
               <Icon icon={tempIcon} style={{ fontSize: '25px' }} />
               in
-            </WrapperIkon>
+            </WrapperIcon>
             <Value>{props.prehled?.temperatureIn}</Value>
             <Unite>°C</Unite>
           </TemperatureIn>
           <TemperatureOut>
-            <WrapperIkon>
+            <WrapperIcon>
               <Icon icon={tempIcon} style={{ fontSize: '25px' }} />
               out
-            </WrapperIkon>
+            </WrapperIcon>
             <Value>{props.prehled?.temperatureOut}</Value>
             <Unite>°C</Unite>
           </TemperatureOut>

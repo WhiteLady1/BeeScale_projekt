@@ -3,10 +3,10 @@ import { Icon, InlineIcon } from '@iconify/react';
 import pensilIcon from '@iconify/icons-raphael/pensil';
 import { scaleList, usePersistedState } from '../../..';
 import { Link } from 'react-router-dom';
-import SeznamVah from './SeznamVah/SeznamVah';
+import ScalesList from './ScalesList/ScalesList';
 import { FormGroup, Label, Select } from './style';
 
-const VyberVahu = (props) => {
+const ChooseScale = (props) => {
   const [localStorageScaleList] = usePersistedState(scaleList, 'scaleList');
   const handleClick = (choice) => {
     props.nastavVahu(choice);
@@ -27,7 +27,7 @@ const VyberVahu = (props) => {
             <option value={props.vybranaVaha}></option>
           )}
           {localStorageScaleList.map((entry) => (
-            <SeznamVah
+            <ScalesList
               key={entry.SigfoxID}
               kod={entry.SigfoxID}
               name={entry.name}
@@ -41,4 +41,4 @@ const VyberVahu = (props) => {
     </>
   );
 };
-export default VyberVahu;
+export default ChooseScale;
