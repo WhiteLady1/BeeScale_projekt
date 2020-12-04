@@ -28,7 +28,7 @@ const Scale = styled.div`
   width: 320px;
   height: 377px;
   background-color: white;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
 `;
 
 const Prehled = (props) => {

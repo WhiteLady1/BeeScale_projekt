@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom';
 import { render } from 'react-dom';
 import './index.html';
-import './style.css';
 import GlobalStyle from './globalStyle';
 import Dashboard from './components/Prehled/Dashboard/Dashboard';
 import SignIn from './components/MainPage/SignIn/signIn';
