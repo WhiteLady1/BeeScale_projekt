@@ -28,6 +28,9 @@ export const Chart = styled.div`
   height: 400px;
   background-color: white;
   border-radius: 10px;
+  li {
+    padding-bottom: 15px;
+  }
 `;
 export const Button = styled.div`
   width: 250px;

@@ -17,6 +17,7 @@ body {
   border-left: #f7f8fa 1px solid;
   fill: rgb(56, 53, 37);
   height: 377px;
+  position: relative;
 }
 /*nejde netlify*/
 
