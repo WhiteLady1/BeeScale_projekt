@@ -1,9 +1,10 @@
 body {
   display: flex;
   flex-direction: row-reverse;
+  flex-direction: column-reverse;
   background-color: rgba(255, 255, 255, 0.89);
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
   justify-content: space-around;
   padding-bottom: 5px;
