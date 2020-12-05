@@ -4,14 +4,12 @@ export const FormGroup = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 100%;
   font-size: 20px;
   justify-content: space-around;
 `;
 export const Label = styled.label`
   paddind-left: 10px;
   margin-bottom: 0.5em;
-  width: 100%;
   font-size: 14px;
 `;
 

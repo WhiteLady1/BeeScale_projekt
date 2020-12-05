@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   margin: 10px;
   font-size: 20px;
   font-weight: 500;
+  justify-content: space-between;
   @media (min-width: 1025px) {
     flex-direction: row-reverse;
   }
@@ -24,7 +25,7 @@ export const TimeSelection = styled.div`
 `;
 
 export const Chart = styled.div`
-  width: 100%;
+  width: 90%;
   height: 400px;
   background-color: white;
   border-radius: 10px;
@@ -45,5 +46,15 @@ export const Button = styled.div`
   &:hover {
     background: #ffb802;
     color: white;
+  }
+`;
+export const NoData = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px 0px 20px;
+  @media (min-width: 1025px) {
+    flex: 10 0 auto;
   }
 `;

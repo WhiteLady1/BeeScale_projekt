@@ -16,7 +16,6 @@ export const Wrapper = styled.div`
   padding-left: 10px;
   display: flex;
   flex-direction: column;
-  width: 100%;
   @media (min-width: 1025px) {
     flex-direction: row;
   }
@@ -61,8 +60,9 @@ export const WrapperTem = styled.div`
 export const TemIn = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   font-size: 20px;
+  justify-content: space-between;
+  width: 100%;
   padding-bottom: 10px;
   @media (min-width: 1025px) {
     padding-bottom: 0px;
@@ -73,6 +73,7 @@ export const TemOut = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   font-size: 20px;
 `;
 
@@ -91,7 +92,7 @@ export const WrapperValue = styled.div`
 `;
 export const Value = styled.div`
   @media (min-width: 1025px) {
-    padding-left: 5px;
+    padding-left: 10px;
   }
 `;
 export const Unite = styled.div`

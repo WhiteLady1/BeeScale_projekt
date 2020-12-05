@@ -1,9 +1,10 @@
 body {
   display: flex;
   flex-direction: row-reverse;
+  flex-direction: column-reverse;
   background-color: rgba(255, 255, 255, 0.89);
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-start;
   justify-content: space-around;
   padding-bottom: 5px;
@@ -17,6 +18,7 @@ body {
   border-left: #f7f8fa 1px solid;
   fill: rgb(56, 53, 37);
   height: 377px;
+  width: 100%;
   position: relative;
 }
 /*nejde netlify*/

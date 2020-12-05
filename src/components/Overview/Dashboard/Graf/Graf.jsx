@@ -9,7 +9,9 @@ import {
   Tooltip,
   Legend,
 } from 'recharts';
-import { Button, Chart, TimeSelection, Wrapper } from './style';
+import { Icon, InlineIcon } from '@iconify/react';
+import beehiveOffOutline from '@iconify/icons-mdi/beehive-off-outline';
+import { Button, Chart, NoData, TimeSelection, Wrapper } from './style';
 
 export const parseDateTime = (dateTimeString) => {
   const [date, time] = dateTimeString.split(' ');
@@ -82,7 +84,13 @@ const Graf = (props) => {
             </ResponsiveContainer>
           </Chart>
         ) : (
-          <div> nemame data :( </div>
+          <div>
+            {' '}
+            <NoData>
+              <p>nemame data :(</p>
+              <Icon icon={beehiveOffOutline} style={{ fontSize: '80px' }} />
+            </NoData>
+          </div>
         )}
       </Wrapper>
     </>

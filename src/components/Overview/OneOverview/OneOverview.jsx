@@ -18,7 +18,7 @@ import {
   WrapperBody,
   WrapperHeader,
   WrapperIcon,
-} from './oneOverview';
+} from './oneOverviewStyle';
 
 const OneOverview = (props) => {
   return (

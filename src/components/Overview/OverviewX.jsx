@@ -1,10 +1,10 @@
 import React from 'react';
 import { usePersistedState } from '../index';
 import { scaleList } from '../index';
-import OneOverview from './OneOverview/oneOverview';
+import OneOverview from './OneOverview/OneOverview';
 import JednaVaha from './JednaVaha/JednaVaha';
 import { Link } from 'react-router-dom';
-import { Scale, Wrapper } from './overview';
+import { Scale, Wrapper } from './overviewStyle';
 
 const Overview = (props) => {
   const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
@@ -17,7 +17,7 @@ const Overview = (props) => {
       <Wrapper>
         {localStorageScaleList.map((scale) => {
           return (
-            <Link to={`/dashboard/${scale.SigfoxID}`}>
+            <Link key={scale.SigfoxID} to={`/dashboard/${scale.SigfoxID}`}>
               <Scale>
                 <JednaVaha key={scale.name} name={scale.name} />
                 <OneOverview
