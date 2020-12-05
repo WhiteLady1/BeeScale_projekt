@@ -36,7 +36,7 @@ const DataOfScale = (props) => {
             />
           </WrapperIcon>
           <WrapperValue>
-            <Value className="number">{ScalesData.weight}</Value>
+            <Value className="number">{ScalesData.weight || '0'}</Value>
             <Unite className="metric">Kg</Unite>
           </WrapperValue>
         </Values>
@@ -71,7 +71,9 @@ const DataOfScale = (props) => {
                 <p>out</p>
               </WrapperIcon>
               <WrapperValue>
-                <Value className="number">{ScalesData.temperatureOut}</Value>
+                <Value className="number">
+                  {ScalesData.temperatureOut || '0'}
+                </Value>
                 <Unite className="metric">°C</Unite>
               </WrapperValue>
             </TemOut>
@@ -86,7 +88,7 @@ const DataOfScale = (props) => {
             />
           </WrapperIcon>
           <WrapperValue>
-            <Value className="number">{ScalesData.humidity}</Value>
+            <Value className="number">{ScalesData.humidity || '0'}</Value>
             <Unite className="metric">%</Unite>
           </WrapperValue>
         </Values>
@@ -100,7 +102,7 @@ const DataOfScale = (props) => {
             />
           </WrapperIcon>
           <WrapperValue>
-            <Value className="number">{ScalesData.voltage}</Value>
+            <Value className="number">{ScalesData.voltage || '0'}</Value>
             <Unite className="metric">%</Unite>
           </WrapperValue>
         </Values>
