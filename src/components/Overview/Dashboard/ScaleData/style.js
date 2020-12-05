@@ -92,7 +92,7 @@ export const WrapperValue = styled.div`
 `;
 export const Value = styled.div`
   @media (min-width: 1025px) {
-    padding-left: 5px;
+    padding-left: 10px;
   }
 `;
 export const Unite = styled.div`
