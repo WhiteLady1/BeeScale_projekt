@@ -6,9 +6,15 @@ export const FormGroup = styled.div`
   align-items: center;
   font-size: 20px;
   justify-content: space-around;
+  -webkit-justify-content: flex-start;
+
+  a {
+    padding-left: 15px;
+  }
+
 `;
 export const Label = styled.label`
-  paddind-left: 10px;
+  margin-top: 0.5em;
   margin-bottom: 0.5em;
   font-size: 14px;
 `;

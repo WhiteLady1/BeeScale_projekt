@@ -111,7 +111,7 @@ const Graf = (props) => {
           <div>
             {' '}
             <NoData>
-              <p>nemame data :(</p>
+              <p>Nemáme data :(</p>
               <Icon icon={beehiveOffOutline} style={{ fontSize: '80px' }} />
             </NoData>
           </div>
