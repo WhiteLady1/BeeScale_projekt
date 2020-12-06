@@ -96,8 +96,7 @@ const Graf = (props) => {
                 <XAxis
                   dataKey="time"
                   tickCount={10}
-                  angle={30}
-                  textAnchor="start"
+                  style={{ fontSize: '12px' }}
                 />
                 ,
                 <YAxis tickCount={15} />

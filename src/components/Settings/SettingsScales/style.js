@@ -11,29 +11,29 @@ export const Cross = styled.div`
 `;
 
 export const Form = styled.form`
-font-size: 18px;
+  font-size: 18px;
 
-button {
-  width: 200px;
-  height: 50px;
-  text-align: center;
-  text-transform: uppercase;
-  background-color: white;
-  border-radius: 50px;
-  border: 1px solid #ededed;
-  margin: 5px;
-  padding: 5px 10px 5px 10px;
-  cursor: pointer;
-  &:hover {
-    background: #ffb802;
-    color: white;
+  button {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: white;
+    border-radius: 50px;
+    border: 1px solid #ededed;
+    margin: 5px;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+    &:hover {
+      background: #ffb802;
+      color: white;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
   }
-
-  a {
-  text-decoration: none;
-  color: white;
-}
-
 `;
 
 export const Input = styled.input`
