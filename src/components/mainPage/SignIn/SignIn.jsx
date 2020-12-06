@@ -20,9 +20,7 @@ const SignIn = () => {
         <Form>
           <Input type="text" placeholder="Uživatelské jméno" />
           <Input type="password" placeholder="Heslo" />
-          <Btn>
-            <Link to="/prehled">Přihlásit</Link>
-          </Btn>
+          <Btn to="/prehled">Přihlásit</Btn>
           <p>Nebo</p>
           <LogInGoogle>
             <GoogleBtn />

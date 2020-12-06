@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { usePersistedState } from '../../index';
 import { scaleList, newEmptyScale } from '../../index';
-import { Form, Input, Label, Ul, Wrapper } from './style';
+import { Form, Input, Label, Ul, Cross } from './style';
 
 /*const transformedData = {};
 data.forEach((item) => {
@@ -24,6 +24,15 @@ const SettingsScales = () => {
         {formState.map((scale, i) => {
           return (
             <li key={i}>
+              <Cross
+                onClick={() => {
+                  const newState = [...formState];
+                  newState.splice(i, 1);
+                  setFormState(newState);
+                }}
+              >
+                ✕
+              </Cross>
               <Label>
                 ID Váhy:
                 <Input

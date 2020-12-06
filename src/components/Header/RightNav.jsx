@@ -5,7 +5,6 @@ import Ul, { ListItem } from './rightNavstyle';
 const RightNav = (props) => {
   const location = useLocation();
   const pathName = location.pathname;
-  console.log(pathName === '/prehled');
   const history = useHistory();
   const handleClick = (locationTo) => {
     props.setOpen(false);

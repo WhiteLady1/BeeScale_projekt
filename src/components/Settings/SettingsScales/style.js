@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+export const Cross = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px;
+  width: 20px;
+  height: 20px;
+  color: black;
+`;
+
 export const Form = styled.form`
 font-size: 18px;
 
@@ -19,24 +29,25 @@ button {
     color: white;
   }
 
-button a {
+  a {
   text-decoration: none;
   color: white;
 }
 
 `;
+
 export const Input = styled.input`
-background: white;
-width: 100%;
-border: 1px solid #ededed;
-border-radius: 4px
-box-sizing: border-box;
-font-size: 14px;
-padding: 5px;
-font-size: 15px;
-@media (min-width: 600px) {
-  display: flex;
-}
+  background: white;
+  width: 100%;
+  border: 1px solid #ededed;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 5px;
+  font-size: 15px;
+  @media (min-width: 600px) {
+    display: flex;
+  }
 `;
 
 export const Label = styled.label`
@@ -54,6 +65,7 @@ export const Ul = styled.ul`
   }
 
   li {
+    position: relative;
     padding: 30px;
     border-radius: 50px;
     border: 1px solid #ededed;
