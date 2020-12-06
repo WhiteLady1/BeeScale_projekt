@@ -1,12 +1,25 @@
-# Project Starters
+# BeeScale
 
-Základní nastavení projektu pro Reactovou webovou aplikaci s Webpackem.
+Aplikace pro včelí váhy. Sběr a prezentace údajů ze senzorů vah. Nový front-end pro stávající aplikaci (https://beescale.cloud/).
 
-## Vývoj
+## Funkčnost
 
-1. Nainstalujte závislosti příkazem `npm install`.
-1. Spusťte watch s dev serverem příkazem `npm run start`.
+1. Přihlašovací stránky
+  -příprava na přihlášení
+  -zapojený přístup přes google
+2. Přehled
+3. Dashboard
+  -příprava na komponentu "Deníček"
+4. Nastavení
+  -odhlášení
+  -přidání a odebrání váhy
+  -příprava nastavení pro změnu údajů uživatele
+  
+Absence stávající databáze nahrazena souborem s daty 3 vah za 8. měsíc. 
+  
+### Stav & Budoucnost
 
-## Produkční sestavení
+Napojení nového front-endu na stávající back-end. 
+Doprogramování komponenty "Deníček". 
+Doladění dle požadavků majitele BeeScale.
 
-Pro produkční sestavení pusťte příkaz `npm run build`.
