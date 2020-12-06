@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { usePersistedState } from '../../index';
 import { scaleList, newEmptyScale } from '../../index';
-import { Form, Input, Label, Ul } from './style';
+import { Form, Input, Label, Ul, Div } from './style';
 
 /*const transformedData = {};
 data.forEach((item) => {
@@ -25,49 +25,54 @@ const SettingsScales = () => {
           {formState.map((scale, i) => {
             return (
               <li key={i}>
-                <Label>
-                  ID Váhy:
-                  <Input
-                    value={scale.SigfoxID}
-                    onChange={(e) => {
-                      //e.preventDefault();
-                      const newFormState = [...formState];
-                      const newScaleValue = { ...scale };
-                      newScaleValue.SigfoxID = e.target.value;
-                      newFormState[i] = newScaleValue;
-                      setFormState(newFormState);
-                    }}
-                  />
-                </Label>
-                <br />
-                <Label>
-                  Jméno Váhy:
-                  <Input
-                    value={scale.name}
-                    onChange={(e) => {
-                      e.preventDefault();
-                      const newFormState = [...formState];
-                      const newScaleValue = { ...scale };
-                      newScaleValue.name = e.target.value;
-                      newFormState[i] = newScaleValue;
-                      setFormState(newFormState);
-                    }}
-                  />
-                </Label>
-                <Label>
-                  Město nebo obec:{' '}
-                  <Input
-                    value={scale.city}
-                    onChange={(e) => {
-                      e.preventDefault();
-                      const newFormState = [...formState];
-                      const newScaleValue = { ...scale };
-                      newScaleValue.city = e.target.value;
-                      newFormState[i] = newScaleValue;
-                      setFormState(newFormState);
-                    }}
-                  />
-                </Label>
+                <Div>
+                  <Label>
+                    ID Váhy:
+                    <Input
+                      value={scale.SigfoxID}
+                      onChange={(e) => {
+                        //e.preventDefault();
+                        const newFormState = [...formState];
+                        const newScaleValue = { ...scale };
+                        newScaleValue.SigfoxID = e.target.value;
+                        newFormState[i] = newScaleValue;
+                        setFormState(newFormState);
+                      }}
+                    />
+                  </Label>
+                </Div>
+                <Div>
+                  <Label>
+                    Jméno Váhy:
+                    <Input
+                      value={scale.name}
+                      onChange={(e) => {
+                        e.preventDefault();
+                        const newFormState = [...formState];
+                        const newScaleValue = { ...scale };
+                        newScaleValue.name = e.target.value;
+                        newFormState[i] = newScaleValue;
+                        setFormState(newFormState);
+                      }}
+                    />
+                  </Label>
+                </Div>
+                <Div>
+                  <Label>
+                    Město nebo obec:{' '}
+                    <Input
+                      value={scale.city}
+                      onChange={(e) => {
+                        e.preventDefault();
+                        const newFormState = [...formState];
+                        const newScaleValue = { ...scale };
+                        newScaleValue.city = e.target.value;
+                        newFormState[i] = newScaleValue;
+                        setFormState(newFormState);
+                      }}
+                    />
+                  </Label>
+                </Div>
               </li>
             );
           })}
@@ -86,7 +91,7 @@ const SettingsScales = () => {
             setFormState(newFormState);
           }}
         >
-          Přdat váhu
+          Přidat váhu
         </button>
       </Form>
     </div>

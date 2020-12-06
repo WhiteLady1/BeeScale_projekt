@@ -42,6 +42,11 @@ list-style: none;
 
 li {
   padding-bottom: 10px;
+  display:flex;
+flex-direction: column;
 }
+`
+
+export const Div = styled.div`
 
 `
