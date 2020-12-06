@@ -107,13 +107,10 @@ const Graf = (props) => {
             </ResponsiveContainer>
           </Chart>
         ) : (
-          <div>
-            {' '}
-            <NoData>
-              <p>Nemáme data :(</p>
-              <Icon icon={beehiveOffOutline} style={{ fontSize: '80px' }} />
-            </NoData>
-          </div>
+          <NoData>
+            <p>Nemáme data :(</p>
+            <Icon icon={beehiveOffOutline} style={{ fontSize: '80px' }} />
+          </NoData>
         )}
       </Wrapper>
     </>
