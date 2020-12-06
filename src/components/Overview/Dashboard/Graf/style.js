@@ -33,6 +33,9 @@ export const Chart = styled.div`
   li {
     padding-bottom: 15px;
   }
+  @media (min-width: 1400px) {
+    height: 400px;
+  }
 `;
 export const Button = styled.div`
   width: 250px;
