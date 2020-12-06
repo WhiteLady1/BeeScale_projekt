@@ -20,6 +20,13 @@ body {
   height: 377px;
   width: 100%;
   position: relative;
+  @media (min-width: 600px) {
+    align-items: center;
+  }
+  &:hover {
+    background: #ffb802;
+    color: white;
+  }
 }
 /*nejde netlify*/
 

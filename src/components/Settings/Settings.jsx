@@ -9,22 +9,23 @@ import {
 import SettingsScales from './SettingsScales/SettingsScales';
 import SettingsUser from './SettingsUser/SettingsUser';
 import GoogleBtn from '../../GoogleBtn/GoogleBtn';
+import { ScalesSettings, SettingsLeft, UserSettings, Wrapper } from './style';
+
 const Settings = () => {
   let { path, url } = useRouteMatch();
   return (
     <>
-      <h2>Nastavení</h2>
-      <div>
-        <ul>
-          <li>
+      <Wrapper>
+        <SettingsLeft>
+          <UserSettings>
             <Link to={`${url}/user`}>Nastavení užitatele</Link>
-          </li>
-          <li>
+          </UserSettings>
+          <ScalesSettings>
             <Link to={`${url}/scales`}>Nastavení vah</Link>
-          </li>
-        </ul>
-      </div>
-      <GoogleBtn />
+          </ScalesSettings>
+        </SettingsLeft>
+        <GoogleBtn />
+      </Wrapper>
       <Switch>
         <Route exact path={path}></Route>
         <Route path={`${path}/:topicId`}>

@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
+width:300px;
 font-size: 18px;
+margin-left: 20px;
 
 button {
   width: 200px;
@@ -43,24 +45,4 @@ export const Label = styled.label`
   display: flex;
   flex-direction: column;
   padding: 5px;
-`;
-
-export const Ul = styled.ul`
-  list-style: none;
-  padding: 0;
-  @media (min-width: 600px) {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  li {
-    padding: 30px;
-    border-radius: 50px;
-    border: 1px solid #ededed;
-    margin: 10px;
-    margin-bottom: 20px;
-    @media (min-width: 600px) {
-      width: 270px;
-    }
-  }
 `;

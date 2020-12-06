@@ -26,12 +26,15 @@ export const TimeSelection = styled.div`
 
 export const Chart = styled.div`
   width: 90%;
-  height: 400px;
+  height: 300px;
   background-color: white;
   border-radius: 10px;
   border: 1px solid #ededed;
   li {
     padding-bottom: 15px;
+  }
+  @media (min-width: 1400px) {
+    height: 400px;
   }
 `;
 export const Button = styled.div`
