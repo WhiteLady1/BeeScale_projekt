@@ -1,25 +1,24 @@
 import React from 'react';
+import { Form, Input, Label } from './style';
 
 const SettingsUser = () => {
   return (
-    <div>
-      <h3>Jméno uživatele</h3>
-      <form>
-        <h4>Změna hesla</h4>
-        <label>
-          Staré heslo: <input />
-        </label>
-        <div className="checkPassword">
-          <label>
-            Nové heslo: <input />
-          </label>
-          <label>
-            Ověření hesla: <input />
-          </label>
-        </div>
-        <button>Uložit heslo</button>
-      </form>
-    </div>
+    <Form>
+      <h3>Jméno uživatele: Tom1</h3>
+      <Label>
+        Změna hesla
+        <Label>
+          Staré heslo: <Input />
+        </Label>
+        <Label>
+          Nové heslo: <Input />
+        </Label>
+        <Label>
+          Ověření hesla: <Input />
+        </Label>
+      </Label>
+      <button>Uložit heslo</button>
+    </Form>
   );
 };
 export default SettingsUser;
