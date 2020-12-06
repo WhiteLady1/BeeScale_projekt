@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { usePersistedState } from '../../index';
 import { scaleList, newEmptyScale } from '../../index';
+import { Form, Input, Label, Ul } from './style';
 
 /*const transformedData = {};
 data.forEach((item) => {
@@ -19,14 +20,14 @@ const SettingsScales = () => {
 
   return (
     <div className="settingsScale">
-      <form>
-        <ul>
+      <Form>
+        <Ul>
           {formState.map((scale, i) => {
             return (
               <li key={i}>
-                <label>
+                <Label>
                   ID Váhy:
-                  <input
+                  <Input
                     value={scale.SigfoxID}
                     onChange={(e) => {
                       //e.preventDefault();
@@ -37,11 +38,11 @@ const SettingsScales = () => {
                       setFormState(newFormState);
                     }}
                   />
-                </label>
+                </Label>
                 <br />
-                <label>
-                  Jméno:
-                  <input
+                <Label>
+                  Jméno Váhy:
+                  <Input
                     value={scale.name}
                     onChange={(e) => {
                       e.preventDefault();
@@ -52,10 +53,10 @@ const SettingsScales = () => {
                       setFormState(newFormState);
                     }}
                   />
-                </label>
-                <label>
+                </Label>
+                <Label>
                   Město nebo obec:{' '}
-                  <input
+                  <Input
                     value={scale.city}
                     onChange={(e) => {
                       e.preventDefault();
@@ -66,11 +67,11 @@ const SettingsScales = () => {
                       setFormState(newFormState);
                     }}
                   />
-                </label>
+                </Label>
               </li>
             );
           })}
-        </ul>
+        </Ul>
         <button
           onClick={() => {
             setlocalStorageScaleList(formState);
@@ -87,7 +88,7 @@ const SettingsScales = () => {
         >
           Přdat váhu
         </button>
-      </form>
+      </Form>
     </div>
   );
 };
