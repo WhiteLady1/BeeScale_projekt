@@ -1,32 +1,43 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import Ul from './rightNavstyle';
+import { useLocation, useHistory } from 'react-router-dom';
+import Ul, { ListItem } from './rightNavstyle';
 
 const RightNav = (props) => {
-  /*const location = useLocation();
-  if (location.pathname === '/dashboard') {
-    return null;
-  }*/
-  const [openX, setOpenX] = useState(props.open);
-  console.log(openX);
+  const location = useLocation();
+  const pathName = location.pathname;
+  console.log(pathName === '/prehled');
+  const history = useHistory();
+  const handleClick = (locationTo) => {
+    props.setOpen(false);
+    history.push(locationTo);
+  };
 
   return (
     <>
-      <Ul open={props.open} onClick={() => setOpenX(!openX)}>
+      <Ul open={props.open}>
         <li>
-          <Link className="nav nav-link" to="/prehled">
+          <ListItem
+            selected={pathName === '/prehled'}
+            onClick={() => handleClick('/prehled')}
+          >
             Přehled
-          </Link>
+          </ListItem>
         </li>
         <li>
-          <Link className="nav nav-link" to="/dashboard">
-            Dashboard
-          </Link>
+          <ListItem
+            selected={pathName === '/dashboard'}
+            onClick={() => handleClick('/dashboard')}
+          >
+            Dastboard
+          </ListItem>
         </li>
         <li>
-          <Link className="nav nav-link" to="/settings">
+          <ListItem
+            selected={pathName === '/settings'}
+            onClick={() => handleClick('/settings')}
+          >
             Nastavení
-          </Link>
+          </ListItem>
         </li>
       </Ul>
     </>

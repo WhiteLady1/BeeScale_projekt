@@ -1,15 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Burger from './Burger';
 import StyledHeader from './navBarStyle';
 
 //import settingsIcon from '@iconify/icons-carbon/settings';
 
 const NavBar = () => {
-  /*const location = useLocation();
+  const location = useLocation();
   if (location.pathname === '/') {
     return null;
-  }*/
+  }
 
   return (
     <>

@@ -1,8 +1,15 @@
 import styled from 'styled-components';
 
+export const ListItem = styled.div`
+  color: ${(props) => (props.selected ? '#ffb802' : 'black')};
+  &:hover {
+    color: #ffb802;
+  }
+`;
 const Ul = styled.ul`
   list-style: none;
   display: flex;
+  justify-content: center;
 
   li {
     text-transform: uppercase;
@@ -23,12 +30,11 @@ const Ul = styled.ul`
     transition: transform 0.3s ease-in-out;
 
     li {
-      color: black;
       margin-top: 10px;
     }
 
     li:first-child {
-      padding-top: 30px;
+      padding-top: 0px;
     }
   }
 `;
