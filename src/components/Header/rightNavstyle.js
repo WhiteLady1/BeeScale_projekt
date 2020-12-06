@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 
 export const ListItem = styled.div`
-  color: ${(props) => (props.selected ? '#ffb802' : 'black')};
+  color: black;
+  border-bottom: ${(props) => (props.selected ? 'black 1px solid' : '')};
   &:hover {
     color: #ffb802;
+  }
+  @media (min-width: 768px) {
+    color: ${(props) => (props.selected ? '#ffb802' : 'black')};
+    border-bottom: ${(props) => (props.selected ? '#ffb802 1px solid' : '')};
+    cursor: pointer;
   }
 `;
 const Ul = styled.ul`

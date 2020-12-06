@@ -27,7 +27,7 @@ const RightNav = (props) => {
             selected={pathName === '/dashboard'}
             onClick={() => handleClick('/dashboard')}
           >
-            Dastboard
+            Dashboard
           </ListItem>
         </li>
         <li>
