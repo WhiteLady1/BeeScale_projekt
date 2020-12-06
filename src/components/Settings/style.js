@@ -11,6 +11,7 @@ export const SettingsLeft = styled.div`
   flex-direction: column;
   @media (min-width: 1025px) {
     flex-direction: row;
+    align-items: center;
   }
 `;
 
@@ -25,15 +26,21 @@ export const UserSettings = styled.div`
     background: #ffb802;
     color: white;
   }
+  @media (min-width: 1025px) {
+    margin-bottom: 0;
+  }
 `;
 export const ScalesSettings = styled.div`
-  text-align: center;
   padding: 5px 20px 5px 20px;
+  text-align: center;
   border-radius: 5px;
   cursor: pointer;
   border: 1px solid #ededed;
   &:hover {
     background: #ffb802;
     color: white;
+  }
+  @media (min-width: 1025px) {
+    margin-left: 10px;
   }
 `;
