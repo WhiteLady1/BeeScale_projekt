@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
+font-size: 18px;
 
 button {
   width: 200px;
@@ -22,26 +23,44 @@ button a {
   text-decoration: none;
   color: white;
 }
-`
+
+`;
 export const Input = styled.input`
 background: white;
-width: 75%;
+width: 100%;
 border: 1px solid #ededed;
 border-radius: 4px
 box-sizing: border-box;
 font-size: 14px;
 padding: 5px;
-`
+font-size: 15px;
+@media (min-width: 600px) {
+  display: flex;
+}
+`;
 
 export const Label = styled.label`
-padding: 5px;
-`
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+`;
 
 export const Ul = styled.ul`
-list-style: none;
+  list-style: none;
+  padding: 0;
+  @media (min-width: 600px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-li {
-  padding-bottom: 10px;
-}
-
-`
+  li {
+    padding: 30px;
+    border-radius: 50px;
+    border: 1px solid #ededed;
+    margin: 10px;
+    margin-bottom: 20px;
+    @media (min-width: 600px) {
+      width: 270px;
+    }
+  }
+`;
