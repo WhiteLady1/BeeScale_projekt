@@ -17,12 +17,12 @@ const WrapperName = styled.div`
   }
 `;
 
-const JednaVaha = (props) => {
-  //console.log(`JednaVaha: ${props}`);
+const OneScale = (props) => {
+  //console.log(`OneScale: ${props}`);
   return (
     <>
       <WrapperName>{props.name}</WrapperName>
     </>
   );
 };
-export default JednaVaha;
+export default OneScale;

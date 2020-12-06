@@ -14,7 +14,7 @@ const ChooseScale = (props) => {
   return (
     <>
       <FormGroup>
-        <Label>Zobraz údaje pro váhu:</Label>
+        <Label>Údaje pro váhu:</Label>
         <Select
           value={props.chosenScale}
           name="vahy"

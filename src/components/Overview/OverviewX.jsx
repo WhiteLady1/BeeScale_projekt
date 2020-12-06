@@ -2,7 +2,7 @@ import React from 'react';
 import { usePersistedState } from '../index';
 import { scaleList } from '../index';
 import OneOverview from './OneOverview/OneOverview';
-import JednaVaha from './JednaVaha/JednaVaha';
+import OneScale from './OneScale/OneScale';
 import { Link } from 'react-router-dom';
 import { Scale, Wrapper } from './overviewStyle';
 
@@ -19,7 +19,7 @@ const Overview = (props) => {
           return (
             <Link key={scale.SigfoxID} to={`/dashboard/${scale.SigfoxID}`}>
               <Scale>
-                <JednaVaha key={scale.name} name={scale.name} />
+                <OneScale key={scale.name} name={scale.name} />
                 <OneOverview
                   key={scale.SigfoxID}
                   overview={props.posledniData[scale.SigfoxID]}
