@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Link,
   Switch,
@@ -13,16 +13,41 @@ import { ScalesSettings, SettingsLeft, UserSettings, Wrapper } from './style';
 
 const Settings = () => {
   let { path, url } = useRouteMatch();
+  const [selected, setSelected] = useState('');
+
+  const handleClick = (choise) => {
+    setSelected('');
+    switch (choise) {
+      case 'scales':
+        setSelected('scales');
+        break;
+      case 'user':
+        setSelected('user');
+        break;
+    }
+  };
+
   return (
     <>
       <Wrapper>
         <SettingsLeft>
-          <UserSettings>
-            <Link to={`${url}/user`}>Nastavení užitatele</Link>
-          </UserSettings>
-          <ScalesSettings>
-            <Link to={`${url}/scales`}>Nastavení vah</Link>
-          </ScalesSettings>
+          <Link to={`${url}/user`}>
+            <UserSettings
+              onClick={() => handleClick('user')}
+              selected={selected === 'user' ? true : false}
+            >
+              Nastavení užitatele
+            </UserSettings>
+          </Link>
+
+          <Link to={`${url}/scales`}>
+            <ScalesSettings
+              onClick={() => handleClick('scales')}
+              selected={selected === 'scales' ? true : false}
+            >
+              Nastavení vah
+            </ScalesSettings>
+          </Link>
         </SettingsLeft>
         <GoogleBtn />
       </Wrapper>

@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import Ul from './rightNavstyle';
 
 const RightNav = ({ open }) => {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
-      <Ul open={open}>
+      <Ul open={open} onClick={() => setOpen(!open)}>
         <li>
           <Link className="nav nav-link" to="/prehled">
             Přehled

@@ -22,6 +22,9 @@ export const UserSettings = styled.div`
   cursor: pointer;
   border: 1px solid #ededed;
   margin-bottom: 10px;
+  background-color: ${(props) =>
+    props.selected === true ? '#ffb802' : 'white'};
+  color: ${(props) => (props.selected === true ? 'white' : 'black')};
   &:hover {
     background: #ffb802;
     color: white;
@@ -36,6 +39,9 @@ export const ScalesSettings = styled.div`
   border-radius: 5px;
   cursor: pointer;
   border: 1px solid #ededed;
+  background-color: ${(props) =>
+    props.selected === true ? '#ffb802' : 'white'};
+  color: ${(props) => (props.selected === true ? 'white' : 'black')};
   &:hover {
     background: #ffb802;
     color: white;
