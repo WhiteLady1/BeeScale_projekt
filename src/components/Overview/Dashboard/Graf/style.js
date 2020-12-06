@@ -40,9 +40,8 @@ export const Chart = styled.div`
 export const Button = styled.div`
   width: 250px;
   text-align: center;
-  background-color: ${(props) =>
-    props.selected === true ? '#ffb802' : 'white'};
-  color: ${(props) => (props.selected === true ? 'white' : 'black')};
+  background-color: ${(props) => (props.selected ? '#ffb802' : 'white')};
+  color: ${(props) => (props.selected ? 'white' : 'black')};
   border-radius: 50px;
   border: 1px solid #ededed;
   margin: 5px;
@@ -59,7 +58,6 @@ export const NoData = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px 20px 0px 20px;
-
 
   @media (min-width: 1025px) {
     flex: 10 0 auto;

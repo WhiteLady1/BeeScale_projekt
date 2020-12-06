@@ -27,9 +27,8 @@ export const Values = styled.div`
   justify-content: space-between;
   font-size: 20px;
   padding: 10px 50px 10px 50px;
-  background-color: ${(props) =>
-    props.selected === true ? '#ffb802' : 'white'};
-  color: ${(props) => (props.selected === true ? 'white' : 'black')};
+  background-color: ${(props) => (props.selected ? '#ffb802' : 'white')};
+  color: ${(props) => (props.selected ? 'white' : 'black')};
   border: 1px solid #ededed;
   border-radius: 50px;
   margin-right: 15px;
