@@ -59,6 +59,8 @@ export const NoData = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px 20px 0px 20px;
+
+
   @media (min-width: 1025px) {
     flex: 10 0 auto;
   }

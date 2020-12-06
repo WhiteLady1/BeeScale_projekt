@@ -73,6 +73,7 @@ export const TemIn = styled.div`
   padding-bottom: 10px;
   @media (min-width: 1025px) {
     padding-bottom: 0px;
+    justify-content: center;
   }
 `;
 
@@ -82,6 +83,9 @@ export const TemOut = styled.div`
   justify-content: space-between;
   width: 100%;
   font-size: 20px;
+  @media (min-width: 1025px) {
+    justify-content: center;
+  }
 `;
 
 export const WrapperIcon = styled.div`
