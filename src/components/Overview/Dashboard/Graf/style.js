@@ -40,7 +40,9 @@ export const Chart = styled.div`
 export const Button = styled.div`
   width: 250px;
   text-align: center;
-  background-color: white;
+  background-color: ${(props) =>
+    props.selected === true ? '#ffb802' : 'white'};
+  color: ${(props) => (props.selected === true ? 'white' : 'black')};
   border-radius: 50px;
   border: 1px solid #ededed;
   margin: 5px;

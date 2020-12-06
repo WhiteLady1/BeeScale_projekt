@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import weightHanging from '@iconify/icons-fa-solid/weight-hanging';
 import tempIcon from '@iconify/icons-raphael/temp';
@@ -20,14 +20,35 @@ import {
 const DataOfScale = (props) => {
   const ScalesData = props.data[props.data.length - 1];
 
+  const [selected, setSelected] = useState('');
+
   const handleClick = (oneMetric) => () => {
     props.setMetric(oneMetric);
+    setSelected('');
+    switch (oneMetric) {
+      case 'weight':
+        setSelected('weight');
+        break;
+      case 'temperatureOut':
+        setSelected('temperatureOut');
+        break;
+      case 'humidity':
+        setSelected('humidity');
+        break;
+      case 'voltage':
+        setSelected('voltage');
+        break;
+    }
   };
 
   return (
     <>
       <Wrapper>
-        <Values className="btn weight" onClick={handleClick('weight')}>
+        <Values
+          className="btn weight"
+          onClick={handleClick('weight')}
+          selected={selected === 'weight' ? true : false}
+        >
           <WrapperIcon>
             <Icon
               className="icon"
@@ -43,6 +64,7 @@ const DataOfScale = (props) => {
         <Values
           className="btn temperature"
           onClick={handleClick('temperatureOut')}
+          selected={selected === 'temperatureOut' ? true : false}
         >
           <WrapperTem>
             <TemIn>
@@ -79,7 +101,11 @@ const DataOfScale = (props) => {
             </TemOut>
           </WrapperTem>
         </Values>
-        <Values className="btn humidity" onClick={handleClick('humidity')}>
+        <Values
+          className="btn humidity"
+          onClick={handleClick('humidity')}
+          selected={selected === 'humidity' ? true : false}
+        >
           <WrapperIcon>
             <Icon
               className="icon"
@@ -92,7 +118,11 @@ const DataOfScale = (props) => {
             <Unite className="metric">%</Unite>
           </WrapperValue>
         </Values>
-        <Values className="btn voltage" onClick={handleClick('voltage')}>
+        <Values
+          className="btn voltage"
+          onClick={handleClick('voltage')}
+          selected={selected === 'voltage' ? true : false}
+        >
           <WrapperIcon>
             <Icon
               className="icon"

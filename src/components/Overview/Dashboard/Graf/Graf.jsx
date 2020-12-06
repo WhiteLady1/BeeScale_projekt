@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   ResponsiveContainer,
   LineChart,
@@ -21,31 +21,55 @@ export const parseDateTime = (dateTimeString) => {
 };
 
 const Graf = (props) => {
+  const [selected, setSelected] = useState('');
+  const handleClick = (time) => {
+    props.setTimeOffset(time);
+    setSelected('');
+    switch (time) {
+      case 24:
+        setSelected(24);
+        break;
+      case 48:
+        setSelected(48);
+        break;
+      case 24 * 7:
+        setSelected(24 * 7);
+        break;
+      case 24 * 30:
+        setSelected(24 * 30);
+        break;
+    }
+  };
+
   return (
     <>
       <Wrapper>
         <TimeSelection>
           <Button
             className="btn btn-first"
-            onClick={() => props.setTimeOffset(24)}
+            onClick={() => handleClick(24)}
+            selected={selected === 24 ? true : false}
           >
             24 h
           </Button>
           <Button
             className="btn btn-second"
-            onClick={() => props.setTimeOffset(48)}
+            onClick={() => handleClick(48)}
+            selected={selected === 48 ? true : false}
           >
             48 h
           </Button>
           <Button
             className="btn btn-third"
-            onClick={() => props.setTimeOffset(24 * 7)}
+            onClick={() => handleClick(24 * 7)}
+            selected={selected === 24 * 7 ? true : false}
           >
             7 d
           </Button>
           <Button
             className="btn btn-fourt"
-            onClick={() => props.setTimeOffset(24 * 30)}
+            onClick={() => handleClick(24 * 30)}
+            selected={selected === 24 * 30 ? true : false}
           >
             30 d
           </Button>
