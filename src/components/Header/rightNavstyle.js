@@ -13,7 +13,8 @@ const Ul = styled.ul`
     flex-flow: column nowrap;
     background-color: #ffb802;
     position: fixed;
-    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
+    transform: ${(props) =>
+      props.open ? 'translateX(0)' : 'translateX(100%)'};
     margin: 0;
     top: 0;
     right: 0;

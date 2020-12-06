@@ -2,23 +2,19 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Ul from './rightNavstyle';
 
-const RightNav = ({ open }) => {
+const RightNav = (props) => {
   /*const location = useLocation();
   if (location.pathname === '/dashboard') {
     return null;
   }*/
-  //const [close, setClose] = useState(false);
+  const [openX, setOpenX] = useState(props.open);
+  console.log(openX);
 
   return (
     <>
-      <Ul open={open}>
+      <Ul open={props.open} onClick={() => setOpenX(!openX)}>
         <li>
-          <Link
-            //close={close}
-            //onClick={() => setClose(!close)}
-            className="nav nav-link"
-            to="/prehled"
-          >
+          <Link className="nav nav-link" to="/prehled">
             Přehled
           </Link>
         </li>

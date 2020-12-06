@@ -20,7 +20,7 @@ import {
 const DataOfScale = (props) => {
   const ScalesData = props.data[props.data.length - 1];
 
-  const [selected, setSelected] = useState('');
+  const [selected, setSelected] = useState('weight');
 
   const handleClick = (oneMetric) => () => {
     props.setMetric(oneMetric);
