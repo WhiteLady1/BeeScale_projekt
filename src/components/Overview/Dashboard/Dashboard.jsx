@@ -6,6 +6,7 @@ import Graf from './Graf/Graf';
 import Alert from './Alert/Alert';
 import { useParams } from 'react-router-dom';
 import { Chart, SelectedMenu, Comments, Container, Values, Map } from './style';
+import { Weather } from './Weather/Weather';
 
 const Dashboard = (props) => {
   const { id } = useParams();
@@ -28,6 +29,7 @@ const Dashboard = (props) => {
             scaleOptions={Object.keys(transformedData)}
           />
         </SelectedMenu>
+        <Weather scale={scaleID} />
         <Values>
           {data.length === 0 ? (
             <DataOfScale vaha={scaleID} data={[{}]} setMetric={setMetric} />
