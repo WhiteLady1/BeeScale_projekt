@@ -15,16 +15,9 @@ const TOKEN =
   'pk.eyJ1Ijoid2hpdGVsYWR5IiwiYSI6ImNraHVvMmozODFldGoycGt6ZDZlNjRwZmUifQ.vejjMGJgs0GlqR9Ccy6xeg';
 
 export const Mapa = (props) => {
-  const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
-    scaleList,
-    'scaleList',
-  );
-  const city = localStorageScaleList.find(
-    (scale) => scale.SigfoxID === props.vaha,
-  ).city;
-  useEffect(() => {
+  /* useEffect(() => {
     fetch(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?access_token=${TOKEN}`,
+      `https://api.mapbox.com/geocoding/v5/mapbox.places/${props.city}.json?access_token=${TOKEN}`,
     )
       .then((resp) => resp.json())
       .then((json) => {
@@ -38,7 +31,8 @@ export const Mapa = (props) => {
           longitude: json.features[0].geometry.coordinates[0],
         });
       });
-  }, [city]);
+  }, [props.city]);
+
   const [viewport, setViewport] = useState(
     {
       latitude: 50.084209699999995,
@@ -47,7 +41,11 @@ export const Mapa = (props) => {
     },
     [],
   );
-  const [mesto, setMesto] = useState(null);
+  const [mesto, setMesto] = useState(null);  */
+
+  const newViewport = (data) => {
+    props.changeViewport(data);
+  };
   const seznamMapy = {
     version: 8,
     sources: {
@@ -71,10 +69,10 @@ export const Mapa = (props) => {
   return (
     <MapStyled>
       <ReactMapGL
-        {...viewport}
+        {...props.viewport}
         width="100%"
         height={200}
-        onViewportChange={(nextViewport) => setViewport(nextViewport)}
+        onViewportChange={(nextViewport) => newViewport(nextViewport)}
         mapboxApiAccessToken="pk.eyJ1Ijoid2hpdGVsYWR5IiwiYSI6ImNraHVvMmozODFldGoycGt6ZDZlNjRwZmUifQ.vejjMGJgs0GlqR9Ccy6xeg"
         mapStyle={seznamMapy}
       >
@@ -82,31 +80,26 @@ export const Mapa = (props) => {
           <NavigationControl />
           <GeolocateControl />
         </Navigation>
-        {mesto && (
+        {props.mesto && (
           <Marker
-            latitude={mesto.latitude}
-            longitude={mesto.longitude}
+            latitude={props.mesto.latitude}
+            longitude={props.mesto.longitude}
             offsetLeft={-25}
             offsetTop={-50}
           >
             <MarkerBtn onClick={() => setPopupOtevren(true)}>
-              <img
-                src={spendlikUrl}
-                width={50}
-                height={50}
-                alt="Přibyslavská"
-              />
+              <img src={spendlikUrl} width={50} height={50} alt="Adresa úlu" />
             </MarkerBtn>
           </Marker>
         )}
         {popupOtevren && mesto && (
           <Popup
-            latitude={mesto.latitude}
-            longitude={mesto.longitude}
+            latitude={props.mesto.latitude}
+            longitude={props.mesto.longitude}
             offsetTop={-50}
             onClose={() => setPopupOtevren(false)}
           >
-            {city}
+            {props.city}
           </Popup>
         )}
         <MapSeznam>
