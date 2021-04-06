@@ -40,11 +40,6 @@ const Dashboard = (props) => {
     )
       .then((resp) => resp.json())
       .then((json) => {
-        setViewport({
-          ...viewport,
-          latitude: json.features[0].geometry.coordinates[1],
-          longitude: json.features[0].geometry.coordinates[0],
-        });
         setMesto({
           latitude: json.features[0].geometry.coordinates[1],
           longitude: json.features[0].geometry.coordinates[0],
@@ -52,20 +47,8 @@ const Dashboard = (props) => {
       });
   }, [city]);
 
-  const [viewport, setViewport] = useState(
-    {
-      latitude: 50.084209699999995,
-      longitude: 14.4477191,
-      zoom: 15,
-    },
-    [],
-  );
   const [mesto, setMesto] = useState(null);
-  console.log(mesto);
-  const handleChangeViewport = (data) => {
-    setViewport(data);
-  };
-  console.log(viewport);
+
   return (
     <>
       <Container>
@@ -76,7 +59,7 @@ const Dashboard = (props) => {
             scaleOptions={Object.keys(transformedData)}
           />
         </SelectedMenu>
-        <Weather city={city} />
+        <Weather city={city} mesto={mesto} />
         <Values>
           {data.length === 0 ? (
             <DataOfScale vaha={scaleID} data={[{}]} setMetric={setMetric} />
@@ -96,11 +79,7 @@ const Dashboard = (props) => {
           <Alert />
         </Comments>
         <Map>
-          <Mapa
-            mesto={mesto}
-            city={city}
-            changeViewport={handleChangeViewport}
-          />
+          <Mapa city={city} />
         </Map>
       </Container>
     </>

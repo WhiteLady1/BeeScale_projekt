@@ -15,7 +15,7 @@ const TOKEN =
   'pk.eyJ1Ijoid2hpdGVsYWR5IiwiYSI6ImNraHVvMmozODFldGoycGt6ZDZlNjRwZmUifQ.vejjMGJgs0GlqR9Ccy6xeg';
 
 export const Mapa = (props) => {
-  /* useEffect(() => {
+  useEffect(() => {
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${props.city}.json?access_token=${TOKEN}`,
     )
@@ -41,11 +41,8 @@ export const Mapa = (props) => {
     },
     [],
   );
-  const [mesto, setMesto] = useState(null);  */
+  const [mesto, setMesto] = useState(null);
 
-  const newViewport = (data) => {
-    props.changeViewport(data);
-  };
   const seznamMapy = {
     version: 8,
     sources: {
@@ -69,10 +66,10 @@ export const Mapa = (props) => {
   return (
     <MapStyled>
       <ReactMapGL
-        {...props.viewport}
+        {...viewport}
         width="100%"
         height={200}
-        onViewportChange={(nextViewport) => newViewport(nextViewport)}
+        onViewportChange={(nextViewport) => setViewport(nextViewport)}
         mapboxApiAccessToken="pk.eyJ1Ijoid2hpdGVsYWR5IiwiYSI6ImNraHVvMmozODFldGoycGt6ZDZlNjRwZmUifQ.vejjMGJgs0GlqR9Ccy6xeg"
         mapStyle={seznamMapy}
       >
