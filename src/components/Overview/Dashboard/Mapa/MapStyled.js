@@ -27,5 +27,5 @@ export const MarkerBtn = styled.button`
 export const Navigation = styled.div`
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 40px;
 `;

@@ -14,6 +14,7 @@ export const Weather = (props) => {
           feelsLike: json.main.feels_like,
           temp: json.main.temp,
         });
+        console.log(json);
       });
   }, [props.city]);
   return (

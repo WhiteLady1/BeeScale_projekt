@@ -8,7 +8,6 @@ import ReactMapGL, {
 } from 'react-map-gl';
 import spendlikUrl from './img/pin.svg';
 import mapySeznam from './img/mapy_logo.svg';
-import { scaleList, usePersistedState } from '../../..';
 import { MapSeznam, MapStyled, MarkerBtn, Navigation } from './MapStyled';
 
 const TOKEN =
@@ -33,6 +32,7 @@ export const Mapa = (props) => {
       });
   }, [props.city]);
 
+  const [mesto, setMesto] = useState(null);
   const [viewport, setViewport] = useState(
     {
       latitude: 50.084209699999995,
@@ -41,8 +41,12 @@ export const Mapa = (props) => {
     },
     [],
   );
-  const [mesto, setMesto] = useState(null);
-
+  const getMesto = (data) => {
+    props.getCoordinates(data);
+  };
+  useEffect(() => {
+    getMesto(mesto), [mesto];
+  });
   const seznamMapy = {
     version: 8,
     sources: {
@@ -77,10 +81,10 @@ export const Mapa = (props) => {
           <NavigationControl />
           <GeolocateControl />
         </Navigation>
-        {props.mesto && (
+        {mesto && (
           <Marker
-            latitude={props.mesto.latitude}
-            longitude={props.mesto.longitude}
+            latitude={mesto.latitude}
+            longitude={mesto.longitude}
             offsetLeft={-25}
             offsetTop={-50}
           >
@@ -91,8 +95,8 @@ export const Mapa = (props) => {
         )}
         {popupOtevren && mesto && (
           <Popup
-            latitude={props.mesto.latitude}
-            longitude={props.mesto.longitude}
+            latitude={mesto.latitude}
+            longitude={mesto.longitude}
             offsetTop={-50}
             onClose={() => setPopupOtevren(false)}
           >

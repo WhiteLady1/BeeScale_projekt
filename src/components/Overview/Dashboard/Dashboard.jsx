@@ -34,21 +34,13 @@ const Dashboard = (props) => {
   console.log(scaleID);
   const city = localStorageScaleList.find((scale) => scale.SigfoxID === scaleID)
     .city;
-  useEffect(() => {
-    fetch(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?access_token=${TOKEN}`,
-    )
-      .then((resp) => resp.json())
-      .then((json) => {
-        setMesto({
-          latitude: json.features[0].geometry.coordinates[1],
-          longitude: json.features[0].geometry.coordinates[0],
-        });
-      });
-  }, [city]);
 
-  const [mesto, setMesto] = useState(null);
-
+  const [coordinates, setCoordinates] = useState(null);
+  //Fce pro vytáhnutí souřadnic z Mapa
+  const changeCoordinates = (data) => {
+    setCoordinates(data);
+  };
+  console.log(coordinates);
   return (
     <>
       <Container>
@@ -59,7 +51,7 @@ const Dashboard = (props) => {
             scaleOptions={Object.keys(transformedData)}
           />
         </SelectedMenu>
-        <Weather city={city} mesto={mesto} />
+        <Weather city={city} coordinates={coordinates} />
         <Values>
           {data.length === 0 ? (
             <DataOfScale vaha={scaleID} data={[{}]} setMetric={setMetric} />
@@ -79,7 +71,7 @@ const Dashboard = (props) => {
           <Alert />
         </Comments>
         <Map>
-          <Mapa city={city} />
+          <Mapa city={city} getCoordinates={changeCoordinates} />
         </Map>
       </Container>
     </>
