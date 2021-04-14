@@ -1,11 +1,43 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 export const scaleList = [
-  { name: 'Tom Ruzyně 1', SigfoxID: '32C7C3', city: 'Hostivice' },
-  { name: 'Branov', SigfoxID: '32B86C', city: 'Branov' },
-  { name: 'Areál Botanika', SigfoxID: '32AEAB', city: 'Horní Bezděkov' },
+  {
+    name: 'Tom Ruzyně 1',
+    SigfoxID: '32C7C3',
+    city: 'Hostivice',
+    diary: [
+      {
+        date: '01.08.2020',
+        text: 'test jestli nám to funguje',
+        idDate: '1596233086',
+      },
+      {
+        date: '01.08.2020',
+        text: 'test 2 Tom Ruzině',
+        idDate: '1596233740',
+      },
+    ],
+  },
+  {
+    name: 'Branov',
+    SigfoxID: '32B86C',
+    city: 'Branov',
+    diary: {
+      date: '22.08.2020',
+      text: 'test pro Branov',
+      idDate: '1598098795',
+    },
+  },
+  {
+    name: 'Areál Botanika',
+    SigfoxID: '32AEAB',
+    city: 'Horní Bezděkov',
+    diary: '',
+  },
 ];
 export const newEmptyScale = { name: '', SigfoxID: '', city: '' };
+
+export const newEmptyRecord = { date: '', text: '', idDate: '' };
 
 export const usePersistedState = (
   initialState,

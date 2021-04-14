@@ -41,12 +41,7 @@ export const Mapa = (props) => {
     },
     [],
   );
-  const getMesto = (data) => {
-    props.getCoordinates(data);
-  };
-  useEffect(() => {
-    getMesto(mesto), [mesto];
-  });
+
   const seznamMapy = {
     version: 8,
     sources: {

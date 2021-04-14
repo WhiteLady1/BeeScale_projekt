@@ -3,14 +3,19 @@ import { Mapa } from './Mapa/Mapa';
 import DataOfScale from './ScaleData/DataOfScale';
 import ChooseScale from './ChooseScale/ChooseScale';
 import Graf from './Graf/Graf';
-import Alert from './Alert/Alert';
 import { useParams } from 'react-router-dom';
-import { Chart, SelectedMenu, Comments, Container, Values, Map } from './style';
+import {
+  Chart,
+  SelectedMenu,
+  WeatherContainer,
+  Comments,
+  Container,
+  Values,
+  Map,
+} from './style';
 import { Weather } from './Weather/Weather';
 import { scaleList, usePersistedState } from '../..';
-
-const TOKEN =
-  'pk.eyJ1Ijoid2hpdGVsYWR5IiwiYSI6ImNraHVvMmozODFldGoycGt6ZDZlNjRwZmUifQ.vejjMGJgs0GlqR9Ccy6xeg';
+import Diary from './Diary/Diary';
 
 const Dashboard = (props) => {
   const { id } = useParams();
@@ -28,19 +33,8 @@ const Dashboard = (props) => {
     scaleList,
     'scaleList',
   );
-  console.log(
-    localStorageScaleList.find((scale) => scale.SigfoxID === scaleID),
-  );
-  console.log(scaleID);
   const city = localStorageScaleList.find((scale) => scale.SigfoxID === scaleID)
     .city;
-
-  const [coordinates, setCoordinates] = useState(null);
-  //Fce pro vytáhnutí souřadnic z Mapa
-  const changeCoordinates = (data) => {
-    setCoordinates(data);
-  };
-  console.log(coordinates);
   return (
     <>
       <Container>
@@ -51,7 +45,9 @@ const Dashboard = (props) => {
             scaleOptions={Object.keys(transformedData)}
           />
         </SelectedMenu>
-        <Weather city={city} coordinates={coordinates} />
+        <WeatherContainer>
+          <Weather city={city} />
+        </WeatherContainer>
         <Values>
           {data.length === 0 ? (
             <DataOfScale vaha={scaleID} data={[{}]} setMetric={setMetric} />
@@ -68,10 +64,10 @@ const Dashboard = (props) => {
           />
         </Chart>
         <Comments>
-          <Alert />
+          <Diary scale={scaleID} />
         </Comments>
         <Map>
-          <Mapa city={city} getCoordinates={changeCoordinates} />
+          <Mapa city={city} />
         </Map>
       </Container>
     </>
