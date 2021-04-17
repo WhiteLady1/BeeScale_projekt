@@ -3,9 +3,9 @@ const Record = (props) => {
   return (
     <>
       <form>
-        Datum<input type="text">{props.date}</input>
+        Datum<input type="text" value={props.date}></input>
         <br></br>
-        Záznam<input type="text">{props.text}</input>
+        Záznam<input type="text" value={props.text}></input>
       </form>
     </>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Record from './Record/Record';
 import { usePersistedState } from '../../../index';
 import { scaleList } from '../../../index';
@@ -9,14 +9,16 @@ const Diary = (props) => {
     scaleList,
     'scaleList',
   );
-  const scale = props.scale;
-  console.log(scale);
+  const diariesOfScale = localStorageScaleList.find(
+    (scale) => scale.SigfoxID === props.scale,
+  ).diary;
+  console.log(diariesOfScale);
   return (
     <>
       <div>Deníček</div>
-      {localStorageScaleList.map((entry) => {
+      {diariesOfScale.map((entry) => {
         return (
-          <Record key={entry.SigfoxID} date={entry.name} text={entry.city} />
+          <Record key={entry.idDate} date={entry.date} text={entry.text} />
         );
       })}
     </>
