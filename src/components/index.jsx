@@ -22,17 +22,19 @@ export const scaleList = [
     name: 'Branov',
     SigfoxID: '32B86C',
     city: 'Branov',
-    diary: {
-      date: '22.08.2020',
-      text: 'test pro Branov',
-      idDate: '1598098795',
-    },
+    diary: [
+      {
+        date: '22.08.2020',
+        text: 'test pro Branov',
+        idDate: '1598098795',
+      },
+    ],
   },
   {
     name: 'Areál Botanika',
     SigfoxID: '32AEAB',
     city: 'Horní Bezděkov',
-    diary: '',
+    diary: [],
   },
 ];
 export const newEmptyScale = { name: '', SigfoxID: '', city: '' };
