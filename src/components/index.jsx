@@ -37,7 +37,7 @@ export const scaleList = [
     diary: [],
   },
 ];
-export const newEmptyScale = { name: '', SigfoxID: '', city: '' };
+export const newEmptyScale = { name: '', SigfoxID: '', city: '', diary: [] };
 
 export const newEmptyRecord = { date: '', text: '', idDate: '' };
 

@@ -33,6 +33,7 @@ const Dashboard = (props) => {
     scaleList,
     'scaleList',
   );
+  console.log(`scaleID je: ${scaleID}`);
   const city = localStorageScaleList.find((scale) => scale.SigfoxID === scaleID)
     .city;
   return (

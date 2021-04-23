@@ -12,15 +12,14 @@ const Diary = (props) => {
   const diariesOfScale = localStorageScaleList.find(
     (scale) => scale.SigfoxID === props.scale,
   ).diary;
+  console.log(diariesOfScale);
   return (
     <>
       <div>Deníček</div>
       {diariesOfScale.map((entry) =>
         entry ? (
           <Record key={entry.idDate} date={entry.date} text={entry.text} />
-        ) : (
-          <Record key={[]} date={[{}]} text={[{}]} />
-        ),
+        ) : null,
       )}
     </>
   );
