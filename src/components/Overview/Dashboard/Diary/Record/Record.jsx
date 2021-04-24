@@ -1,12 +1,9 @@
 import React from 'react';
-const Record = (props) => {
+const Record = ({ date, text }) => {
   return (
     <>
-      <form>
-        Datum<input type="text" value={props.date}></input>
-        <br></br>
-        Záznam<input type="text" value={props.text}></input>
-      </form>
+      <div>{date}</div>
+      <div>{text}</div>
     </>
   );
 };

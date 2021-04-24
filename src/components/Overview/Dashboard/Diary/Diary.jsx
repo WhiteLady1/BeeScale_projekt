@@ -12,7 +12,7 @@ const Diary = (props) => {
   const diariesOfScale = localStorageScaleList.find(
     (scale) => scale.SigfoxID === props.scale,
   ).diary;
-  console.log(diariesOfScale);
+
   return (
     <>
       <div>Deníček</div>
