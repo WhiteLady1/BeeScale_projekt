@@ -12,21 +12,15 @@ const Diary = (props) => {
     scaleList,
     'scaleList',
   );
+
+  const [formState, setFormState] = useState(localStorageScaleList);
+
   const diariesOfScale = localStorageScaleList.find(
     (scale) => scale.SigfoxID === props.scale,
   ).diary;
   console.log(diariesOfScale);
-  /* diariesOfScale.push({
-    date: '1.1.1999',
-    text: 'Test 4.5.2021',
-    idDate: '0000',
-  }); */
   const [addRecord, setAddRecord] = useState(false);
-  const [newRecord, setNewRecord] = useState({
-    date: '',
-    text: '',
-    idDate: '',
-  });
+  const [newRecord, setNewRecord] = useState(newEmptyRecord);
 
   return (
     <>
@@ -46,6 +40,7 @@ const Diary = (props) => {
           <form
             onSubmit={() => {
               diariesOfScale.push(newRecord);
+              setlocalStorageScaleList(formState);
               setAddRecord((addRecord) => !addRecord);
             }}
           >
