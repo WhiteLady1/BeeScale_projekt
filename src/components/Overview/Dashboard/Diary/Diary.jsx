@@ -14,11 +14,11 @@ const Diary = (props) => {
   );
 
   const [formState, setFormState] = useState(localStorageScaleList);
-
+  console.log(formState);
   const diariesOfScale = localStorageScaleList.find(
-    (scale) => scale.SigfoxID === props.scale,
+    (scaleId) => scaleId.SigfoxID === props.scale,
   ).diary;
-  console.log(diariesOfScale);
+
   const [addRecord, setAddRecord] = useState(false);
   const [newRecord, setNewRecord] = useState(newEmptyRecord);
 
@@ -65,7 +65,18 @@ const Diary = (props) => {
             <button type="submit">
               <Icon icon={checkCircleFill} />
             </button>
-            <div>✕</div>
+            {/*Pro zavření nového záznamu, smaže co se vepsalo*/}
+            <div
+              onClick={() => {
+                const record = { ...newRecord };
+                record.text = '';
+                record.date = '';
+                setNewRecord(record);
+                setAddRecord((addRecord) => !addRecord);
+              }}
+            >
+              ✕
+            </div>
           </form>
         </div>
       ) : null}
