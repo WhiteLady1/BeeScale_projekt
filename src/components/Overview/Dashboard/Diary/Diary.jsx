@@ -13,24 +13,26 @@ const Diary = (props) => {
     'scaleList',
   );
 
-  const [formState, setFormState] = useState(localStorageScaleList);
-  const diariesOfScale = localStorageScaleList.find(
-    (scaleId) => scaleId.SigfoxID === props.scale,
-  ).diary;
+  const [diariesOfScale, setDiariesOfScale] = useState(() => {
+    return localStorageScaleList.find(
+      (scaleId) => scaleId.SigfoxID === props.scale,
+    ).diary;
+  });
 
-  const [editText, setEditText] = useState('');
-  const [editRecord, setEditRecord] = useState(diariesOfScale);
   const [addRecord, setAddRecord] = useState(false);
   const [newRecord, setNewRecord] = useState(newEmptyRecord);
 
-  console.log(diariesOfScale[0].text);
-  console.log(editRecord);
-
-  const changeText = (setText, i) => {
-    setEditText(setText);
-    setEditRecord[i].text = editText;
+  const handleSubmit = (event) => {
+    setDiariesOfScale([...diariesOfScale, newRecord]);
+    setAddRecord((addRecord) => !addRecord);
   };
-  console.log(editText);
+
+  /*funkce pro změnu hodnoty. Nastavuji nový záznam, což znamená že vytvářím nový objekt složený z newRecord, kde ve vlastnosti obsažení v name měním hodnotu dle vstupu z fomáře dle name (např. name='date', tudíž upravuju vlastnost date*/
+  const handleChange = (e) => {
+    e.preventDefault();
+    const value = e.target.value;
+    setNewRecord({ ...newRecord, [e.target.name]: value });
+  };
 
   return (
     <>
@@ -42,44 +44,14 @@ const Diary = (props) => {
         />
       </div>
       {diariesOfScale.map((entry, i) =>
-        entry ? (
-          <Record
-            key={i}
-            date={entry.date}
-            text={entry.text}
-            getEditText={changeText}
-            order={i}
-          />
-        ) : null,
+        entry ? <Record key={i} date={entry.date} text={entry.text} /> : null,
       )}
       {addRecord ? (
         <div>
           <div>Nový záznam</div>
-          <form
-            onSubmit={() => {
-              diariesOfScale.push(newRecord);
-              setlocalStorageScaleList(formState);
-              setAddRecord((addRecord) => !addRecord);
-            }}
-          >
-            <input
-              type="date"
-              onChange={(e) => {
-                e.preventDefault();
-                const record = { ...newRecord };
-                record.date = e.target.value;
-                setNewRecord(record);
-              }}
-            />
-            <input
-              type="text"
-              onChange={(e) => {
-                e.preventDefault();
-                const record = { ...newRecord };
-                record.text = e.target.value;
-                setNewRecord(record);
-              }}
-            />
+          <form onSubmit={handleSubmit}>
+            <input type="date" name="date" onChange={handleChange} />
+            <input type="text" name="text" onChange={handleChange} />
             <button type="submit">
               <Icon icon={checkCircleFill} />
             </button>
