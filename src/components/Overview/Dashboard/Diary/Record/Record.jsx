@@ -4,12 +4,17 @@ import pensilIcon from '@iconify/icons-raphael/pensil';
 import checkCircleFill from '@iconify/icons-bi/check-circle-fill';
 import trashFill from '@iconify/icons-bi/trash-fill';
 
-const Record = ({ date, text, getEditText, order }) => {
+const Record = ({ date, text, handleChangeRecord }) => {
   const [editRecord, setEditRecord] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('xxx');
+  };
+  const handleChange = (e) => {
+    e.preventDefault();
+    const value = { [e.target.name]: e.target.value };
+    handleChangeRecord(value);
   };
 
   return (
@@ -17,35 +22,24 @@ const Record = ({ date, text, getEditText, order }) => {
       {editRecord ? (
         <form onSubmit={handleSubmit}>
           <input
-            value={date}
+            type="date"
+            defaultValue={date}
             name="date"
-            onChange={(e) => {
-              e.preventDefault();
-            }}
+            onChange={handleChange}
           />
           <input
-            value={text}
+            type="text"
+            defaultValue={text}
             name="text"
-            onChange={(e) => {
-              e.preventDefault();
-              const changeText = e.target.value;
-            }}
+            onChange={handleChange}
           />
-          <button>
+          <button type="submit">
             <Icon
               icon={checkCircleFill}
               onClick={() => setEditRecord((editRecord) => !editRecord)}
             />
           </button>
-          <div
-            onClick={() => {
-              const record = { ...newRecord };
-              record.text = '';
-              record.date = '';
-              setNewRecord(record);
-              setAddRecord((addRecord) => !addRecord);
-            }}
-          >
+          <div onClick={() => setEditRecord((editRecord) => !editRecord)}>
             ✕
           </div>
         </form>

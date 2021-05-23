@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Record from './Record/Record';
 import { usePersistedState } from '../../../index';
 import { scaleList, newEmptyRecord } from '../../../index';
@@ -13,17 +13,23 @@ const Diary = (props) => {
     'scaleList',
   );
 
-  const [diariesOfScale, setDiariesOfScale] = useState(() => {
-    return localStorageScaleList.find(
-      (scaleId) => scaleId.SigfoxID === props.scale,
-    ).diary;
-  });
+  const diariesOfScale = localStorageScaleList.find(
+    (scaleId) => scaleId.SigfoxID === props.scale,
+  ).diary;
 
   const [addRecord, setAddRecord] = useState(false);
   const [newRecord, setNewRecord] = useState(newEmptyRecord);
 
-  const handleSubmit = (event) => {
-    setDiariesOfScale([...diariesOfScale, newRecord]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setlocalStorageScaleList((state) => {
+      const array = state.map((item) => {
+        return item.SigfoxID === props.scale
+          ? { ...item, diary: [...diariesOfScale, newRecord] }
+          : item;
+      });
+      return array;
+    });
     setAddRecord((addRecord) => !addRecord);
   };
 
@@ -34,6 +40,14 @@ const Diary = (props) => {
     setNewRecord({ ...newRecord, [e.target.name]: value });
   };
 
+  const listOfDiaries = [...diariesOfScale];
+  const [editRecord, setEditRecord] = useState(['']);
+  const onChangeRecord = (entry) => {
+    setEditRecord(entry);
+  };
+  console.log(editRecord);
+  const onSaveEditRecord = (e) => {};
+
   return (
     <>
       <div>
@@ -43,8 +57,15 @@ const Diary = (props) => {
           onClick={() => setAddRecord((addRecord) => !addRecord)}
         />
       </div>
-      {diariesOfScale.map((entry, i) =>
-        entry ? <Record key={i} date={entry.date} text={entry.text} /> : null,
+      {listOfDiaries.map((entry, i) =>
+        entry ? (
+          <Record
+            key={i}
+            date={entry.date}
+            text={entry.text}
+            handleChangeRecord={onChangeRecord}
+          />
+        ) : null,
       )}
       {addRecord ? (
         <div>
