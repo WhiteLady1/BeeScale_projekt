@@ -5,6 +5,7 @@ import { scaleList, newEmptyRecord } from '../../../index';
 import { Icon } from '@iconify/react';
 import addCircleOutline from '@iconify/icons-ion/add-circle-outline';
 import checkCircleFill from '@iconify/icons-bi/check-circle-fill';
+import { da } from 'date-fns/locale';
 
 // Přidat localstorage, kde budou uloženy záznamy
 const Diary = (props) => {
@@ -41,9 +42,15 @@ const Diary = (props) => {
   };
 
   const listOfDiaries = [...diariesOfScale];
-  const [editRecord, setEditRecord] = useState(['']);
+  const [editRecord, setEditRecord] = useState(newEmptyRecord);
+
   const onChangeRecord = (entry) => {
-    setEditRecord(entry);
+    const text = entry.text;
+    const date = entry.date;
+    console.log(text);
+    console.log(date);
+    const record = [{ date: date }, { text: text }];
+    setEditRecord(record);
   };
   console.log(editRecord);
   const onSaveEditRecord = (e) => {};
