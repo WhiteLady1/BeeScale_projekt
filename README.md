@@ -1,25 +1,30 @@
 # BeeScale
 
-Aplikace pro včelí váhy. Sběr a prezentace údajů ze senzorů vah. Nový front-end pro stávající aplikaci (https://beescale.cloud/).
+Application for bee scales. Collection and presentation of data from scale sensors. New front-end for existing application (https://beescale.cloud/).
 
-## Funkčnost
+## Functionality
 
-1. Přihlašovací stránky
-  -příprava na přihlášení
-  -zapojený přístup přes google
-2. Přehled
+1. Login page
+  -Preparation for classic login/registration
+  -Functional access via google
+2. Ovewview
+  -Overview of all user scales with basic data. Always the most up-to-date
 3. Dashboard
-  -příprava na komponentu "Deníček"
-4. Nastavení
-  -odhlášení
-  -přidání a odebrání váhy
-  -příprava nastavení pro změnu údajů uživatele
+  -Current weather
+  - "Diary", which allows the user to view information for each scale. Add and edit notes
+  -Overview of current values
+  -Graph with the evolution of values over time
+  -Map
+4. Settings
+  -logout
+  -adding and removing scales
+  -preparing settings for changing user data
   
-Absence stávající databáze nahrazena souborem s daty 3 vah za 8. měsíc. 
+Absence of an existing database replaced by a file with 3 months of data for the 8th month. 
   
-### Stav & Budoucnost
+### Status & Future
 
-Napojení nového front-endu na stávající back-end. 
-Doprogramování komponenty "Deníček". 
-Doladění dle požadavků majitele BeeScale.
+Connecting the new front-end to the existing back-end. 
+Development of the "Diary" component. 
+Fine-tuning according to BeeScale owner's requirements.
 

@@ -1,16 +1,50 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Icon } from '@iconify/react';
 import pensilIcon from '@iconify/icons-raphael/pensil';
 import checkCircleFill from '@iconify/icons-bi/check-circle-fill';
 import trashFill from '@iconify/icons-bi/trash-fill';
 import { RecordIcon, RecordIcons, RecordStyled } from './style';
 
-const Record = ({ date, text }) => {
+const Record = ({
+  date,
+  text,
+  setRecord,
+  index,
+  setlocalStorageScaleList,
+  scaleID,
+  record,
+}) => {
   const [editRecord, setEditRecord] = useState(false);
+
+  useEffect(() => {
+    setRecord({ date, text });
+  }, [editRecord]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('xxx');
+    setlocalStorageScaleList((state) => {
+      const scale = state.find((item) => {
+        return item.SigfoxID === scaleID;
+      });
+      console.log(scale);
+      const newDiary = [...scale.diary];
+      console.log(newDiary);
+      newDiary[index] = record;
+      const newScales = { ...scale, diary: newDiary };
+      console.log(newScales);
+      const array = state.map((item) => {
+        return item.SigfoxID === scaleID ? newScales : item;
+      });
+      return array;
+    });
+    setEditRecord((editRecord) => !editRecord);
+  };
+  const handleChange = (e) => {
+    e.preventDefault();
+    e.persist();
+    setRecord((state) => {
+      return { ...state, [e.target.name]: e.target.value };
+    });
   };
 
   return (
@@ -18,37 +52,21 @@ const Record = ({ date, text }) => {
       {editRecord ? (
         <form onSubmit={handleSubmit}>
           <input
-            value={date}
+            type="date"
+            defaultValue={date}
             name="date"
-            onChange={(e) => {
-              e.preventDefault();
-            }}
+            onChange={handleChange}
           />
           <input
-            value={text}
+            type="text"
+            defaultValue={text}
             name="text"
-            onChange={(e) => {
-              e.preventDefault();
-              const changeText = e.target.value;
-            }}
+            onChange={handleChange}
           />
-          <button>
-            <RecordIcon>
-              <Icon
-                icon={checkCircleFill}
-                onClick={() => setEditRecord((editRecord) => !editRecord)}
-              />
-            </RecordIcon>
+          <button type="submit">
+            <Icon icon={checkCircleFill} />
           </button>
-          <div
-            onClick={() => {
-              const record = { ...newRecord };
-              record.text = '';
-              record.date = '';
-              setNewRecord(record);
-              setAddRecord((addRecord) => !addRecord);
-            }}
-          >
+          <div onClick={() => setEditRecord((editRecord) => !editRecord)}>
             ✕
           </div>
         </form>
