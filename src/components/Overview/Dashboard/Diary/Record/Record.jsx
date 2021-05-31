@@ -3,8 +3,9 @@ import { Icon } from '@iconify/react';
 import pensilIcon from '@iconify/icons-raphael/pensil';
 import checkCircleFill from '@iconify/icons-bi/check-circle-fill';
 import trashFill from '@iconify/icons-bi/trash-fill';
+import { RecordIcon, RecordIcons, RecordStyled } from './style';
 
-const Record = ({ date, text, getEditText, order }) => {
+const Record = ({ date, text }) => {
   const [editRecord, setEditRecord] = useState(false);
 
   const handleSubmit = (e) => {
@@ -13,7 +14,7 @@ const Record = ({ date, text, getEditText, order }) => {
   };
 
   return (
-    <>
+    <RecordStyled>
       {editRecord ? (
         <form onSubmit={handleSubmit}>
           <input
@@ -32,10 +33,12 @@ const Record = ({ date, text, getEditText, order }) => {
             }}
           />
           <button>
-            <Icon
-              icon={checkCircleFill}
-              onClick={() => setEditRecord((editRecord) => !editRecord)}
-            />
+            <RecordIcon>
+              <Icon
+                icon={checkCircleFill}
+                onClick={() => setEditRecord((editRecord) => !editRecord)}
+              />
+            </RecordIcon>
           </button>
           <div
             onClick={() => {
@@ -55,16 +58,20 @@ const Record = ({ date, text, getEditText, order }) => {
             <div>{date}</div>
             <div>{text}</div>
           </div>
-          <div>
-            <Icon
-              icon={pensilIcon}
-              onClick={() => setEditRecord((editRecord) => !editRecord)}
-            />
-            <Icon icon={trashFill} />
-          </div>
+          <RecordIcons>
+            <RecordIcon>
+              <Icon
+                icon={pensilIcon}
+                onClick={() => setEditRecord((editRecord) => !editRecord)}
+              />
+            </RecordIcon>
+            <RecordIcon>
+              <Icon icon={trashFill} />
+            </RecordIcon>
+          </RecordIcons>
         </>
       )}
-    </>
+    </RecordStyled>
   );
 };
 export default Record;
