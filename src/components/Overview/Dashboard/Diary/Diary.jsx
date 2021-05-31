@@ -55,11 +55,13 @@ const Diary = (props) => {
     <ContainerDiary>
       <DiaryHeader>
         Deníček
-        <Icon
-          icon={addCircleOutline}
-          onClick={() => setAddRecord((addRecord) => !addRecord)}
-        />
-      </div>
+        <NewRecordIkon>
+          <Icon
+            icon={addCircleOutline}
+            onClick={() => setAddRecord((addRecord) => !addRecord)}
+          />
+        </NewRecordIkon>
+      </DiaryHeader>
       {listOfDiaries.map((entry, i) =>
         entry ? (
           <Record

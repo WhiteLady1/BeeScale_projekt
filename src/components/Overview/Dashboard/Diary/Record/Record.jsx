@@ -4,6 +4,7 @@ import pensilIcon from '@iconify/icons-raphael/pensil';
 import checkCircleFill from '@iconify/icons-bi/check-circle-fill';
 import trashFill from '@iconify/icons-bi/trash-fill';
 import { RecordIcon, RecordIcons, RecordStyled } from './style';
+import { NewRecordForm } from '../style';
 
 const Record = ({
   date,
@@ -50,7 +51,7 @@ const Record = ({
   return (
     <RecordStyled>
       {editRecord ? (
-        <form onSubmit={handleSubmit}>
+        <NewRecordForm onSubmit={handleSubmit}>
           <input
             type="date"
             defaultValue={date}
@@ -69,7 +70,7 @@ const Record = ({
           <div onClick={() => setEditRecord((editRecord) => !editRecord)}>
             ✕
           </div>
-        </form>
+        </NewRecordForm>
       ) : (
         <>
           <div>
