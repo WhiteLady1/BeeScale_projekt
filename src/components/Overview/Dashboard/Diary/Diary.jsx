@@ -5,6 +5,14 @@ import { scaleList, newEmptyRecord } from '../../../index';
 import { Icon } from '@iconify/react';
 import addCircleOutline from '@iconify/icons-ion/add-circle-outline';
 import checkCircleFill from '@iconify/icons-bi/check-circle-fill';
+import {
+  ContainerDiary,
+  DiaryHeader,
+  NewRecordForm,
+  NewRecordIkon,
+  NewRecordSubmit,
+} from './style';
+import { RecordIcon, RecordIcons, RecordStyled } from './Record/style';
 
 // Přidat localstorage, kde budou uloženy záznamy
 const Diary = (props) => {
@@ -44,14 +52,16 @@ const Diary = (props) => {
   const [editRecord, setEditRecord] = useState(newEmptyRecord);
 
   return (
-    <>
-      <div>
+    <ContainerDiary>
+      <DiaryHeader>
         Deníček
-        <Icon
-          icon={addCircleOutline}
-          onClick={() => setAddRecord((addRecord) => !addRecord)}
-        />
-      </div>
+        <NewRecordIkon>
+          <Icon
+            icon={addCircleOutline}
+            onClick={() => setAddRecord((addRecord) => !addRecord)}
+          />
+        </NewRecordIkon>
+      </DiaryHeader>
       {listOfDiaries.map((entry, i) =>
         entry ? (
           <Record
@@ -67,16 +77,21 @@ const Diary = (props) => {
         ) : null,
       )}
       {addRecord ? (
-        <div>
-          <div>Nový záznam</div>
-          <form onSubmit={handleSubmit}>
-            <input type="date" name="date" onChange={handleChange} />
-            <input type="text" name="text" onChange={handleChange} />
-            <button type="submit">
-              <Icon icon={checkCircleFill} />
-            </button>
+        <RecordStyled>
+          {/*           <div>Nový záznam</div>
+           */}{' '}
+          <NewRecordForm onSubmit={handleSubmit}>
+            <div>
+              <input type="date" name="date" onChange={handleChange} />
+              <input type="text" name="text" onChange={handleChange} />
+            </div>
+            <NewRecordSubmit>
+              <button type="submit">
+                <Icon icon={checkCircleFill} />
+              </button>
+            </NewRecordSubmit>
             {/*Pro zavření nového záznamu, smaže co se vepsalo*/}
-            <div
+            <RecordIcons
               onClick={() => {
                 const record = { ...newRecord };
                 record.text = '';
@@ -85,12 +100,12 @@ const Diary = (props) => {
                 setAddRecord((addRecord) => !addRecord);
               }}
             >
-              ✕
-            </div>
-          </form>
-        </div>
+              <RecordIcon>✕</RecordIcon>
+            </RecordIcons>
+          </NewRecordForm>
+        </RecordStyled>
       ) : null}
-    </>
+    </ContainerDiary>
   );
 };
 export default Diary;
