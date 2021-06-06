@@ -2,7 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 html{
-  --maincolor:rgb(237, 231, 46)
+  --maincolor:rgb(237, 231, 46);
+  --secondcolor:rgb(251, 255, 170)
 }
 body{
   font-family: 'Open Sans', sans-serif;
