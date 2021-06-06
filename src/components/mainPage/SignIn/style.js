@@ -10,6 +10,13 @@ export const WelcomeUser = styled.div`
   font-size: 30px;
   font-weight: 300;
 `;
+export const Logo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 50px;
+  margin-bottom: 20px;
+`;
 
 export const LogInGoogle = styled.div`
   padding-top: 15px;
@@ -24,7 +31,7 @@ export const LoginPage = styled.div`
 export const Form = styled.form`
   position: relative;
   z-index: 1;
-  background: #ffffff;
+  background: rgba(251, 255, 170, 0.1);
   max-width: 360px;
   margin: 0 auto 50px;
   padding: 45px;
@@ -35,9 +42,10 @@ export const Form = styled.form`
 export const Input = styled.input`
   font-family: 'Roboto', sans-serif;
   outline: 0;
-  background: #f2f2f2;
+  border: 0.5px solid rgb(251, 255, 170);
+  //background: #f2f2f2;
+  //border: 0;
   width: 100%;
-  border: 0;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
@@ -62,7 +70,7 @@ export const Btn = styled(Link)`
   &:hover,
   :active,
   :focus {
-    background: #ffb802;
+    background: var(--maincolor);
   }
 
   a {

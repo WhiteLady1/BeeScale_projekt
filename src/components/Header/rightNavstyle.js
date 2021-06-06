@@ -4,11 +4,12 @@ export const ListItem = styled.div`
   color: black;
   border-bottom: ${(props) => (props.selected ? 'black 1px solid' : '')};
   &:hover {
-    color: #ffb802;
+    color: var(--maincolor);
   }
   @media (min-width: 768px) {
-    color: ${(props) => (props.selected ? '#ffb802' : 'black')};
-    border-bottom: ${(props) => (props.selected ? '#ffb802 1px solid' : '')};
+    color: ${(props) => (props.selected ? 'var(--maincolor)' : 'black')};
+    border-bottom: ${(props) =>
+      props.selected ? 'var(--maincolor) 1px solid' : ''};
     cursor: pointer;
   }
 `;

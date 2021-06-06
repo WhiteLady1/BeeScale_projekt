@@ -23,6 +23,7 @@
     "@iconify/icons-simple-line-icons": "^1.0.3",
     "@iconify/react": "^1.1.4",
     "@iconify/vue": "^1.0.6",
+    "@svgr/webpack": "^5.5.0",
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^6.3.0",
     "css-loader": "^3.5.3",

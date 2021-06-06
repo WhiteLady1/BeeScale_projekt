@@ -1,9 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+html{
+  --maincolor:rgb(237, 231, 46)
+}
 body{
   font-family: 'Open Sans', sans-serif;
-  background-color:RGB(249,250,252);
+  background-color: white;
+  //background-color:RGB(249,250,252);
 }
 a{
   text-decoration:none;
