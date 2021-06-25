@@ -5,6 +5,9 @@ import OneOverview from './OneOverview/OneOverview';
 import OneScale from './OneScale/OneScale';
 import { Link } from 'react-router-dom';
 import { Scale, Wrapper } from './overviewStyle';
+import logo2 from '../logo_2.svg';
+import logo3 from '../logo_3.svg';
+import { Logo2, Logo3 } from '../../globalStyle';
 
 const Overview = (props) => {
   const [localStorageScaleList, setlocalStorageScaleList] = usePersistedState(
@@ -15,6 +18,8 @@ const Overview = (props) => {
   return (
     <>
       <Wrapper>
+        <Logo2 src={logo2} />
+        <Logo3 src={logo3} />
         {localStorageScaleList.map((scale) => {
           return (
             <Link key={scale.SigfoxID} to={`/dashboard/${scale.SigfoxID}`}>

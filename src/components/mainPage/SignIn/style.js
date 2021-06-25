@@ -2,13 +2,16 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const WelcomeUser = styled.div`
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 15px;
   display: flex;
   flex-direction: column;
   text-align: center;
   font-size: 30px;
   font-weight: 300;
+  @media (min-width: 600px) {
+    padding-top: 100px;
+  }
 `;
 export const Logo = styled.div`
   display: flex;

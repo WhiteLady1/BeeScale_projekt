@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
   margin: 0;
   padding: 0;
   padding-top: 20px;
@@ -21,6 +24,6 @@ export const Scale = styled.div`
   text-align: center;
   width: 320px;
   height: 377px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
+  background: rgba(237, 231, 46, 0.1);
+  border: 0.5px solid var(--secondcolor);
 `;

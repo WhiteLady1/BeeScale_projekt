@@ -13,6 +13,9 @@ import {
   Values,
   Map,
 } from './style';
+import logo2 from '../../logo_2.svg';
+import logo3 from '../../logo_3.svg';
+import { Logo2, Logo3 } from '../../../globalStyle';
 import { Weather } from './Weather/Weather';
 import { scaleList, usePersistedState } from '../..';
 import Diary from './Diary/Diary';
@@ -34,10 +37,13 @@ const Dashboard = (props) => {
     'scaleList',
   );
   console.log(`scaleID je: ${scaleID}`);
-  const city = localStorageScaleList.find((scale) => scale.SigfoxID === scaleID)
-    .city;
+  const city = localStorageScaleList.find(
+    (scale) => scale.SigfoxID === scaleID,
+  ).city;
   return (
     <>
+      <Logo2 src={logo2} />
+      <Logo3 src={logo3} />
       <Container>
         <SelectedMenu>
           <ChooseScale

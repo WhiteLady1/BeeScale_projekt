@@ -10,7 +10,7 @@ export const WrapperHeader = styled.div`
   font-weight: 600;
   color: rgb(56, 53, 37);
   &:hover {
-    background: #ffb802;
+    background: var(--maincolor);
     color: white;
   }
 `;
@@ -24,7 +24,7 @@ export const WrapperBody = styled.div`
   padding-top: 20px;
   padding-bottom: 20px;
   &:hover {
-    background: #ffb802;
+    background: var(--maincolor);
     color: white;
   }
 `;
@@ -69,7 +69,7 @@ export const LastMeasurement = styled.div`
   padding: 15px;
   font-weight: 200;
   &:hover {
-    background: #ffb802;
+    background: var(--maincolor);
     color: white;
   }
 `;

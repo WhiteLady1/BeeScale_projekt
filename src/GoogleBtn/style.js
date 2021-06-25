@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const GoogleDiv = styled.div`
+  color: white;
   button {
     display: flex;
     justify-content: space-evenly;
