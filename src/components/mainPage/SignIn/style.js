@@ -31,7 +31,6 @@ export const LoginPage = styled.div`
 export const Form = styled.form`
   position: relative;
   z-index: 1;
-  //background: rgba(251, 255, 170, 0.1);
   background: rgba(237, 231, 46, 0.1);
   max-width: 360px;
   margin: 0 auto 50px;
@@ -56,7 +55,7 @@ export const Btn = styled(Link)`
   box-sizing: border-box;
   text-transform: uppercase;
   outline: 0;
-  background: rgb(66, 66, 66);
+  background: var(--btncolor);
   width: 100%;
   border: 0;
   padding: 15px;
