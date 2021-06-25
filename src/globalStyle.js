@@ -8,6 +8,7 @@ html{
 body{
   font-family: 'Open Sans', sans-serif;
   background-color: white;
+  color: rgb(66, 66, 66);
   //background-color:RGB(249,250,252);
 }
 a{

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import { withRouter } from 'react-router-dom';
+import { GoogleDiv } from './style';
 
 export const localStorageToken = 'bee_scale_login_token';
 const CLIENT_ID =
@@ -57,7 +58,7 @@ class GoogleBtn extends Component {
   }
   render() {
     return (
-      <div>
+      <GoogleDiv>
         {this.state.isLogined ? (
           <GoogleLogout
             clientId={CLIENT_ID}
@@ -75,7 +76,7 @@ class GoogleBtn extends Component {
             responseType="code,token"
           />
         )}
-      </div>
+      </GoogleDiv>
     );
   }
 }
