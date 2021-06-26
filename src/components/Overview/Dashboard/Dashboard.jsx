@@ -12,6 +12,7 @@ import {
   Container,
   Values,
   Map,
+  DashboardPage,
 } from './style';
 import logo2 from '../../logo_2.svg';
 import logo3 from '../../logo_3.svg';
@@ -41,7 +42,7 @@ const Dashboard = (props) => {
     (scale) => scale.SigfoxID === scaleID,
   ).city;
   return (
-    <>
+    <DashboardPage>
       <Logo2 src={logo3} />
       <Logo3 src={logo2} />
       <Container>
@@ -77,7 +78,7 @@ const Dashboard = (props) => {
           <Mapa city={city} />
         </Map>
       </Container>
-    </>
+    </DashboardPage>
   );
 };
 export default Dashboard;

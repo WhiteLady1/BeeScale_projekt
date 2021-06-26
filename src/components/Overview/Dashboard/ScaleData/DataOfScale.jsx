@@ -85,11 +85,11 @@ const DataOfScale = (props) => {
             </TemIn>
             <TemOut>
               <WrapperIcon>
-                <Icon
+                {/*<Icon
                   className="icon"
                   icon={tempIcon}
                   style={{ fontSize: '50px' }}
-                />
+                />*/}
                 <p>out</p>
               </WrapperIcon>
               <WrapperValue>

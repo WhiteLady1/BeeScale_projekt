@@ -26,7 +26,7 @@ export const Values = styled.div`
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
-  padding: 10px 50px 10px 50px;
+  padding: 10px 20px 10px 20px;
   background-color: ${(props) =>
     props.selected ? 'var(--maincolor)' : 'white'};
   color: ${(props) => (props.selected ? 'white' : 'black')};
@@ -56,7 +56,7 @@ export const Values = styled.div`
 `;
 export const WrapperTem = styled.div`
   display: flex;
-  flex-direction: column;
+  //flex-direction: column;
   align-items: space-between;
   width: 100%;
   @media (min-width: 1025px) {
@@ -70,7 +70,6 @@ export const TemIn = styled.div`
   font-size: 20px;
   justify-content: space-between;
   width: 100%;
-  padding-bottom: 10px;
   @media (min-width: 1025px) {
     padding-bottom: 0px;
     justify-content: center;
@@ -80,7 +79,7 @@ export const TemIn = styled.div`
 export const TemOut = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  //justify-content: space-between;
   width: 100%;
   font-size: 20px;
   @media (min-width: 1025px) {

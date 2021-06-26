@@ -10,16 +10,19 @@ export const FormGroup = styled.div`
   justify-content: flex-start;
   font-size: 20px;
 
-
   a {
     padding-left: 15px;
   }
-
+  @media (min-width: 600px) {
+    flex-wrap: nowrap;
+  }
 `;
 export const Label = styled.label`
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin: 0.5rem;
   font-size: 14px;
+  @media (min-width: 600px) {
+    margin: 1rem;
+  }
 `;
 
 export const Select = styled.select`
@@ -32,4 +35,7 @@ export const Select = styled.select`
   margin-top: 0.5em;
   font-size: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 2px;
+  @media (min-width: 600px) {
+    width: 75%;
+  }
 `;

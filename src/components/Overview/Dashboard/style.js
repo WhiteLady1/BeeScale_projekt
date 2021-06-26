@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const DashboardPage = styled.div`
+  position: relative;
+  overflow: hidden;
+  min-height: 90vh;
+`;
+
 export const Container = styled.div`
   display: grid;
   grid-template-columns: auto;
