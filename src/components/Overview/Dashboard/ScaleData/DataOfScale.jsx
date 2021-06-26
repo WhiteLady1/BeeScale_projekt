@@ -15,6 +15,7 @@ import {
   TemIn,
   TemOut,
   WrapperTem,
+  SpecialValues,
 } from './style';
 
 const DataOfScale = (props) => {
@@ -44,7 +45,7 @@ const DataOfScale = (props) => {
   return (
     <>
       <Wrapper>
-        <Values
+        <SpecialValues
           className="btn weight"
           onClick={handleClick('weight')}
           selected={selected === 'weight' ? true : false}
@@ -53,29 +54,29 @@ const DataOfScale = (props) => {
             <Icon
               className="icon"
               icon={weightHanging}
-              style={{ fontSize: '50px' }}
+              style={{ fontSize: '40px' }}
             />
           </WrapperIcon>
           <WrapperValue>
             <Value className="number">{ScalesData.weight || '0'}</Value>
             <Unite className="metric">Kg</Unite>
           </WrapperValue>
-        </Values>
-        <Values
+        </SpecialValues>
+        <SpecialValues
           className="btn temperature"
           onClick={handleClick('temperatureOut')}
           selected={selected === 'temperatureOut' ? true : false}
         >
+          <WrapperIcon>
+            <Icon
+              className="icon"
+              icon={tempIcon}
+              style={{ fontSize: '40px' }}
+            />
+          </WrapperIcon>
           <WrapperTem>
             <TemIn>
-              <WrapperIcon>
-                <Icon
-                  className="icon"
-                  icon={tempIcon}
-                  style={{ fontSize: '50px' }}
-                />
-                <p>in</p>
-              </WrapperIcon>
+              <p>in</p>
               <WrapperValue>
                 <Value className="number">
                   {ScalesData.temperatureIn || '0'}
@@ -88,7 +89,7 @@ const DataOfScale = (props) => {
                 {/*<Icon
                   className="icon"
                   icon={tempIcon}
-                  style={{ fontSize: '50px' }}
+                  style={{ fontSize: '40px' }}
                 />*/}
                 <p>out</p>
               </WrapperIcon>
@@ -100,7 +101,7 @@ const DataOfScale = (props) => {
               </WrapperValue>
             </TemOut>
           </WrapperTem>
-        </Values>
+        </SpecialValues>
         <Values
           className="btn humidity"
           onClick={handleClick('humidity')}
@@ -110,7 +111,7 @@ const DataOfScale = (props) => {
             <Icon
               className="icon"
               icon={humidityIcon}
-              style={{ fontSize: '50px' }}
+              style={{ fontSize: '40px' }}
             />
           </WrapperIcon>
           <WrapperValue>
@@ -127,7 +128,7 @@ const DataOfScale = (props) => {
             <Icon
               className="icon"
               icon={batteryIcon}
-              style={{ paddingLeft: '10px', fontSize: '50px' }}
+              style={{ paddingLeft: '10px', fontSize: '40px' }}
               rotate="270deg"
             />
           </WrapperIcon>

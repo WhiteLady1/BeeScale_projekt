@@ -42,82 +42,80 @@ const Graf = (props) => {
   };
 
   return (
-    <>
-      <Wrapper>
-        <TimeSelection>
-          <Button
-            className="btn btn-first"
-            onClick={() => handleClick(24)}
-            selected={selected === 24 ? true : false}
-          >
-            24 h
-          </Button>
-          <Button
-            className="btn btn-second"
-            onClick={() => handleClick(48)}
-            selected={selected === 48 ? true : false}
-          >
-            48 h
-          </Button>
-          <Button
-            className="btn btn-third"
-            onClick={() => handleClick(24 * 7)}
-            selected={selected === 24 * 7 ? true : false}
-          >
-            7 d
-          </Button>
-          <Button
-            className="btn btn-fourt"
-            onClick={() => handleClick(24 * 30)}
-            selected={selected === 24 * 30 ? true : false}
-          >
-            30 d
-          </Button>
-        </TimeSelection>
-        {props.data.length ? (
-          <Chart>
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart
-                //width={1000}
-                //height={300}
-                data={props.data.map((item) => ({
-                  ...item,
-                  temperatureOut: parseFloat(item.temperatureOut, 10),
-                }))}
-                margin={{
-                  top: 10,
-                  right: 30,
-                  left: 0,
-                  bottom: 5,
-                }}
-                padding={{ bottom: 10 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis
-                  dataKey="time"
-                  tickCount={10}
-                  style={{ fontSize: '12px' }}
-                />
-                ,
-                <YAxis tickCount={15} />
-                <Tooltip />
-                <Line
-                  type="monotone"
-                  dataKey={props.metric}
-                  stroke="var(--maincolor)"
-                />
-                <Legend verticalAlign="top" />
-              </LineChart>
-            </ResponsiveContainer>
-          </Chart>
-        ) : (
-          <NoData>
-            <p>Nemáme data :(</p>
-            <Icon icon={beehiveOffOutline} style={{ fontSize: '80px' }} />
-          </NoData>
-        )}
-      </Wrapper>
-    </>
+    <Wrapper>
+      <TimeSelection>
+        <Button
+          className="btn btn-first"
+          onClick={() => handleClick(24)}
+          selected={selected === 24 ? true : false}
+        >
+          24 h
+        </Button>
+        <Button
+          className="btn btn-second"
+          onClick={() => handleClick(48)}
+          selected={selected === 48 ? true : false}
+        >
+          48 h
+        </Button>
+        <Button
+          className="btn btn-third"
+          onClick={() => handleClick(24 * 7)}
+          selected={selected === 24 * 7 ? true : false}
+        >
+          7 d
+        </Button>
+        <Button
+          className="btn btn-fourt"
+          onClick={() => handleClick(24 * 30)}
+          selected={selected === 24 * 30 ? true : false}
+        >
+          30 d
+        </Button>
+      </TimeSelection>
+      {props.data.length ? (
+        <Chart>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              //width={1000}
+              //height={300}
+              data={props.data.map((item) => ({
+                ...item,
+                temperatureOut: parseFloat(item.temperatureOut, 10),
+              }))}
+              margin={{
+                top: 10,
+                right: 30,
+                left: 0,
+                bottom: 5,
+              }}
+              padding={{ bottom: 10 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis
+                dataKey="time"
+                tickCount={10}
+                style={{ fontSize: '12px' }}
+              />
+              ,
+              <YAxis tickCount={15} />
+              <Tooltip />
+              <Line
+                type="monotone"
+                dataKey={props.metric}
+                stroke="var(--maincolor)"
+              />
+              <Legend verticalAlign="top" />
+            </LineChart>
+          </ResponsiveContainer>
+        </Chart>
+      ) : (
+        <NoData>
+          <p>Nemáme data :(</p>
+          <Icon icon={beehiveOffOutline} style={{ fontSize: '80px' }} />
+        </NoData>
+      )}
+    </Wrapper>
   );
 };
 export default Graf;

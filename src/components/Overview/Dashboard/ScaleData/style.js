@@ -1,21 +1,15 @@
 import styled from 'styled-components';
 
-export const Time = styled.div`
-  font-size: 13px;
-  font-weight: 300;
-  text-align: center;
-  padding: 10px;
-  @media (min-width: 1025px) {
-    text-align: right;
-  }
-`;
-
 export const Wrapper = styled.div`
   margin: 0;
   padding-top: 20px;
   padding-left: 10px;
   display: flex;
   flex-direction: column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
   @media (min-width: 1025px) {
     flex-direction: row;
   }
@@ -44,21 +38,34 @@ export const Values = styled.div`
     color: white;
   }
 
+  @media (min-width: 600px) {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+  }
   @media (min-width: 1025px) {
     padding: 5px 20px 5px 20px;
     margin-right: 20px;
     width: 100%;
-    border: 1px solid #ededed;
-
     display: flex;
     justify-content: center;
   }
 `;
+export const SpecialValues = styled(Values)`
+  @media (min-width: 600px) {
+    flex-direction: column;
+  }
+`;
+
 export const WrapperTem = styled.div`
   display: flex;
   //flex-direction: column;
   align-items: space-between;
   width: 100%;
+  @media (min-width: 600px) {
+    flex-direction: column;
+  }
   @media (min-width: 1025px) {
     flex-direction: row;
     align-items: center;
@@ -107,4 +114,13 @@ export const Value = styled.div`
 `;
 export const Unite = styled.div`
   padding-left: 3px;
+`;
+export const Time = styled.div`
+  font-size: 13px;
+  font-weight: 300;
+  text-align: center;
+  padding: 10px;
+  @media (min-width: 600px) {
+    text-align: right;
+  }
 `;
