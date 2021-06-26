@@ -18,10 +18,24 @@ export const Wrapper = styled.div`
 
 export const TimeSelection = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
+  margin-bottom: 10px;
+`;
+export const Button = styled.div`
+  text-align: center;
+  background-color: ${(props) =>
+    props.selected ? 'var(--maincolor)' : 'white'};
+  color: ${(props) => (props.selected ? 'white' : 'black')};
+  border-radius: 10px;
+  border: 1px solid #ededed;
+  margin: 5px;
+  padding: 5px 15px 5px 15px;
+  cursor: pointer;
+  &:hover {
+    background: var(--maincolor);
+    color: white;
+  }
 `;
 
 export const Chart = styled.div`
@@ -35,22 +49,6 @@ export const Chart = styled.div`
   }
   @media (min-width: 1400px) {
     height: 400px;
-  }
-`;
-export const Button = styled.div`
-  width: 250px;
-  text-align: center;
-  background-color: ${(props) =>
-    props.selected ? 'var(--maincolor)' : 'white'};
-  color: ${(props) => (props.selected ? 'white' : 'black')};
-  border-radius: 50px;
-  border: 1px solid #ededed;
-  margin: 5px;
-  padding: 5px 10px 5px 10px;
-  cursor: pointer;
-  &:hover {
-    background: var(--maincolor);
-    color: white;
   }
 `;
 export const NoData = styled.div`
