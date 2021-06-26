@@ -2,12 +2,21 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: grid;
-  background-color: rgba(255, 255, 255, 0.5);
   grid-template-columns: auto;
   grid-template-rows: auto auto auto auto auto auto auto auto auto;
   @media (min-width: 1025px) {
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+    z-index: 2;
+    background-image: linear-gradient(
+      to right bottom,
+      var(--secondcolor07),
+      var(--secondcolor03)
+    );
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin: 50px;
+    padding: 20px;
   }
 `;
 

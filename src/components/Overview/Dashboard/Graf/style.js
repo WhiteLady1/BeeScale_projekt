@@ -40,7 +40,8 @@ export const Chart = styled.div`
 export const Button = styled.div`
   width: 250px;
   text-align: center;
-  background-color: ${(props) => (props.selected ? '#ffb802' : 'white')};
+  background-color: ${(props) =>
+    props.selected ? 'var(--maincolor)' : 'white'};
   color: ${(props) => (props.selected ? 'white' : 'black')};
   border-radius: 50px;
   border: 1px solid #ededed;
@@ -48,7 +49,7 @@ export const Button = styled.div`
   padding: 5px 10px 5px 10px;
   cursor: pointer;
   &:hover {
-    background: #ffb802;
+    background: var(--maincolor);
     color: white;
   }
 `;

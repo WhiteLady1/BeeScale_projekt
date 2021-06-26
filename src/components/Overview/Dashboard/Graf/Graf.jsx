@@ -101,7 +101,11 @@ const Graf = (props) => {
                 ,
                 <YAxis tickCount={15} />
                 <Tooltip />
-                <Line type="monotone" dataKey={props.metric} stroke="#ffb802" />
+                <Line
+                  type="monotone"
+                  dataKey={props.metric}
+                  stroke="var(--maincolor)"
+                />
                 <Legend verticalAlign="top" />
               </LineChart>
             </ResponsiveContainer>

@@ -27,7 +27,8 @@ export const Values = styled.div`
   justify-content: space-between;
   font-size: 20px;
   padding: 10px 50px 10px 50px;
-  background-color: ${(props) => (props.selected ? '#ffb802' : 'white')};
+  background-color: ${(props) =>
+    props.selected ? 'var(--maincolor)' : 'white'};
   color: ${(props) => (props.selected ? 'white' : 'black')};
   border: 1px solid #ededed;
   border-radius: 50px;
@@ -35,11 +36,11 @@ export const Values = styled.div`
   margin-bottom: 10px;
   cursor: pointer;
   &:hover {
-    background: #ffb802;
+    background: var(--maincolor);
     color: white;
   }
   &:focus {
-    background: #ffb802;
+    background: var(--maincolor);
     color: white;
   }
 

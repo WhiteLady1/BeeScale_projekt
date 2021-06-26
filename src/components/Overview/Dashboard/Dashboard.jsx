@@ -42,8 +42,8 @@ const Dashboard = (props) => {
   ).city;
   return (
     <>
-      <Logo2 src={logo2} />
-      <Logo3 src={logo3} />
+      <Logo2 src={logo3} />
+      <Logo3 src={logo2} />
       <Container>
         <SelectedMenu>
           <ChooseScale

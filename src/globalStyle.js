@@ -5,8 +5,8 @@ const GlobalStyle = createGlobalStyle`
 html{
   --maincolor:rgb(237, 231, 46);
   --secondcolor:rgb(251, 255, 170);
-  --secondcolor07:rgba(251, 255, 170, 0.7);
-  --secondcolor03:rgba(251, 255, 170, 0.3);
+  --secondcolor07:rgba(237, 231, 46, 0.2);
+  --secondcolor03:rgba(251, 255, 170, 0.2);
   --btncolor:rgb(66, 66, 66);
 }
 body{
