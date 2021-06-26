@@ -14,6 +14,7 @@ export const ListItem = styled.div`
   }
 `;
 const Ul = styled.ul`
+  z-index: 3;
   list-style: none;
   display: flex;
   justify-content: center;
@@ -25,7 +26,7 @@ const Ul = styled.ul`
 
   @media (max-width: 768px) {
     flex-flow: column nowrap;
-    background-color: #ffb802;
+    background-color: var(--maincolor);
     position: fixed;
     transform: ${(props) =>
       props.open ? 'translateX(0)' : 'translateX(100%)'};

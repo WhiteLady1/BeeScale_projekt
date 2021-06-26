@@ -15,8 +15,14 @@ const StyledHeader = styled.header`
   }
 
   .navbar-logo {
+    display: flex;
+    align-items: center;
     padding: 10px 10px;
     font-size: 30px;
+    img {
+      padding-right: 10px;
+      width: 40px;
+    }
   }
   .navbar-logo :hover {
     color: #ffb802;
