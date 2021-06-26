@@ -5,11 +5,15 @@ const GlobalStyle = createGlobalStyle`
 html{
   --maincolor:rgb(237, 231, 46);
   --secondcolor:rgb(251, 255, 170);
+  --secondcolor07:rgba(251, 255, 170, 0.7);
+  --secondcolor03:rgba(251, 255, 170, 0.3);
   --btncolor:rgb(66, 66, 66);
 }
 body{
   font-family: 'Open Sans', sans-serif;
   background-color: white;
+  min-height: 100vh;
+  position: relative;
   color: rgb(66, 66, 66);
 }
 a{
@@ -22,12 +26,16 @@ export const Logo2 = styled.img`
     display: block;
     position: absolute;
     z-index: -1;
-    left: 500px;
-    top: -150px;
+    left: 60%;
   }
-  @media (min-width: 1025px) {
-    left: 700px;
-    top: -150px;
+  @media (min-width: 1000px) {
+    left: 70%;
+  }
+  @media (min-width: 1200px) {
+    left: 75%;
+  }
+  @media (min-width: 1500px) {
+    left: 80%;
   }
 `;
 export const Logo3 = styled.img`
@@ -36,15 +44,20 @@ export const Logo3 = styled.img`
     display: block;
     position: absolute;
     z-index: -1;
-    right: 500px;
-    bottom: -150px;
+    right: 60%;
+    bottom: -20%;
   }
-  @media (min-width: 1025px) {
-    right: 700px;
-    bottom: -150px;
+  @media (min-width: 1000px) {
+    right: 70%;
+    bottom: -30%;
+  }
+  @media (min-width: 1200px) {
+    right: 75%;
+    bottom: -30%;
+  }
+  @media (min-width: 1500px) {
+    right: 80%;
+    bottom: -30%;
   }
 `;
 export default GlobalStyle;
-
-//špinavější bílá: #F7F8FA
-// světlá šedá: #DDE4ED

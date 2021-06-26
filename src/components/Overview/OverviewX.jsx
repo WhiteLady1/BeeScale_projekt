@@ -18,19 +18,19 @@ const Overview = (props) => {
   return (
     <>
       <Wrapper>
-        <Logo2 src={logo2} />
-        <Logo3 src={logo3} />
+        <Logo2 src={logo3} />
+        <Logo3 src={logo2} />
         {localStorageScaleList.map((scale) => {
           return (
-            <Link key={scale.SigfoxID} to={`/dashboard/${scale.SigfoxID}`}>
-              <Scale>
+            <Scale>
+              <Link key={scale.SigfoxID} to={`/dashboard/${scale.SigfoxID}`}>
                 <OneScale key={scale.name} name={scale.name} />
                 <OneOverview
                   key={scale.SigfoxID}
                   overview={props.posledniData[scale.SigfoxID]}
                 />
-              </Scale>
-            </Link>
+              </Link>
+            </Scale>
           );
         })}
       </Wrapper>

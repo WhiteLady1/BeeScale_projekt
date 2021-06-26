@@ -34,12 +34,17 @@ export const LoginPage = styled.div`
 export const Form = styled.form`
   position: relative;
   z-index: 1;
-  background: rgba(237, 231, 46, 0.1);
+  //background: rgba(237, 231, 46, 0.1);
+  background-image: linear-gradient(
+    to right bottom,
+    var(--secondcolor07),
+    var(--secondcolor03)
+  );
   max-width: 360px;
   margin: 0 auto 50px;
   padding: 45px;
   text-align: center;
-  border: 0.5px solid rgb(251, 255, 170);
+  border-radius: 5px;
 `;
 
 export const Input = styled.input`
