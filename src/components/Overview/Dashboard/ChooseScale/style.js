@@ -36,6 +36,6 @@ export const Select = styled.select`
   font-size: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 2px;
   @media (min-width: 600px) {
-    width: 75%;
+    width: 73%;
   }
 `;

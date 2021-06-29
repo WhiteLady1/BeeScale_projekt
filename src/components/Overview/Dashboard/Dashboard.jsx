@@ -45,14 +45,14 @@ const Dashboard = (props) => {
     <DashboardPage>
       <Logo2 src={logo3} />
       <Logo3 src={logo2} />
+      <SelectedMenu>
+        <ChooseScale
+          chosenScale={scaleID}
+          setTheScale={setScale}
+          scaleOptions={Object.keys(transformedData)}
+        />
+      </SelectedMenu>
       <Container>
-        <SelectedMenu>
-          <ChooseScale
-            chosenScale={scaleID}
-            setTheScale={setScale}
-            scaleOptions={Object.keys(transformedData)}
-          />
-        </SelectedMenu>
         <WeatherContainer>
           <Weather city={city} />
         </WeatherContainer>

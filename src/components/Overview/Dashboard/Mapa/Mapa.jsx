@@ -67,7 +67,7 @@ export const Mapa = (props) => {
       <ReactMapGL
         {...viewport}
         width="100%"
-        height={200}
+        height="100%"
         onViewportChange={(nextViewport) => setViewport(nextViewport)}
         mapboxApiAccessToken="pk.eyJ1Ijoid2hpdGVsYWR5IiwiYSI6ImNraHVvMmozODFldGoycGt6ZDZlNjRwZmUifQ.vejjMGJgs0GlqR9Ccy6xeg"
         mapStyle={seznamMapy}

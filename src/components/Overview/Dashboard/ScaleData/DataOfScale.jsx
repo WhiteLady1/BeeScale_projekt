@@ -19,6 +19,7 @@ import {
   TemValues,
   HumidityValues,
   VoltageValues,
+  WeightIcon,
 } from './style';
 
 const DataOfScale = (props) => {
@@ -53,13 +54,13 @@ const DataOfScale = (props) => {
           onClick={handleClick('weight')}
           selected={selected === 'weight' ? true : false}
         >
-          <WrapperIcon>
+          <WeightIcon>
             <Icon
               className="icon"
               icon={weightHanging}
               style={{ fontSize: '40px' }}
             />
-          </WrapperIcon>
+          </WeightIcon>
           <WrapperValue>
             <Value className="number">{ScalesData.weight || '0'}</Value>
             <Unite className="metric">Kg</Unite>

@@ -38,11 +38,3 @@ const Overview = (props) => {
   );
 };
 export default Overview;
-
-/* Ikony baterií
-prázdná baterie <Icon icon={battery0} style={{fontSize: '80px'}} />
-25 % <Icon icon={battery1} style={{fontSize: '80px'}} />
-50 % <Icon icon={battery2} style={{fontSize: '80px'}} />
-75 % <Icon icon={battery3} style={{fontSize: '80px'}} />
-100% <Icon icon={batteryIcon} style={{fontSize: '80px'}} /> 
-*/

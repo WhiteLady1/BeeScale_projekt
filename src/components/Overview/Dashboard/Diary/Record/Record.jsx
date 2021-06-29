@@ -64,11 +64,13 @@ const Record = ({
             name="text"
             onChange={handleChange}
           />
-          <button type="submit">
-            <Icon icon={checkCircleFill} />
-          </button>
-          <div onClick={() => setEditRecord((editRecord) => !editRecord)}>
-            ✕
+          <div>
+            <button type="submit">
+              <Icon icon={checkCircleFill} />
+            </button>
+            <div onClick={() => setEditRecord((editRecord) => !editRecord)}>
+              ✕
+            </div>
           </div>
         </NewRecordForm>
       ) : (

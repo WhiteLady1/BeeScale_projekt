@@ -28,7 +28,7 @@ export const Button = styled.div`
     props.selected ? 'var(--maincolor)' : 'white'};
   color: ${(props) => (props.selected ? 'white' : 'black')};
   border-radius: 10px;
-  border: 1px solid #ededed;
+  border: 1px solid var(--greycolor);
   margin: 5px;
   padding: 5px 15px 5px 15px;
   cursor: pointer;
@@ -43,9 +43,12 @@ export const Chart = styled.div`
   height: 300px;
   background-color: white;
   border-radius: 10px;
-  border: 1px solid #ededed;
+  border: 1px solid var(--greycolor);
   li {
     padding-bottom: 15px;
+  }
+  @media (min-width: 600px) {
+    width: 99%;
   }
   @media (min-width: 1400px) {
     height: 400px;

@@ -78,8 +78,6 @@ const Diary = (props) => {
       )}
       {addRecord ? (
         <RecordStyled>
-          {/*           <div>Nový záznam</div>
-           */}{' '}
           <NewRecordForm onSubmit={handleSubmit}>
             <div>
               <input type="date" name="date" onChange={handleChange} />

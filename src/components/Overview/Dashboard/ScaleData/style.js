@@ -27,7 +27,7 @@ export const Values = styled.div`
   background-color: ${(props) =>
     props.selected ? 'var(--maincolor)' : 'white'};
   color: ${(props) => (props.selected ? 'white' : 'black')};
-  border: 1px solid #ededed;
+  border: 1px solid var(--greycolor);
   border-radius: 50px;
   margin-right: 15px;
   margin-bottom: 10px;
@@ -117,6 +117,11 @@ export const WrapperIcon = styled.div`
   align-items: center;
   text-align: center;
 `;
+export const WeightIcon = styled(WrapperIcon)`
+  @media (min-width: 600px) {
+    padding-bottom: 5px;
+  }
+`;
 export const WrapperValue = styled.div`
   display: flex;
   padding-right: 20px;
@@ -142,6 +147,6 @@ export const Time = styled.div`
   text-align: center;
   padding: 10px;
   @media (min-width: 600px) {
-    text-align: right;
+    text-align: left;
   }
 `;

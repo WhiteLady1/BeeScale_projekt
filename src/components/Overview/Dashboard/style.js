@@ -6,6 +6,18 @@ export const DashboardPage = styled.div`
   min-height: 90vh;
 `;
 
+export const SelectedMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  grid-row: 1/2;
+  @media (min-width: 600px) {
+    grid-column: 1/5;
+  }
+  @media (min-width: 1025px) {
+    grid-row: 1;
+  }
+`;
+
 export const Container = styled.div`
   display: grid;
   grid-template-columns: auto;
@@ -14,50 +26,27 @@ export const Container = styled.div`
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
     z-index: 2;
-    /*
-    background-image: linear-gradient(
-      to right bottom,
-      var(--secondcolor07),
-      var(--secondcolor03)
-    );
     backdrop-filter: blur(5px);
     border-radius: 15px;
-    margin: 50px;
-    padding: 20px;
-    */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid var(--greycolor);
   }
   @media (min-width: 1025px) {
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
     z-index: 2;
-    background-image: linear-gradient(
-      to right bottom,
-      var(--secondcolor07),
-      var(--secondcolor03)
-    );
     backdrop-filter: blur(5px);
     border-radius: 15px;
     margin: 50px;
     padding: 20px;
-  }
-`;
-
-export const SelectedMenu = styled.div`
-  display: flex;
-  flex-direction: column;
-  grid-row: 1/2;
-  @media (min-width: 600px) {
-    grid-column: 1/4;
-  }
-  @media (min-width: 1025px) {
-    grid-row: 1;
   }
 `;
 
 export const WeatherContainer = styled.div`
   grid-row: 2/3;
   @media (min-width: 600px) {
-    grid-row: 2/6;
+    grid-row: 3/5;
     grid-column: 4/5;
   }
   @media (min-width: 1025px) {

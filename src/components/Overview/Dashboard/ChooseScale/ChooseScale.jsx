@@ -35,7 +35,7 @@ const ChooseScale = (props) => {
           ))}
         </Select>
         <Link to="/settings/scales">
-          <Icon icon={pensilIcon} />
+          <Icon icon={pensilIcon} style={{ marginLeft: '10px' }} />
         </Link>
       </FormGroup>
     </>
