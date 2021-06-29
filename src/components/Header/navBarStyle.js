@@ -25,7 +25,7 @@ const StyledHeader = styled.header`
     }
   }
   .navbar-logo :hover {
-    color: #ffb802;
+    color: var(--maincolor);
   }
 `;
 
