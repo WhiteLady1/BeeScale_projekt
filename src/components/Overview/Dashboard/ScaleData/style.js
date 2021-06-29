@@ -7,6 +7,9 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   @media (min-width: 600px) {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto;
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -20,7 +23,7 @@ export const Values = styled.div`
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 30px 10px 30px;
   background-color: ${(props) =>
     props.selected ? 'var(--maincolor)' : 'white'};
   color: ${(props) => (props.selected ? 'white' : 'black')};
@@ -29,6 +32,9 @@ export const Values = styled.div`
   margin-right: 15px;
   margin-bottom: 10px;
   cursor: pointer;
+  p {
+    margin: 0;
+  }
   &:hover {
     background: var(--maincolor);
     color: white;
@@ -39,9 +45,7 @@ export const Values = styled.div`
   }
 
   @media (min-width: 600px) {
-    width: 30%;
-    display: flex;
-    justify-content: center;
+    margin: 5px;
     border-radius: 10px;
   }
   @media (min-width: 1025px) {
@@ -52,19 +56,41 @@ export const Values = styled.div`
     justify-content: center;
   }
 `;
-export const SpecialValues = styled(Values)`
+export const WeightValues = styled(Values)`
   @media (min-width: 600px) {
+    grid-row: 1/3;
+    grid-column: 1/4;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    padding: 30px;
+  }
+`;
+export const TemValues = styled(Values)`
+  @media (min-width: 600px) {
+    grid-row: 3;
+    grid-column: 1/7;
+  }
+`;
+export const HumidityValues = styled(Values)`
+  @media (min-width: 600px) {
+    grid-row: 1/2;
+    grid-column: 4/7;
+  }
+`;
+export const VoltageValues = styled(Values)`
+  @media (min-width: 600px) {
+    grid-row: 2/3;
+    grid-column: 4/7;
   }
 `;
 
 export const WrapperTem = styled.div`
   display: flex;
-  //flex-direction: column;
   align-items: space-between;
   width: 100%;
   @media (min-width: 600px) {
-    flex-direction: column;
   }
   @media (min-width: 1025px) {
     flex-direction: row;
@@ -73,23 +99,15 @@ export const WrapperTem = styled.div`
 `;
 export const TemIn = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: center;
   font-size: 20px;
-  justify-content: space-between;
   width: 100%;
+  @media (min-width: 600px) {
+    justify-content: space-around;
+  }
   @media (min-width: 1025px) {
     padding-bottom: 0px;
-    justify-content: center;
-  }
-`;
-
-export const TemOut = styled.div`
-  display: flex;
-  align-items: center;
-  //justify-content: space-between;
-  width: 100%;
-  font-size: 20px;
-  @media (min-width: 1025px) {
     justify-content: center;
   }
 `;
@@ -102,6 +120,9 @@ export const WrapperIcon = styled.div`
 export const WrapperValue = styled.div`
   display: flex;
   padding-right: 20px;
+  @media (min-width: 600px) {
+    padding-right: 0;
+  }
   @media (min-width: 1025px) {
     padding-right: 0px;
     padding-left: 10px;

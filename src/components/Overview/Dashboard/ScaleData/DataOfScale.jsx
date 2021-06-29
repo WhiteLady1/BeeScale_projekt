@@ -15,7 +15,10 @@ import {
   TemIn,
   TemOut,
   WrapperTem,
-  SpecialValues,
+  WeightValues,
+  TemValues,
+  HumidityValues,
+  VoltageValues,
 } from './style';
 
 const DataOfScale = (props) => {
@@ -45,7 +48,7 @@ const DataOfScale = (props) => {
   return (
     <>
       <Wrapper>
-        <SpecialValues
+        <WeightValues
           className="btn weight"
           onClick={handleClick('weight')}
           selected={selected === 'weight' ? true : false}
@@ -61,8 +64,8 @@ const DataOfScale = (props) => {
             <Value className="number">{ScalesData.weight || '0'}</Value>
             <Unite className="metric">Kg</Unite>
           </WrapperValue>
-        </SpecialValues>
-        <SpecialValues
+        </WeightValues>
+        <TemValues
           className="btn temperature"
           onClick={handleClick('temperatureOut')}
           selected={selected === 'temperatureOut' ? true : false}
@@ -84,25 +87,18 @@ const DataOfScale = (props) => {
                 <Unite className="metric">°C</Unite>
               </WrapperValue>
             </TemIn>
-            <TemOut>
-              <WrapperIcon>
-                {/*<Icon
-                  className="icon"
-                  icon={tempIcon}
-                  style={{ fontSize: '40px' }}
-                />*/}
-                <p>out</p>
-              </WrapperIcon>
+            <TemIn>
+              <p>out</p>
               <WrapperValue>
                 <Value className="number">
                   {ScalesData.temperatureOut || '0'}
                 </Value>
                 <Unite className="metric">°C</Unite>
               </WrapperValue>
-            </TemOut>
+            </TemIn>
           </WrapperTem>
-        </SpecialValues>
-        <Values
+        </TemValues>
+        <HumidityValues
           className="btn humidity"
           onClick={handleClick('humidity')}
           selected={selected === 'humidity' ? true : false}
@@ -118,8 +114,8 @@ const DataOfScale = (props) => {
             <Value className="number">{ScalesData.humidity || '0'}</Value>
             <Unite className="metric">%</Unite>
           </WrapperValue>
-        </Values>
-        <Values
+        </HumidityValues>
+        <VoltageValues
           className="btn voltage"
           onClick={handleClick('voltage')}
           selected={selected === 'voltage' ? true : false}
@@ -136,7 +132,7 @@ const DataOfScale = (props) => {
             <Value className="number">{ScalesData.voltage || '0'}</Value>
             <Unite className="metric">%</Unite>
           </WrapperValue>
-        </Values>
+        </VoltageValues>
       </Wrapper>
       <Time>Zobrazená data z: {ScalesData.time}</Time>
     </>

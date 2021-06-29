@@ -57,12 +57,12 @@ export const SelectedMenu = styled.div`
 export const WeatherContainer = styled.div`
   grid-row: 2/3;
   @media (min-width: 600px) {
-    grid-column: 4/5;
     grid-row: 2/6;
+    grid-column: 4/5;
   }
   @media (min-width: 1025px) {
-    grid-column: 4/6;
     grid-row: 1/2;
+    grid-column: 4/6;
     padding-top: 20px;
   }
 `;
@@ -70,45 +70,45 @@ export const WeatherContainer = styled.div`
 export const Values = styled.div`
   grid-row: 3/6;
   @media (min-width: 600px) {
-    grid-column: 1/4;
     grid-row: 2/6;
+    grid-column: 1/4;
   }
   @media (min-width: 1025px) {
-    grid-column: 1/11;
     grid-row: 2/3;
+    grid-column: 1/11;
   }
 `;
 
 export const Chart = styled.div`
   grid-row: 6/13;
   @media (min-width: 600px) {
-    grid-column: 1/5;
     grid-row: 6/7;
+    grid-column: 1/5;
   }
   @media (min-width: 1025px) {
-    grid-column: 1/11;
     grid-row: 3/7;
+    grid-column: 1/11;
   }
 `;
 export const Comments = styled.div`
   grid-row: 13/16;
   @media (min-width: 600px) {
-    grid-column: 4/5;
     grid-row: 7/10;
+    grid-column: 4/5;
   }
   @media (min-width: 1025px) {
-    grid-column: 8/11;
     grid-row: 7/10;
+    grid-column: 8/11;
   }
 `;
 export const Map = styled.div`
   grid-row: 16/19;
   @media (min-width: 600px) {
-    grid-column: 1/4;
     grid-row: 7/10;
+    grid-column: 1/4;
   }
   @media (min-width: 1025px) {
-    grid-column: 1/8;
     grid-row: 7/10;
+    grid-column: 1/8;
   }
 `;
