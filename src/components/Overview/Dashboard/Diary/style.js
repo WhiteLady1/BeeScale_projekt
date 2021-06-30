@@ -11,7 +11,7 @@ export const DiaryHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 25px;
   margin-bottom: 10px;
 `;
 export const NewRecordIkon = styled.div`
@@ -20,7 +20,12 @@ export const NewRecordIkon = styled.div`
 `;
 export const NewRecordForm = styled.form`
   display: flex;
+  justify-content: space-between;
+`;
+export const NewRecordBody = styled.div`
+  display: flex;
   flex-direction: column;
+  width: 60%;
   input {
     padding: 0.5em;
     border: none;
@@ -33,14 +38,12 @@ export const NewRecordForm = styled.form`
     border: none;
     background: none;
   }
-  div {
-    display: flex;
-  }
 `;
 
 export const NewRecordSubmit = styled.div`
   margin: 10px;
   button {
+    font-size: 20px;
     border: none;
     background: none;
   }

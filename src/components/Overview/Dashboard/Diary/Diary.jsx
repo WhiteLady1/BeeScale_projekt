@@ -11,6 +11,7 @@ import {
   NewRecordForm,
   NewRecordIkon,
   NewRecordSubmit,
+  NewRecordBody,
 } from './style';
 import { RecordIcon, RecordIcons, RecordStyled } from './Record/style';
 
@@ -79,10 +80,10 @@ const Diary = (props) => {
       {addRecord ? (
         <RecordStyled>
           <NewRecordForm onSubmit={handleSubmit}>
-            <div>
+            <NewRecordBody>
               <input type="date" name="date" onChange={handleChange} />
               <input type="text" name="text" onChange={handleChange} />
-            </div>
+            </NewRecordBody>
             <NewRecordSubmit>
               <button type="submit">
                 <Icon icon={checkCircleFill} />

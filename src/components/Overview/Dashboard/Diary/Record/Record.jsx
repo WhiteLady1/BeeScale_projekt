@@ -4,7 +4,7 @@ import pensilIcon from '@iconify/icons-raphael/pensil';
 import checkCircleFill from '@iconify/icons-bi/check-circle-fill';
 import trashFill from '@iconify/icons-bi/trash-fill';
 import { RecordIcon, RecordIcons, RecordStyled } from './style';
-import { NewRecordForm } from '../style';
+import { NewRecordForm, NewRecordSubmit, NewRecordBody } from '../style';
 
 const Record = ({
   date,
@@ -52,26 +52,30 @@ const Record = ({
     <RecordStyled>
       {editRecord ? (
         <NewRecordForm onSubmit={handleSubmit}>
-          <input
-            type="date"
-            defaultValue={date}
-            name="date"
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            defaultValue={text}
-            name="text"
-            onChange={handleChange}
-          />
-          <div>
+          <NewRecordBody>
+            <input
+              type="date"
+              defaultValue={date}
+              name="date"
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              defaultValue={text}
+              name="text"
+              onChange={handleChange}
+            />
+          </NewRecordBody>
+          <NewRecordSubmit>
             <button type="submit">
               <Icon icon={checkCircleFill} />
             </button>
-            <div onClick={() => setEditRecord((editRecord) => !editRecord)}>
-              ✕
-            </div>
-          </div>
+          </NewRecordSubmit>
+          <RecordIcons
+            onClick={() => setEditRecord((editRecord) => !editRecord)}
+          >
+            <RecordIcon>✕</RecordIcon>
+          </RecordIcons>
         </NewRecordForm>
       ) : (
         <>
