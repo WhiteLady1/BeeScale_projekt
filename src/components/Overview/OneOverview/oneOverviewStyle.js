@@ -8,7 +8,6 @@ export const WrapperHeader = styled.div`
   justify-content: center;
   font-size: 25px;
   font-weight: 600;
-  color: rgb(56, 53, 37);
   &:hover {
     background: var(--maincolor);
     color: white;
@@ -35,23 +34,23 @@ export const Values = styled.div`
   font-size: 18px;
 `;
 export const TemperatureIn = styled(Values)`
-  border-bottom: #f7f8fa 1px solid;
-  border-right: #f7f8fa 1px solid;
+  border-bottom: var(--secondcolor) 1px solid;
+  border-right: var(--secondcolor) 1px solid;
 `;
 export const TemperatureOut = styled(Values)`
-  border-bottom: #f7f8fa 1px solid;
-  border-left: #f7f8fa 1px solid;
+  border-bottom: var(--secondcolor) 1px solid;
+  border-left: var(--secondcolor) 1px solid;
 `;
 export const Humidity = styled(Values)`
   margin-top: 10px;
-  border-top: #f7f8fa 1px solid;
-  border-right: #f7f8fa 1px solid;
+  border-top: var(--secondcolor) 1px solid;
+  border-right: var(--secondcolor) 1px solid;
   text-align: right;
 `;
 export const Voltage = styled(Values)`
   margin-top: 10px;
-  border-top: #f7f8fa 1px solid;
-  border-left: #f7f8fa 1px solid; ;
+  border-top: var(--secondcolor) 1px solid;
+  border-left: var(--secondcolor) 1px solid; ;
 `;
 export const WrapperIcon = styled.div`
   display: flex;
@@ -68,6 +67,8 @@ export const LastMeasurement = styled.div`
   font-size: 15px;
   padding: 15px;
   font-weight: 200;
+  border-radius: 0 0 10px 10px;
+
   &:hover {
     background: var(--maincolor);
     color: white;

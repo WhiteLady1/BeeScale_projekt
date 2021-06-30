@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const DashboardPage = styled.div`
   position: relative;
   overflow: hidden;
-  min-height: 90vh;
 `;
 
 export const SelectedMenu = styled.div`
@@ -39,7 +38,7 @@ export const Container = styled.div`
     z-index: 2;
     backdrop-filter: blur(5px);
     border-radius: 15px;
-    margin: 20px 40px 20px 40px;
+    margin: 10px 40px 20px 40px;
     padding: 20px;
   }
 `;

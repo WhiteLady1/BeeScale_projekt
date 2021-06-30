@@ -40,7 +40,7 @@ export const Form = styled.form`
     var(--secondcolor07),
     var(--secondcolor03)
   ); */
-  background: var(--secondcolor);
+  background: var(--maincolor07);
   max-width: 360px;
   margin: 0 auto 50px;
   padding: 45px;
@@ -79,7 +79,7 @@ export const Btn = styled(Link)`
   &:hover,
   :active,
   :focus {
-    background: var(--maincolor);
+    background: var(--secondcolor);
     color: var(--btncolor);
   }
 

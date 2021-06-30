@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 html{
   --maincolor:rgb(237, 231, 46);
+  --maincolor07:rgba(237, 231, 46, 0.7);
   --secondcolor:rgb(251, 255, 170);
   --secondcolor07:rgba(237, 231, 46, 0.2);
   --secondcolor03:rgba(251, 255, 170, 0.2);
