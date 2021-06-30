@@ -20,12 +20,12 @@ export const Form = styled.form`
     text-transform: uppercase;
     background-color: white;
     border-radius: 50px;
-    border: 1px solid #ededed;
+    border: 1px solid var(--greycolor);
     margin: 5px;
     padding: 5px 10px 5px 10px;
     cursor: pointer;
     &:hover {
-      background: #ffb802;
+      background: var(--maincolor);
       color: white;
     }
 
@@ -39,7 +39,7 @@ export const Form = styled.form`
 export const Input = styled.input`
   background: white;
   width: 100%;
-  border: 1px solid #ededed;
+  border: 1px solid var(--greycolor);
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 14px;
@@ -68,7 +68,7 @@ export const Ul = styled.ul`
     position: relative;
     padding: 30px;
     border-radius: 50px;
-    border: 1px solid #ededed;
+    border: 1px solid var(--greycolor);
     margin: 10px;
     margin-bottom: 20px;
     @media (min-width: 600px) {

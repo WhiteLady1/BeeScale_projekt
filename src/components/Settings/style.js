@@ -20,12 +20,13 @@ export const UserSettings = styled.div`
   text-align: center;
   border-radius: 5px;
   cursor: pointer;
-  border: 1px solid #ededed;
+  border: 1px solid var(--greycolor);
   margin-bottom: 10px;
-  background-color: ${(props) => (props.selected ? '#ffb802' : 'white')};
+  background-color: ${(props) =>
+    props.selected ? 'var(--maincolor)' : 'white'};
   color: ${(props) => (props.selected ? 'white' : 'black')};
   &:hover {
-    background: #ffb802;
+    background: var(--maincolor);
     color: white;
   }
   @media (min-width: 1025px) {
@@ -37,11 +38,12 @@ export const ScalesSettings = styled.div`
   text-align: center;
   border-radius: 5px;
   cursor: pointer;
-  border: 1px solid #ededed;
-  background-color: ${(props) => (props.selected ? '#ffb802' : 'white')};
+  border: 1px solid var(--greycolor);
+  background-color: ${(props) =>
+    props.selected ? 'var(--maincolor)' : 'white'};
   color: ${(props) => (props.selected ? 'white' : 'black')};
   &:hover {
-    background: #ffb802;
+    background: var(--maincolor);
     color: white;
   }
   @media (min-width: 1025px) {
