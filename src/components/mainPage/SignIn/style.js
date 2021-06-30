@@ -35,27 +35,29 @@ export const Form = styled.form`
   position: relative;
   z-index: 1;
   //background: rgba(237, 231, 46, 0.1);
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right bottom,
     var(--secondcolor07),
     var(--secondcolor03)
-  );
+  ); */
+  background: var(--secondcolor);
   max-width: 360px;
   margin: 0 auto 50px;
   padding: 45px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 10px;
 `;
 
 export const Input = styled.input`
+  box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  outline: 0;
-  border: 1px solid rgb(251, 255, 170);
+  font-size: 14px;
   width: 100%;
   margin: 0 0 15px;
   padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
+  outline: 0;
+  border: 1px solid var(--secondcolor);
+  border-radius: 5px;
 `;
 
 export const Btn = styled(Link)`
@@ -66,6 +68,7 @@ export const Btn = styled(Link)`
   background: var(--btncolor);
   width: 100%;
   border: 0;
+  border-radius: 5px;
   padding: 15px;
   color: white;
   font-size: 14px;
@@ -77,6 +80,7 @@ export const Btn = styled(Link)`
   :active,
   :focus {
     background: var(--maincolor);
+    color: var(--btncolor);
   }
 
   a {
