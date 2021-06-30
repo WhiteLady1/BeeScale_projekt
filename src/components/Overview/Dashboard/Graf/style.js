@@ -50,6 +50,7 @@ export const Chart = styled.div`
     width: 99%;
   }
   @media (min-width: 1025px) {
+    min-width: 550px;
     height: 500px;
   }
 `;
@@ -62,5 +63,6 @@ export const NoData = styled.div`
 
   @media (min-width: 1025px) {
     flex: 10 0 auto;
+    min-width: 500px;
   }
 `;
