@@ -8,12 +8,12 @@ export const ListItem = styled.div`
     color: var(--maincolor);
   }
   @media (min-width: 768px) {
-    color: ${(props) => (props.selected ? 'white' : 'black')};
-    border-bottom: ${(props) => (props.selected ? 'white 1px solid' : '')};
+    color: ${(props) => (props.selected ? 'var(--maincolor)' : 'black')};
+    border-bottom: ${(props) =>
+      props.selected ? 'var(--maincolor) 1px solid' : ''};
     cursor: pointer;
   }
   @media (min-width: 1000px) {
-    color: ${(props) => (props.selected ? 'var(--maincolor)' : 'black')};
     border-bottom: ${(props) =>
       props.selected ? 'var(--maincolor) 1px solid' : ''};
     cursor: pointer;
