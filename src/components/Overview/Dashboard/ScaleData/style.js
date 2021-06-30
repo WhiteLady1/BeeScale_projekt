@@ -49,11 +49,6 @@ export const Values = styled.div`
     border-radius: 10px;
   }
   @media (min-width: 1025px) {
-    padding: 5px 20px 5px 20px;
-    margin-right: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
   }
 `;
 export const WeightValues = styled(Values)`
@@ -93,8 +88,6 @@ export const WrapperTem = styled.div`
   @media (min-width: 600px) {
   }
   @media (min-width: 1025px) {
-    flex-direction: row;
-    align-items: center;
   }
 `;
 export const TemIn = styled.div`
@@ -107,8 +100,6 @@ export const TemIn = styled.div`
     justify-content: space-around;
   }
   @media (min-width: 1025px) {
-    padding-bottom: 0px;
-    justify-content: center;
   }
 `;
 
@@ -129,13 +120,10 @@ export const WrapperValue = styled.div`
     padding-right: 0;
   }
   @media (min-width: 1025px) {
-    padding-right: 0px;
-    padding-left: 10px;
   }
 `;
 export const Value = styled.div`
   @media (min-width: 1025px) {
-    padding-left: 10px;
   }
 `;
 export const Unite = styled.div`

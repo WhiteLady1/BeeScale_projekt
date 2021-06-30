@@ -77,8 +77,6 @@ const Graf = (props) => {
         <Chart>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
-              //width={1000}
-              //height={300}
               data={props.data.map((item) => ({
                 ...item,
                 temperatureOut: parseFloat(item.temperatureOut, 10),

@@ -5,20 +5,16 @@ export const Wrapper = styled.div`
   flex-direction: column;
   margin-left: 20px;
   margin-bottom: 20px;
-  justify-content: center;
-  align-items: center;
   margin: 10px;
   font-size: 20px;
   font-weight: 500;
-  justify-content: space-between;
   @media (min-width: 1025px) {
-    flex-direction: row-reverse;
+    margin-top: 0;
   }
 `;
 
 export const TimeSelection = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
   margin-bottom: 10px;
 `;
@@ -36,6 +32,9 @@ export const Button = styled.div`
     background: var(--maincolor);
     color: white;
   }
+  @media (min-width: 1025px) {
+    padding: 10px 15px 10px 15px;
+  }
 `;
 
 export const Chart = styled.div`
@@ -50,8 +49,8 @@ export const Chart = styled.div`
   @media (min-width: 600px) {
     width: 99%;
   }
-  @media (min-width: 1400px) {
-    height: 400px;
+  @media (min-width: 1025px) {
+    height: 500px;
   }
 `;
 export const NoData = styled.div`

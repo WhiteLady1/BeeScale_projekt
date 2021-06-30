@@ -15,6 +15,7 @@ export const SelectedMenu = styled.div`
   }
   @media (min-width: 1025px) {
     grid-row: 1;
+    width: 60%;
   }
 `;
 
@@ -33,12 +34,12 @@ export const Container = styled.div`
     border: 1px solid var(--greycolor);
   }
   @media (min-width: 1025px) {
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
     z-index: 2;
     backdrop-filter: blur(5px);
     border-radius: 15px;
-    margin: 50px;
+    margin: 20px 40px 20px 40px;
     padding: 20px;
   }
 `;
@@ -50,9 +51,9 @@ export const WeatherContainer = styled.div`
     grid-column: 4/5;
   }
   @media (min-width: 1025px) {
-    grid-row: 1/2;
-    grid-column: 4/6;
-    padding-top: 20px;
+    grid-row: 1/3;
+    grid-column: 7/10;
+    margin-right: 20px;
   }
 `;
 
@@ -63,8 +64,8 @@ export const Values = styled.div`
     grid-column: 1/4;
   }
   @media (min-width: 1025px) {
-    grid-row: 2/3;
-    grid-column: 1/11;
+    grid-row: 1/4;
+    grid-column: 1/4;
   }
 `;
 
@@ -75,8 +76,9 @@ export const Chart = styled.div`
     grid-column: 1/5;
   }
   @media (min-width: 1025px) {
-    grid-row: 3/7;
-    grid-column: 1/11;
+    grid-row: 1/7;
+    grid-column: 4/10;
+    padding-top: 20px;
   }
 `;
 export const Comments = styled.div`
@@ -86,8 +88,9 @@ export const Comments = styled.div`
     grid-column: 4/5;
   }
   @media (min-width: 1025px) {
-    grid-row: 7/10;
-    grid-column: 8/11;
+    grid-row: 4/10;
+    grid-column: 1/4;
+    max-width: 400px;
   }
 `;
 export const Map = styled.div`
@@ -98,6 +101,7 @@ export const Map = styled.div`
   }
   @media (min-width: 1025px) {
     grid-row: 7/10;
-    grid-column: 1/8;
+    grid-column: 4/10;
+    height: 200px;
   }
 `;
